@@ -225,80 +225,92 @@ html_output += "<tbody>\n"
 
 #Búa til sköl fyrir þingmál (frumvörp og þingsályktanir) - í nefnd, bíður umræðu og samþykkt og svo svaraðar og ósvaraðar fyrirspurnir
 
-commitee = html_output
+committee = html_output
 waiting = html_output
 asked =html_output
 answered = html_output
 passed = html_output
 government_waiting = html_output
+government_committee = html_output
 
 for k in data[u'málaskrá'][u'mál']:
   try:
     document_data = get_document_data(k[u'xml'])
     print(k[u'@málsnúmer'])
     if u'nefnd' in document_data[u'issue_status']:
-      commitee += """\t<tr>\n"""
-      commitee += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-      commitee += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-      commitee += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-      commitee += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      commitee += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
-      commitee += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
-      commitee += """\t</tr>\n"""
+      flutningur = str(find_mp_party(str(document_data['mps']), parties))
+      if 'ráðherra' in flutningur:
+        government_committee += """\t<tr>\n"""
+        government_committee += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        government_committee += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+        government_committee += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+        government_committee += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+        government_committee += "\t\t<td>" + flutningur +"</td>\n"
+        government_committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        government_committee += """\t</tr>\n"""
+      else:
+        committee += """\t<tr>\n"""
+        committee += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        committee += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+        committee += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+        committee += "\t\t<td><a href='" + k[u'html'] +"'>" + k[u'málsheiti'] + "</a></td>\n"
+        committee += "\t\t<td>" + flutningur + "</td>\n"
+        committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        committee += """\t</tr>\n"""
     elif u'Bíður' in document_data[u'issue_status']:
       #ríkisstjórnarmál eða þingmannamál?
       flutningur = str(find_mp_party(str(document_data['mps']), parties))
       if 'ráðherra' in flutningur:
         government_waiting += """\t<tr>\n"""
-        government_waiting += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-        government_waiting += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-        government_waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-        government_waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-        government_waiting += "\t\t<td>"+ flutningur +"</td>\n"
-        government_waiting += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
+        government_waiting += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        government_waiting += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+        government_waiting += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
+        government_waiting += "\t\t<td><a href='" + k[u'html']+"'>" + k[u'málsheiti'] + "</a></td>\n"
+        government_waiting += "\t\t<td>" + flutningur + "</td>\n"
+        government_waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
         government_waiting += """\t</tr>\n"""    
       else:
         waiting += """\t<tr>\n"""
-        waiting += "\t\t<td>"+k[u'@málsnúmer'] +"</td>\n"
-        waiting += "\t\t<td>"+k[u'málstegund'][u'heiti'] +"</td>\n"
-        waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-        waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti'] +"</a></td>\n"
-        waiting += "\t\t<td>"+ flutningur +"</td>\n"
-        waiting += "\t\t<td>"+ document_data[u'issue_published'] +"</td>\n"
+        waiting += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        waiting += "\t\t<td>" + k[u'málstegund'][u'heiti'] +"</td>\n"
+        waiting += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+        waiting += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+        waiting += "\t\t<td>" + flutningur + "</td>\n"
+        waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
         waiting += """\t</tr>\n"""    
     elif u'var svarað' in document_data[u'issue_status']:
       answered += """\t<tr>\n"""
-      answered += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-      answered += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-      answered += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-      answered += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      answered += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
-      answered += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
+      answered += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+      answered += "\t\t<td>" + k[u'málstegund'][u'heiti']+"</td>\n"
+      answered += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+      answered += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+      answered += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
+      answered += "\t\t<td>" + document_data[u'issue_published']+"</td>\n"
       answered += """\t</tr>\n"""
     elif u'ekki verið svarað' in document_data[u'issue_status']:
       asked += """\t<tr>\n"""
-      asked += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-      asked += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-      asked += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-      asked += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      asked += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
-      asked += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
+      asked += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+      asked += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+      asked += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
+      asked += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+      asked += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
+      asked += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
       asked += """\t</tr>\n"""
     elif u'Samþykkt' in document_data[u'issue_status']:
       passed += """\t<tr>\n"""
-      passed += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-      passed += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-      passed += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-      passed += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      passed += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
-      passed += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
+      passed += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+      passed += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+      passed += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
+      passed += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+      passed += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
+      passed += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
       passed += """\t</tr>\n"""
   except:
     pass
 
 html_footer = "</tbody>\n"
 html_footer += "</table></body></html>"
-commitee += html_footer
+committee += html_footer
 waiting += html_footer
 asked += html_footer
 answered += html_footer
@@ -306,7 +318,7 @@ passed += html_footer
 government_waiting += html_footer
 
 with open("in_committee.html", "w") as file:
-  file.write(commitee)
+  file.write(committee)
 with open("waiting.html", "w") as file:
   file.write(waiting)
 with open("asked.html", "w") as file:
@@ -317,3 +329,5 @@ with open("passed.html", "w") as file:
   file.write(passed)
 with open("government_waiting.html", "w") as file:
   file.write(government_waiting)
+with open("government_committee.html", "w") as file:
+  file.write(government_committee)
