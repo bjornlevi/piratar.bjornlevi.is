@@ -255,5 +255,5 @@ with open("asked.html", "w") as file:
   file.write(asked)
 with open("answered.html", "w") as file:
   file.write(answered)
-with open("answered.html", "w") as file:
+with open("passed.html", "w") as file:
   file.write(passed)
