@@ -248,7 +248,7 @@ answered += html_footer
 passed += html_footer
 
 with open("in_committee.html", "w") as file:
-	file.write(commitee)
+  file.write(commitee)
 with open("waiting.html", "w") as file:
   file.write(waiting)
 with open("asked.html", "w") as file:
