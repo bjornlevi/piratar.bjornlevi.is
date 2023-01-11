@@ -2,11 +2,14 @@
 
 import requests
 import xmltodict
-import sys
+import sys, os
 
 session = None
+force = False
 try:
-	session = sys.argv[1]
+  session = sys.argv[1]
+  if len(sys.argv) > 2:
+    force = sys.argv[2]
 except:
 	sys.exit(0)
 
@@ -83,9 +86,27 @@ $(function() {
 """
 
 #functions
+def cache_or_fetch(url, force=False):
+  try: 
+    os.mkdir("cache")
+  except:
+    pass
+
+  file_name = "cache/"+url.replace('/','-')
+
+  if force or os.path.exists(file_name):
+    #file exists, return file contents
+    with open(file_name, "r") as f:
+      return xmltodict.parse(f.read())
+  else:
+    response = requests.get(url)
+    #cache file
+    with open(file_name, "w") as f:
+       f.write(response.text)
+    return xmltodict.parse(response.text)
+
 def get_flutningsmenn_data(url):
-  response = requests.get(url)
-  data = xmltodict.parse(response.text)
+  data = cache_or_fetch(url, force)
   if u'nefnd' in data[u'þingskjal'][u'þingskjal'][u'flutningsmenn']:
     try:
       flutningsmenn = data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'nefnd'][u'heiti']
@@ -109,8 +130,7 @@ def get_flutningsmenn_data(url):
   return flutningsmenn
 
 def get_document_data(url):
-  response = requests.get(url)
-  data = xmltodict.parse(response.text)
+  data = cache_or_fetch(url, force)
   thingskjal_url = ''
   try:
     issue_status = data[u'þingmál'][u'mál'][u'staðamáls']
@@ -134,8 +154,7 @@ def get_document_data(url):
 
 def get_party_mps(session):
   url = "http://www.althingi.is/altext/xml/thingmenn/?lthing="
-  response = requests.get(url+str(session))
-  data = xmltodict.parse(response.text)
+  data = cache_or_fetch(url+str(session), force)
   results = {} #{flokkur1: [mp1, mp2], flokkur2: ...}
   for mp in data[u'þingmannalisti'][u'þingmaður']:
     try:
