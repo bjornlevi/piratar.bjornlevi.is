@@ -16,9 +16,6 @@ response = requests.get(query)
 #print response.text.encode('utf-8', 'ignore')
 data = xmltodict.parse(response.text)
 
-#for k in data[u'málaskrá'][u'mál']:
-#	print(k)
-
 script = """
 $(function() {
   const ths = $("th");
@@ -85,25 +82,178 @@ $(function() {
 });
 """
 
+#functions
+def get_flutningsmenn_data(url):
+  response = requests.get(url)
+  data = xmltodict.parse(response.text)
+  if u'nefnd' in data[u'þingskjal'][u'þingskjal'][u'flutningsmenn']:
+    try:
+      flutningsmenn = data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'nefnd'][u'heiti']
+    except:
+      flutningsmenn = ''
+    return flutningsmenn
+
+  try:
+    if u'ráðherra' in data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'flutningsmaður'][0]:
+      flutningsmenn = data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'flutningsmaður'][0][u'ráðherra']
+    else:
+      flutningsmenn = data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'flutningsmaður'][0][u'nafn']
+  except:
+    try:
+      if u'ráðherra' in data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'flutningsmaður']:
+        flutningsmenn = data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'flutningsmaður'][u'ráðherra']
+      else:
+        flutningsmenn = data[u'þingskjal'][u'þingskjal'][u'flutningsmenn'][u'flutningsmaður'][u'nafn']
+    except:
+      flutningsmenn = ''
+  return flutningsmenn
+
+def get_document_data(url):
+  response = requests.get(url)
+  data = xmltodict.parse(response.text)
+  thingskjal_url = ''
+  try:
+    issue_status = data[u'þingmál'][u'mál'][u'staðamáls']
+  except:
+    issue_status = ''
+  try:
+    try:
+      thingskjal_url = data[u'þingmál'][u'þingskjöl'][u'þingskjal'][0][u'slóð'][u'xml']
+    except:
+      thingskjal_url = data[u'þingmál'][u'þingskjöl'][u'þingskjal'][u'slóð'][u'xml']
+  except:
+    return ''
+  try:
+    if data[u'þingmál'][u'ræður'][u'ræða'][0][u'tegundræðu'] == 'flutningsræða' or data[u'þingmál'][u'ræður'][u'ræða'][1][u'tegundræðu'] == 'flutningsræða':
+      issue_introduction = data[u'þingmál'][u'ræður'][u'ræða'][0][u'ræðahófst']
+    else:
+      issue_introduction = ''
+  except Exception as e:
+    issue_introduction = ''
+  return {'mps': get_flutningsmenn_data(thingskjal_url), 'issue_status': issue_status, 'issue_introduction': issue_introduction}
+
+def get_party_mps(session):
+  url = "http://www.althingi.is/altext/xml/thingmenn/?lthing="
+  response = requests.get(url+str(session))
+  data = xmltodict.parse(response.text)
+  results = {} #{flokkur1: [mp1, mp2], flokkur2: ...}
+  for mp in data[u'þingmannalisti'][u'þingmaður']:
+    try:
+      mp_party = get_mp_party(mp[u'xml'][u'þingseta'], session)
+    except:
+      mp_party = None
+    mp_name = mp[u'nafn']
+    if mp_party in results:
+      results[mp_party].append(mp_name)
+    else:
+      results[mp_party] = [mp_name]
+  return results
+
+def get_mp_party(mp, parties):
+  #print(mp)
+  for party in parties:
+    if mp in parties[party]:
+      return party
+  return None
+
+malstegund = {
+  'l': 'Frumvarp til laga', 
+  'f': 'Tillaga til þingsályktunar', 
+  'm': 'Fyrirspurn',
+  'n': 'Álit',
+  'b': 'Beiðni um skýrslu',
+  'q': 'Fyrirspurn',
+  'um': 'sérstök umræða',
+  'a': 'Tillaga til þingsályktunar',
+  's': 'Skýrsla',
+  'ft': 'óundirbúinn fyrirspurnatími'}
+
+print("Collecting party info")
+parties = get_party_mps(session)
+
 html_output = "<html><head><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script></head><body>\n"
 html_output += "<script type='text/javascript'>"+script+"</script>\n"
 html_output += "<table id='table_issues' border='1'>\n"
 html_output += """\t<thead>
 \t\t<th data-type='number'>Málsnúmer</th>
 \t\t<th data-type='string'>Tegund máls</th>
+\t\t<th data-type='string'>Staða máls</th>
 \t\t<th data-type='string'>Málsheiti</th>
+\t\t<th data-type='string'>Flokkur</th>
 \t</thead>\n"""
 html_output += "<tbody>\n"
-for k in data[u'málaskrá'][u'mál']:
-	html_output += """\t<tr>\n"""
-	html_output += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-	html_output += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-	html_output += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-	html_output += """\t</tr>\n"""
 
-html_output += "</tbody>\n"
-html_output += "</table></body></html>"
- 
-with open("file.html", "w") as file:
-	file.write(html_output)
- 
+#Búa til sköl fyrir þingmál (frumvörp og þingsályktanir) - í nefnd, bíður umræðu og samþykkt og svo svaraðar og ósvaraðar fyrirspurnir
+
+commitee = html_output
+waiting = html_output
+asked =html_output
+answered = html_output
+passed = html_output
+
+for k in data[u'málaskrá'][u'mál']:
+  try:
+    document_data = get_document_data(k[u'xml'])
+    print(k[u'@málsnúmer'])
+    print(document_data[u'issue_status'])
+    if u'nefnd' in document_data[u'issue_status']:
+      commitee += """\t<tr>\n"""
+      commitee += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
+      commitee += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
+      commitee += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+      commitee += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
+      commitee += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      commitee += """\t</tr>\n"""
+    elif u'Bíður' in document_data[u'issue_status']:
+      waiting += """\t<tr>\n"""
+      waiting += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
+      waiting += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
+      waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+      waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
+      waiting += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      waiting += """\t</tr>\n"""    
+    elif u'var svarað' in document_data[u'issue_status']:
+      answered += """\t<tr>\n"""
+      answered += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
+      answered += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
+      answered += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+      answered += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
+      answered += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      answered += """\t</tr>\n"""
+    elif u'ekki verið svarað' in document_data[u'issue_status']:
+      asked += """\t<tr>\n"""
+      asked += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
+      asked += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
+      asked += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+      asked += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
+      asked += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      asked += """\t</tr>\n"""
+    elif u'Samþykkt' in document_data[u'issue_status']:
+      passed += """\t<tr>\n"""
+      passed += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
+      passed += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
+      passed += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+      passed += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
+      passed += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      passed += """\t</tr>\n"""
+  except:
+    pass
+
+html_footer = "</tbody>\n"
+html_footer += "</table></body></html>"
+commitee += html_footer
+waiting += html_footer
+asked += html_footer
+answered += html_footer
+passed += html_footer
+
+with open("in_committee.html", "w") as file:
+	file.write(commitee)
+with open("waiting.html", "w") as file:
+  file.write(waiting)
+with open("asked.html", "w") as file:
+  file.write(asked)
+with open("answered.html", "w") as file:
+  file.write(answered)
+with open("answered.html", "w") as file:
+  file.write(passed)
