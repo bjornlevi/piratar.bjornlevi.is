@@ -150,7 +150,15 @@ def get_document_data(url):
       issue_introduction = ''
   except Exception as e:
     issue_introduction = ''
-  return {'mps': get_flutningsmenn_data(thingskjal_url), 'issue_status': issue_status, 'issue_introduction': issue_introduction}
+  try:
+    documents = data[u'þingmál'][u'þingskjöl'][u'þingskjal']
+    if type(documents) is list:
+      issue_published = documents[0][u'útbýting']
+    else:
+      issue_published = documents[u'útbýting']
+  except:
+    issue_published = ''
+  return {'mps': get_flutningsmenn_data(thingskjal_url), 'issue_status': issue_status, 'issue_introduction': issue_introduction, 'issue_published': issue_published}
 
 def get_mp_party(url, session):
   data = cache_or_fetch(url, force)
@@ -211,6 +219,7 @@ html_output += """\t<thead>
 \t\t<th data-type='string'>Staða máls</th>
 \t\t<th data-type='string'>Málsheiti</th>
 \t\t<th data-type='string'>Flokkur</th>
+\t\t<th data-type='string'>Útbýting</th>
 \t</thead>\n"""
 html_output += "<tbody>\n"
 
@@ -226,7 +235,6 @@ for k in data[u'málaskrá'][u'mál']:
   try:
     document_data = get_document_data(k[u'xml'])
     print(k[u'@málsnúmer'])
-    print(document_data[u'issue_status'])
     if u'nefnd' in document_data[u'issue_status']:
       commitee += """\t<tr>\n"""
       commitee += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
@@ -234,6 +242,7 @@ for k in data[u'málaskrá'][u'mál']:
       commitee += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       commitee += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
       commitee += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      commitee += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
       commitee += """\t</tr>\n"""
     elif u'Bíður' in document_data[u'issue_status']:
       waiting += """\t<tr>\n"""
@@ -242,6 +251,7 @@ for k in data[u'málaskrá'][u'mál']:
       waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
       waiting += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      waiting += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
       waiting += """\t</tr>\n"""    
     elif u'var svarað' in document_data[u'issue_status']:
       answered += """\t<tr>\n"""
@@ -250,6 +260,7 @@ for k in data[u'málaskrá'][u'mál']:
       answered += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       answered += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
       answered += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      answered += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
       answered += """\t</tr>\n"""
     elif u'ekki verið svarað' in document_data[u'issue_status']:
       asked += """\t<tr>\n"""
@@ -258,6 +269,7 @@ for k in data[u'málaskrá'][u'mál']:
       asked += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       asked += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
       asked += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      asked += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
       asked += """\t</tr>\n"""
     elif u'Samþykkt' in document_data[u'issue_status']:
       passed += """\t<tr>\n"""
@@ -266,6 +278,7 @@ for k in data[u'málaskrá'][u'mál']:
       passed += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       passed += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
       passed += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      passed += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
       passed += """\t</tr>\n"""
   except:
     pass
