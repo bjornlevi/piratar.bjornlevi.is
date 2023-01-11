@@ -152,6 +152,18 @@ def get_document_data(url):
     issue_introduction = ''
   return {'mps': get_flutningsmenn_data(thingskjal_url), 'issue_status': issue_status, 'issue_introduction': issue_introduction}
 
+def get_mp_party(url, session):
+  data = cache_or_fetch(url, force)
+  try:
+    if data[u'þingmaður'][u'þingsetur'][u'þingseta'][u'þing'] == str(session):
+      #print(data[u'þingmaður'][u'þingsetur'][u'þingseta'][u'þingflokkur'][u'#text'])
+      return data[u'þingmaður'][u'þingsetur'][u'þingseta'][u'þingflokkur'][u'#text']
+  except Exception as e:
+    for session_data in data[u'þingmaður'][u'þingsetur'][u'þingseta']:
+      if session_data[u'þing'] == str(session):
+        return session_data[u'þingflokkur'][u'#text']
+  return None
+
 def get_party_mps(session):
   url = "http://www.althingi.is/altext/xml/thingmenn/?lthing="
   data = cache_or_fetch(url+str(session), force)
@@ -168,12 +180,12 @@ def get_party_mps(session):
       results[mp_party] = [mp_name]
   return results
 
-def get_mp_party(mp, parties):
+def find_mp_party(mp, parties):
   #print(mp)
   for party in parties:
     if mp in parties[party]:
       return party
-  return None
+  return mp
 
 malstegund = {
   'l': 'Frumvarp til laga', 
@@ -221,7 +233,7 @@ for k in data[u'málaskrá'][u'mál']:
       commitee += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
       commitee += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       commitee += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      commitee += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      commitee += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
       commitee += """\t</tr>\n"""
     elif u'Bíður' in document_data[u'issue_status']:
       waiting += """\t<tr>\n"""
@@ -229,7 +241,7 @@ for k in data[u'málaskrá'][u'mál']:
       waiting += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
       waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      waiting += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      waiting += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
       waiting += """\t</tr>\n"""    
     elif u'var svarað' in document_data[u'issue_status']:
       answered += """\t<tr>\n"""
@@ -237,7 +249,7 @@ for k in data[u'málaskrá'][u'mál']:
       answered += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
       answered += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       answered += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      answered += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      answered += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
       answered += """\t</tr>\n"""
     elif u'ekki verið svarað' in document_data[u'issue_status']:
       asked += """\t<tr>\n"""
@@ -245,7 +257,7 @@ for k in data[u'málaskrá'][u'mál']:
       asked += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
       asked += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       asked += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      asked += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      asked += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
       asked += """\t</tr>\n"""
     elif u'Samþykkt' in document_data[u'issue_status']:
       passed += """\t<tr>\n"""
@@ -253,7 +265,7 @@ for k in data[u'málaskrá'][u'mál']:
       passed += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
       passed += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
       passed += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      passed += "\t\t<td>"+ str(get_mp_party(str(document_data['mps']), parties))+"</td>\n"
+      passed += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
       passed += """\t</tr>\n"""
   except:
     pass
