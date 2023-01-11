@@ -1,0 +1,150 @@
+<html><head><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script></head><body>
+<script type='text/javascript'>
+$(function() {
+  const ths = $("th");
+  let sortOrder = 1;
+
+  ths.on("click", function() {
+    const rows = sortRows(this);
+    rebuildTbody(rows);
+    updateClassName(this);
+    sortOrder *= -1; //反転
+  })
+
+  function sortRows(th) {
+    const rows = $.makeArray($('tbody > tr'));
+    const col = th.cellIndex;
+    const type = th.dataset.type;
+    rows.sort(function(a, b) {
+      return compare(a, b, col, type) * sortOrder;      
+    });
+    return rows;
+  }
+
+  function compare(a, b, col, type) {
+    let _a = a.children[col].textContent;
+    let _b = b.children[col].textContent;
+    if (type === "number") {
+      _a *= 1;
+      _b *= 1;
+    } else if (type === "string") {
+      //全て小文字に揃えている。toLowerCase()
+      _a = _a.toLowerCase();
+      _b = _b.toLowerCase();
+    }
+
+    if (_a < _b) {
+      return -1;
+    }
+    if (_a > _b) {
+      return 1;
+    }
+    return 0;
+  }
+
+  function rebuildTbody(rows) {
+    const tbody = $("tbody");
+    while (tbody.firstChild) {
+      tbody.remove(tbody.firstChild);
+    }
+
+    let j;
+    for (j=0; j<rows.length; j++) {
+      tbody.append(rows[j]);
+    }
+  }
+
+  function updateClassName(th) {
+    let k;
+    for (k=0; k<ths.length; k++) {
+      ths[k].className = "";
+    }
+    th.className = sortOrder === 1 ? "asc" : "desc";   
+  }
+  
+});
+</script>
+<table id='table_issues' border='1'>
+	<thead>
+		<th data-type='number'>Málsnúmer</th>
+		<th data-type='string'>Tegund máls</th>
+		<th data-type='string'>Staða máls</th>
+		<th data-type='string'>Málsheiti</th>
+		<th data-type='string'>Flokkur</th>
+		<th data-type='string'>Útbýting</th>
+	</thead>
+<tbody>
+	<tr>
+		<td>382</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 2. umræðu</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=382'>útlendingar</a></td>
+		<td>dómsmálaráðherra</td>
+		<td>2022-10-21 10:58</td>
+	</tr>
+	<tr>
+		<td>529</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=529'>sóttvarnalög</a></td>
+		<td>heilbrigðisráðherra</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>531</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=531'>póstþjónusta</a></td>
+		<td>innviðaráðherra</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>535</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=535'>lögreglulög</a></td>
+		<td>dómsmálaráðherra</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>536</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=536'>raforkulög</a></td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>540</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=540'>opinbert eftirlit Matvælastofnunar</a></td>
+		<td>matvælaráðherra</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>542</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=542'>tónlist</a></td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>588</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=588'>fjármögnunarviðskipti með verðbréf</a></td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>2022-12-16 11:49</td>
+	</tr>
+	<tr>
+		<td>589</td>
+		<td>Frumvarp til laga</td>
+		<td>Bíður 1. umræðu.</td>
+		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=589'>umferðarlög</a></td>
+		<td>innviðaráðherra</td>
+		<td>2022-12-16 11:49</td>
+	</tr>
+</tbody>
+</table></body></html>

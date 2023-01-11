@@ -230,6 +230,7 @@ waiting = html_output
 asked =html_output
 answered = html_output
 passed = html_output
+government_waiting = html_output
 
 for k in data[u'málaskrá'][u'mál']:
   try:
@@ -245,14 +246,26 @@ for k in data[u'málaskrá'][u'mál']:
       commitee += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
       commitee += """\t</tr>\n"""
     elif u'Bíður' in document_data[u'issue_status']:
-      waiting += """\t<tr>\n"""
-      waiting += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
-      waiting += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
-      waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
-      waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
-      waiting += "\t\t<td>"+ str(find_mp_party(str(document_data['mps']), parties))+"</td>\n"
-      waiting += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
-      waiting += """\t</tr>\n"""    
+      #ríkisstjórnarmál eða þingmannamál?
+      flutningur = str(find_mp_party(str(document_data['mps']), parties))
+      if 'ráðherra' in flutningur:
+        government_waiting += """\t<tr>\n"""
+        government_waiting += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
+        government_waiting += "\t\t<td>"+k[u'málstegund'][u'heiti']+"</td>\n"
+        government_waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+        government_waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti']+"</a></td>\n"
+        government_waiting += "\t\t<td>"+ flutningur +"</td>\n"
+        government_waiting += "\t\t<td>"+document_data[u'issue_published']+"</td>\n"
+        government_waiting += """\t</tr>\n"""    
+      else:
+        waiting += """\t<tr>\n"""
+        waiting += "\t\t<td>"+k[u'@málsnúmer'] +"</td>\n"
+        waiting += "\t\t<td>"+k[u'málstegund'][u'heiti'] +"</td>\n"
+        waiting += "\t\t<td>"+ str(document_data['issue_status']) +"</td>\n"
+        waiting += "\t\t<td><a href='"+k[u'html']+"'>"+k[u'málsheiti'] +"</a></td>\n"
+        waiting += "\t\t<td>"+ flutningur +"</td>\n"
+        waiting += "\t\t<td>"+ document_data[u'issue_published'] +"</td>\n"
+        waiting += """\t</tr>\n"""    
     elif u'var svarað' in document_data[u'issue_status']:
       answered += """\t<tr>\n"""
       answered += "\t\t<td>"+k[u'@málsnúmer']+"</td>\n"
@@ -290,6 +303,7 @@ waiting += html_footer
 asked += html_footer
 answered += html_footer
 passed += html_footer
+government_waiting += html_footer
 
 with open("in_committee.html", "w") as file:
   file.write(commitee)
@@ -301,3 +315,5 @@ with open("answered.html", "w") as file:
   file.write(answered)
 with open("passed.html", "w") as file:
   file.write(passed)
+with open("government_waiting.html", "w") as file:
+  file.write(government_waiting)
