@@ -84,6 +84,18 @@ $(function() {
   
 });
 """
+def cache_file(url, contents):
+  file_name = "cache/"+url.replace('/','-')
+  with open(file_name, "w") as f:
+     f.write(contents)
+
+def get_xml_data(url):
+  #get new files
+  response = requests.get(url)
+  #cache file
+  cache_file(url, response.text)
+
+  return xmltodict.parse(response.text)
 
 #functions
 def cache_or_fetch(url, force=False):
@@ -94,16 +106,15 @@ def cache_or_fetch(url, force=False):
 
   file_name = "cache/"+url.replace('/','-')
 
-  if force or os.path.exists(file_name):
-    #file exists, return file contents
-    with open(file_name, "r") as f:
-      return xmltodict.parse(f.read())
+  if force:
+    return get_xml_data(url)
   else:
-    response = requests.get(url)
-    #cache file
-    with open(file_name, "w") as f:
-       f.write(response.text)
-    return xmltodict.parse(response.text)
+    if os.path.exists(file_name):
+      #file exists, return file contents
+      with open(file_name, "r") as f:
+        return xmltodict.parse(f.read())
+    else:
+      return get_xml_data(url)
 
 def get_flutningsmenn_data(url):
   data = cache_or_fetch(url, force)
@@ -277,6 +288,7 @@ for k in data[u'málaskrá'][u'mál']:
         waiting += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
         waiting += "\t\t<td>" + flutningur + "</td>\n"
         waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        #bæta við hvenær var sent til nefndar
         waiting += """\t</tr>\n"""    
     elif u'var svarað' in document_data[u'issue_status']:
       answered += """\t<tr>\n"""
@@ -286,6 +298,7 @@ for k in data[u'málaskrá'][u'mál']:
       answered += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
       answered += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
       answered += "\t\t<td>" + document_data[u'issue_published']+"</td>\n"
+      #bæta við hvað tók langan tíma að svara
       answered += """\t</tr>\n"""
     elif u'ekki verið svarað' in document_data[u'issue_status']:
       asked += """\t<tr>\n"""
@@ -295,6 +308,7 @@ for k in data[u'málaskrá'][u'mál']:
       asked += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
       asked += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
       asked += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+      #bæta við fjöldi daga síðan var spurt
       asked += """\t</tr>\n"""
     elif u'Samþykkt' in document_data[u'issue_status']:
       passed += """\t<tr>\n"""
