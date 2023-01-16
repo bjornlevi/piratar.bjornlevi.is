@@ -1,6 +1,17 @@
 <html><head><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script></head><body>
 <script type='text/javascript'>
 $(function() {
+  var file_name = location.href.split("/").slice(-1);
+  if(file_name == "government_committee.html" || file_name == "in_committee.html") {
+    document.getElementById("extras").innerHTML = "#dagar í nefnd";
+  } else if(file_name == "asked.html") {
+    document.getElementById("extras").innerHTML = "#dagar ósvarað";
+  } else if(file_name == "answered.html") {
+    document.getElementById("extras").innerHTML = "#dagar að svara";
+  } else {
+    document.getElementById("extras").remove();
+  }
+
   const ths = $("th");
   let sortOrder = 1;
 
@@ -72,6 +83,7 @@ $(function() {
 		<th data-type='string'>Málsheiti</th>
 		<th data-type='string'>Flokkur</th>
 		<th data-type='string'>Útbýting</th>
+		<th data-type='number' id="extras">Viðbótarupplýsingar</th>
 	</thead>
 <tbody>
 	<tr>
@@ -81,7 +93,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=152'>verndartollar á franskar kartöflur</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-20 13:02</td>
-	</tr>
 	<tr>
 		<td>168</td>
 		<td>Fyrirspurn</td>
@@ -89,7 +100,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=168'>orkuskipti farartækja opinberra stofnana og fyrirtækja</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-21 17:14</td>
-	</tr>
 	<tr>
 		<td>175</td>
 		<td>Fyrirspurn</td>
@@ -97,7 +107,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=175'>vextir og verðbólga</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-22 10:11</td>
-	</tr>
 	<tr>
 		<td>176</td>
 		<td>Fyrirspurn</td>
@@ -105,7 +114,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=176'>samkeppnishæfni Íslands í alþjóðaviðskiptum og fjárfesting erlendra aðila</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-22 10:11</td>
-	</tr>
 	<tr>
 		<td>177</td>
 		<td>Fyrirspurn</td>
@@ -113,7 +121,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=177'>fulltrúar í starfshópi um stofnanaumgjörð samkeppnis- og neytendamála</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-22 10:11</td>
-	</tr>
 	<tr>
 		<td>178</td>
 		<td>Fyrirspurn</td>
@@ -121,7 +128,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=178'>aðgangur fatlaðra að rafrænum skilríkjum</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-22 10:11</td>
-	</tr>
 	<tr>
 		<td>179</td>
 		<td>Fyrirspurn</td>
@@ -129,7 +135,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=179'>mat Framkvæmdasýslunnar - Ríkiseigna (FSRE) á húsnæðisþörf stofnana ríkisins</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-09-21 17:10</td>
-	</tr>
 	<tr>
 		<td>187</td>
 		<td>Fyrirspurn</td>
@@ -137,7 +142,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=187'>lækkun tolla og gjalda á innfluttar matvörur</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-22 11:03</td>
-	</tr>
 	<tr>
 		<td>192</td>
 		<td>Fyrirspurn</td>
@@ -145,7 +149,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=192'>tillaga til þingsályktunar um vistmorð</a></td>
 		<td>Píratar</td>
 		<td>2022-09-22 11:25</td>
-	</tr>
 	<tr>
 		<td>202</td>
 		<td>Fyrirspurn</td>
@@ -153,7 +156,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=202'>sorpbrennsla</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-09-22 16:15</td>
-	</tr>
 	<tr>
 		<td>205</td>
 		<td>Fyrirspurn</td>
@@ -161,7 +163,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=205'>börn í fóstri</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-22 16:15</td>
-	</tr>
 	<tr>
 		<td>216</td>
 		<td>Fyrirspurn</td>
@@ -169,7 +170,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=216'>fósturbörn</a></td>
 		<td>Píratar</td>
 		<td>2022-09-27 13:01</td>
-	</tr>
 	<tr>
 		<td>223</td>
 		<td>Fyrirspurn</td>
@@ -177,7 +177,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=223'>biðtími eftir afplánun</a></td>
 		<td>Píratar</td>
 		<td>2022-09-27 17:39</td>
-	</tr>
 	<tr>
 		<td>229</td>
 		<td>Fyrirspurn</td>
@@ -185,7 +184,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=229'>kennsla um kynheilbrigði og ofbeldisforvarnir í grunn- og framhaldsskólum</a></td>
 		<td>Píratar</td>
 		<td>2022-09-27 18:39</td>
-	</tr>
 	<tr>
 		<td>232</td>
 		<td>Fyrirspurn</td>
@@ -193,7 +191,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=232'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-09-29 11:58</td>
-	</tr>
 	<tr>
 		<td>245</td>
 		<td>Fyrirspurn</td>
@@ -201,7 +198,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=245'>aðgengi fatlaðra stúdenta að háskólanámi</a></td>
 		<td>Viðreisn</td>
 		<td>2022-09-29 13:12</td>
-	</tr>
 	<tr>
 		<td>250</td>
 		<td>Fyrirspurn</td>
@@ -209,7 +205,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=250'>inn- og útskattur hótela og gistiheimila</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-09-29 13:57</td>
-	</tr>
 	<tr>
 		<td>260</td>
 		<td>Fyrirspurn</td>
@@ -217,7 +212,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=260'>kostnaður við sameiningu Fjármálaeftirlitsins og Seðlabanka Íslands</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-09-29 14:24</td>
-	</tr>
 	<tr>
 		<td>262</td>
 		<td>Fyrirspurn</td>
@@ -225,7 +219,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=262'>þvingunaraðgerðir gegn alvarlegum mannréttindabrotum</a></td>
 		<td>Píratar</td>
 		<td>2022-09-29 14:41</td>
-	</tr>
 	<tr>
 		<td>270</td>
 		<td>Fyrirspurn</td>
@@ -233,7 +226,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=270'>biðlistar eftir ADHD-greiningu hjá Geðheilsumiðstöð barna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-09-29 14:46</td>
-	</tr>
 	<tr>
 		<td>283</td>
 		<td>Fyrirspurn</td>
@@ -241,7 +233,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=283'>búsetuúrræði umsækjenda um alþjóðlega vernd</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-10-10 16:21</td>
-	</tr>
 	<tr>
 		<td>285</td>
 		<td>Fyrirspurn</td>
@@ -249,7 +240,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=285'>útboð innan heilbrigðiskerfisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-10-10 16:51</td>
-	</tr>
 	<tr>
 		<td>295</td>
 		<td>Fyrirspurn</td>
@@ -257,7 +247,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=295'>meðalbiðtími eftir búsetuúrræðum</a></td>
 		<td>Píratar</td>
 		<td>2022-10-11 14:53</td>
-	</tr>
 	<tr>
 		<td>296</td>
 		<td>Fyrirspurn</td>
@@ -265,7 +254,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=296'>meðalbiðtími eftir félagslegri íbúð</a></td>
 		<td>Píratar</td>
 		<td>2022-10-11 14:53</td>
-	</tr>
 	<tr>
 		<td>297</td>
 		<td>Fyrirspurn</td>
@@ -273,7 +261,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=297'>úthlutanir Tækniþróunarsjóðs</a></td>
 		<td>Viðreisn</td>
 		<td>2022-10-11 14:53</td>
-	</tr>
 	<tr>
 		<td>302</td>
 		<td>Fyrirspurn</td>
@@ -281,7 +268,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=302'>eftirlit með fjármálum einkarekinna leikskóla</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-11 16:51</td>
-	</tr>
 	<tr>
 		<td>307</td>
 		<td>Fyrirspurn</td>
@@ -289,7 +275,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=307'>sjúkraliðar</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-11 17:26</td>
-	</tr>
 	<tr>
 		<td>309</td>
 		<td>Fyrirspurn</td>
@@ -297,7 +282,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=309'>íslenskukennsla fyrir útlendinga</a></td>
 		<td>Miðflokkurinn</td>
 		<td>2022-10-11 16:51</td>
-	</tr>
 	<tr>
 		<td>311</td>
 		<td>Fyrirspurn</td>
@@ -305,7 +289,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=311'>flokkun úrgangs og urðun</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-12 16:05</td>
-	</tr>
 	<tr>
 		<td>312</td>
 		<td>Fyrirspurn</td>
@@ -313,7 +296,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=312'>ný sorpbrennslustöð</a></td>
 		<td>Viðreisn</td>
 		<td>2022-10-12 16:05</td>
-	</tr>
 	<tr>
 		<td>316</td>
 		<td>Fyrirspurn</td>
@@ -321,7 +303,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=316'>yfirráð yfir kvóta</a></td>
 		<td>Píratar</td>
 		<td>2022-10-12 17:48</td>
-	</tr>
 	<tr>
 		<td>320</td>
 		<td>Fyrirspurn</td>
@@ -329,7 +310,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=320'>samningar við einkaaðila vegna reksturs dvalar- og hjúkrunarheimila</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-13 12:22</td>
-	</tr>
 	<tr>
 		<td>321</td>
 		<td>Fyrirspurn</td>
@@ -337,7 +317,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=321'>innri endurskoðun og hagkvæmni í ríkisrekstri</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-13 13:10</td>
-	</tr>
 	<tr>
 		<td>322</td>
 		<td>Fyrirspurn</td>
@@ -345,7 +324,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=322'>val á söluaðila raforku til þrautavara</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-13 13:05</td>
-	</tr>
 	<tr>
 		<td>337</td>
 		<td>Fyrirspurn</td>
@@ -353,7 +331,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=337'>landsbyggðarlán Húsnæðis- og mannvirkjastofnunar</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-17 17:01</td>
-	</tr>
 	<tr>
 		<td>347</td>
 		<td>Fyrirspurn</td>
@@ -361,7 +338,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=347'>framfærsluviðmið</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-18 13:08</td>
-	</tr>
 	<tr>
 		<td>348</td>
 		<td>Fyrirspurn</td>
@@ -369,7 +345,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=348'>breytingar á aðsókn fólks yfir 25 ára aldri í framhaldsskólanám</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-18 15:33</td>
-	</tr>
 	<tr>
 		<td>349</td>
 		<td>Fyrirspurn</td>
@@ -377,7 +352,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=349'>kennsla um kynheilbrigði og virkar ofbeldisforvarnir</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-10-18 15:50</td>
-	</tr>
 	<tr>
 		<td>350</td>
 		<td>Fyrirspurn</td>
@@ -385,7 +359,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=350'>gagnkvæm gilding ökuskírteina</a></td>
 		<td>Píratar</td>
 		<td>2022-10-18 15:50</td>
-	</tr>
 	<tr>
 		<td>362</td>
 		<td>Fyrirspurn</td>
@@ -393,7 +366,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=362'>þjónusta við fatlað fólk á heimili sínu</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-19 16:33</td>
-	</tr>
 	<tr>
 		<td>365</td>
 		<td>Fyrirspurn</td>
@@ -401,7 +373,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=365'>staða fatlaðs fólks við loftslagsbreytingar</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-19 16:43</td>
-	</tr>
 	<tr>
 		<td>369</td>
 		<td>Fyrirspurn</td>
@@ -409,7 +380,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=369'>greiðslur til fyrirtækja í heilbrigðisþjónustu</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-19 17:13</td>
-	</tr>
 	<tr>
 		<td>370</td>
 		<td>Fyrirspurn</td>
@@ -417,7 +387,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=370'>aðgengi fatlaðs fólks að réttinum</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-10-19 17:40</td>
-	</tr>
 	<tr>
 		<td>371</td>
 		<td>Fyrirspurn</td>
@@ -425,7 +394,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=371'>raforkumál á Vestfjörðum</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-10-20 10:17</td>
-	</tr>
 	<tr>
 		<td>373</td>
 		<td>Fyrirspurn</td>
@@ -433,7 +401,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=373'>íbúðarhúsnæði í þéttbýli sem nýtt er sem orlofshúsnæði</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-20 12:39</td>
-	</tr>
 	<tr>
 		<td>376</td>
 		<td>Fyrirspurn</td>
@@ -441,7 +408,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=376'>framkvæmd laga um samþættingu þjónustu í þágu farsældar barna</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-10-20 15:25</td>
-	</tr>
 	<tr>
 		<td>385</td>
 		<td>Fyrirspurn</td>
@@ -449,7 +415,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=385'>staða og framvinda hálendisþjóðgarðs</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-10-25 17:04</td>
-	</tr>
 	<tr>
 		<td>400</td>
 		<td>Fyrirspurn</td>
@@ -457,7 +422,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=400'>vinnumiðlunarnet Evrópu (EURES)</a></td>
 		<td>Píratar</td>
 		<td>2022-11-07 16:45</td>
-	</tr>
 	<tr>
 		<td>401</td>
 		<td>Fyrirspurn</td>
@@ -465,7 +429,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=401'>starfshópur um hagsmunafulltrúa eldra fólks</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-07 17:18</td>
-	</tr>
 	<tr>
 		<td>402</td>
 		<td>Fyrirspurn</td>
@@ -473,7 +436,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=402'>jafnréttis- og kynfræðsla</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-07 17:18</td>
-	</tr>
 	<tr>
 		<td>411</td>
 		<td>Fyrirspurn</td>
@@ -481,7 +443,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=411'>útboðsskylda</a></td>
 		<td>Píratar</td>
 		<td>2022-11-08 16:18</td>
-	</tr>
 	<tr>
 		<td>412</td>
 		<td>Fyrirspurn</td>
@@ -489,7 +450,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=412'>staða námslána hjá Menntasjóði námsmanna</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-08 16:44</td>
-	</tr>
 	<tr>
 		<td>416</td>
 		<td>Fyrirspurn</td>
@@ -497,7 +457,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=416'>eigendastefna ríkisins fyrir fjármálafyrirtæki</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-08 17:35</td>
-	</tr>
 	<tr>
 		<td>417</td>
 		<td>Fyrirspurn</td>
@@ -505,7 +464,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=417'>endurviðtökusamningar</a></td>
 		<td>Píratar</td>
 		<td>2022-11-09 14:34</td>
-	</tr>
 	<tr>
 		<td>419</td>
 		<td>Fyrirspurn</td>
@@ -513,7 +471,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=419'>endurskoðun reglugerðar um hollustuhætti</a></td>
 		<td>Píratar</td>
 		<td>2022-11-09 17:27</td>
-	</tr>
 	<tr>
 		<td>420</td>
 		<td>Fyrirspurn</td>
@@ -521,7 +478,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=420'>brottvísanir umsækjenda um alþjóðlega vernd</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-09 17:47</td>
-	</tr>
 	<tr>
 		<td>422</td>
 		<td>Fyrirspurn</td>
@@ -529,7 +485,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=422'>kostnaðar- og ábatagreiningar vegna skógræktarverkefna</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-09 18:03</td>
-	</tr>
 	<tr>
 		<td>423</td>
 		<td>Fyrirspurn</td>
@@ -537,7 +492,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=423'>viðbrögð við greiningu á alvarlegum sjúkdómi við vísindarannsókn</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-09 18:07</td>
-	</tr>
 	<tr>
 		<td>424</td>
 		<td>Fyrirspurn</td>
@@ -545,7 +499,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=424'>fatlaðir umsækjendur um alþjóðlega vernd</a></td>
 		<td>Píratar</td>
 		<td>2022-11-10 13:40</td>
-	</tr>
 	<tr>
 		<td>425</td>
 		<td>Fyrirspurn</td>
@@ -553,7 +506,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=425'>skerðing réttinda almannatrygginga og félagslegrar aðstoðar</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-10 15:26</td>
-	</tr>
 	<tr>
 		<td>426</td>
 		<td>Fyrirspurn</td>
@@ -561,7 +513,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=426'>félagsleg staða barnungra mæðra</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-10 15:39</td>
-	</tr>
 	<tr>
 		<td>427</td>
 		<td>Fyrirspurn</td>
@@ -569,7 +520,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=427'>staða barnungra mæðra gagnvart heilbrigðiskerfinu</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-10 15:39</td>
-	</tr>
 	<tr>
 		<td>436</td>
 		<td>Fyrirspurn</td>
@@ -577,7 +527,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=436'>íbúðarhúsnæði í eigu einstaklinga og lögaðila utan sveitarfélags eða svæðis</a></td>
 		<td>Viðreisn</td>
 		<td>2022-11-15 20:39</td>
-	</tr>
 	<tr>
 		<td>437</td>
 		<td>Fyrirspurn</td>
@@ -585,7 +534,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=437'>íbúðarhúsnæði í eigu einstaklinga og lögaðila</a></td>
 		<td>Viðreisn</td>
 		<td>2022-11-15 15:47</td>
-	</tr>
 	<tr>
 		<td>438</td>
 		<td>Fyrirspurn</td>
@@ -593,7 +541,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=438'>niðurstöður úttektar á meðferð vanskilalána</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-15 15:47</td>
-	</tr>
 	<tr>
 		<td>439</td>
 		<td>Fyrirspurn</td>
@@ -601,7 +548,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=439'>vinna starfshóps um CBD-olíu</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 15:53</td>
-	</tr>
 	<tr>
 		<td>440</td>
 		<td>Fyrirspurn</td>
@@ -609,7 +555,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=440'>aðgerðir vegna mengunar af völdum skotelda</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 16:28</td>
-	</tr>
 	<tr>
 		<td>441</td>
 		<td>Fyrirspurn</td>
@@ -617,7 +562,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=441'>förgun dýraafurða og dýrahræja</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-11-15 15:53</td>
-	</tr>
 	<tr>
 		<td>444</td>
 		<td>Fyrirspurn</td>
@@ -625,7 +569,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=444'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 17:24</td>
-	</tr>
 	<tr>
 		<td>445</td>
 		<td>Fyrirspurn</td>
@@ -633,7 +576,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=445'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 17:24</td>
-	</tr>
 	<tr>
 		<td>446</td>
 		<td>Fyrirspurn</td>
@@ -641,7 +583,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=446'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 18:00</td>
-	</tr>
 	<tr>
 		<td>447</td>
 		<td>Fyrirspurn</td>
@@ -649,7 +590,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=447'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 18:00</td>
-	</tr>
 	<tr>
 		<td>448</td>
 		<td>Fyrirspurn</td>
@@ -657,7 +597,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=448'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 18:27</td>
-	</tr>
 	<tr>
 		<td>449</td>
 		<td>Fyrirspurn</td>
@@ -665,7 +604,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=449'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 18:27</td>
-	</tr>
 	<tr>
 		<td>450</td>
 		<td>Fyrirspurn</td>
@@ -673,7 +611,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=450'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 19:04</td>
-	</tr>
 	<tr>
 		<td>451</td>
 		<td>Fyrirspurn</td>
@@ -681,7 +618,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=451'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 19:04</td>
-	</tr>
 	<tr>
 		<td>452</td>
 		<td>Fyrirspurn</td>
@@ -689,7 +625,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=452'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 19:04</td>
-	</tr>
 	<tr>
 		<td>453</td>
 		<td>Fyrirspurn</td>
@@ -697,7 +632,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=453'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 19:04</td>
-	</tr>
 	<tr>
 		<td>454</td>
 		<td>Fyrirspurn</td>
@@ -705,7 +639,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=454'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 19:04</td>
-	</tr>
 	<tr>
 		<td>455</td>
 		<td>Fyrirspurn</td>
@@ -713,7 +646,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=455'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-15 19:04</td>
-	</tr>
 	<tr>
 		<td>459</td>
 		<td>Fyrirspurn</td>
@@ -721,7 +653,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=459'>losun kolefnis og landbúnaður</a></td>
 		<td>Miðflokkurinn</td>
 		<td>2022-11-16 16:21</td>
-	</tr>
 	<tr>
 		<td>460</td>
 		<td>Fyrirspurn</td>
@@ -729,7 +660,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=460'>börn á flótta</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-16 17:19</td>
-	</tr>
 	<tr>
 		<td>461</td>
 		<td>Fyrirspurn</td>
@@ -737,7 +667,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=461'>raforkuöryggi og forgangsröðun raforku til orkuskipta</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-16 17:53</td>
-	</tr>
 	<tr>
 		<td>462</td>
 		<td>Fyrirspurn</td>
@@ -745,7 +674,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=462'>rafeldsneyti</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-16 18:13</td>
-	</tr>
 	<tr>
 		<td>463</td>
 		<td>Fyrirspurn</td>
@@ -753,7 +681,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=463'>skólavist barna á flótta</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-16 17:53</td>
-	</tr>
 	<tr>
 		<td>464</td>
 		<td>Fyrirspurn</td>
@@ -761,7 +688,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=464'>vinna starfshóps um greiningu á útflutnings- og innflutningstölum</a></td>
 		<td>Miðflokkurinn</td>
 		<td>2022-11-16 17:53</td>
-	</tr>
 	<tr>
 		<td>465</td>
 		<td>Fyrirspurn</td>
@@ -769,7 +695,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=465'>dvalarleyfi fyrir hugsanleg fórnarlömb mansals og fórnarlömb mansals</a></td>
 		<td>Píratar</td>
 		<td>2022-11-16 17:53</td>
-	</tr>
 	<tr>
 		<td>467</td>
 		<td>Fyrirspurn</td>
@@ -777,7 +702,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=467'>samstarf við utanríkisráðuneytið í tengslum við endurskoðun landbúnaðarsamnings Íslands og Evrópusambandsins</a></td>
 		<td>Miðflokkurinn</td>
 		<td>2022-11-17 12:13</td>
-	</tr>
 	<tr>
 		<td>468</td>
 		<td>Fyrirspurn</td>
@@ -785,7 +709,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=468'>rafvæðing skipa og hafna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-17 12:13</td>
-	</tr>
 	<tr>
 		<td>470</td>
 		<td>Fyrirspurn</td>
@@ -793,7 +716,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=470'>landgreining, flokkun landbúnaðarlands og sjálfbærni matvælaframleiðslu</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-17 14:13</td>
-	</tr>
 	<tr>
 		<td>471</td>
 		<td>Fyrirspurn</td>
@@ -801,7 +723,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=471'>útseld vinna sérfræðings Stjórnarráðsins og opinberra háskóla</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-17 15:34</td>
-	</tr>
 	<tr>
 		<td>472</td>
 		<td>Fyrirspurn</td>
@@ -809,7 +730,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=472'>endurheimt votlendis á ríkisjörðum</a></td>
 		<td>Viðreisn</td>
 		<td>2022-11-17 15:35</td>
-	</tr>
 	<tr>
 		<td>473</td>
 		<td>Fyrirspurn</td>
@@ -817,7 +737,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=473'>auðlindagjald af vindorku</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-17 15:34</td>
-	</tr>
 	<tr>
 		<td>477</td>
 		<td>Fyrirspurn</td>
@@ -825,7 +744,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=477'>verðbólga og peningamagn í umferð</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-17 18:23</td>
-	</tr>
 	<tr>
 		<td>479</td>
 		<td>Fyrirspurn</td>
@@ -833,7 +751,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=479'>frestun réttaráhrifa</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-21 14:47</td>
-	</tr>
 	<tr>
 		<td>480</td>
 		<td>Fyrirspurn</td>
@@ -841,7 +758,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=480'>líftryggingar einstaklinga sem greinst hafa með langvarandi sjúkdóm</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-21 14:47</td>
-	</tr>
 	<tr>
 		<td>481</td>
 		<td>Fyrirspurn</td>
@@ -849,7 +765,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=481'>samvinna barnaverndar og sýslumanna í umgengnismálum</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-21 14:47</td>
-	</tr>
 	<tr>
 		<td>483</td>
 		<td>Fyrirspurn</td>
@@ -857,7 +772,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=483'>virðismat starfa</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-21 15:06</td>
-	</tr>
 	<tr>
 		<td>484</td>
 		<td>Fyrirspurn</td>
@@ -865,7 +779,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=484'>móttaka flóttafólks</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-21 15:52</td>
-	</tr>
 	<tr>
 		<td>486</td>
 		<td>Fyrirspurn</td>
@@ -873,7 +786,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=486'>lagaheimildir fjármálaeftirlits Seðlabanka Íslands</a></td>
 		<td>Viðreisn</td>
 		<td>2022-11-21 17:23</td>
-	</tr>
 	<tr>
 		<td>489</td>
 		<td>Fyrirspurn</td>
@@ -881,7 +793,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=489'>biðtími eftir afplánun í fangelsum landsins</a></td>
 		<td>Viðreisn</td>
 		<td>2022-11-23 14:36</td>
-	</tr>
 	<tr>
 		<td>491</td>
 		<td>Fyrirspurn</td>
@@ -889,7 +800,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=491'>skekkja í mannfjölda samkvæmt þjóðskrá</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-11-23 16:42</td>
-	</tr>
 	<tr>
 		<td>492</td>
 		<td>Fyrirspurn</td>
@@ -897,7 +807,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=492'>þróunarsamvinna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-23 16:58</td>
-	</tr>
 	<tr>
 		<td>493</td>
 		<td>Fyrirspurn</td>
@@ -905,7 +814,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=493'>breyting á fjárhæðum örorkulífeyris, tekjutryggingar og heimilisuppbótar</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-23 17:21</td>
-	</tr>
 	<tr>
 		<td>494</td>
 		<td>Fyrirspurn</td>
@@ -913,7 +821,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=494'>sálfræðiþjónusta hjá heilsugæslunni</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-23 17:14</td>
-	</tr>
 	<tr>
 		<td>495</td>
 		<td>Fyrirspurn</td>
@@ -921,7 +828,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=495'>landsmarkmið í loftslagsmálum</a></td>
 		<td>Píratar</td>
 		<td>2022-11-23 17:36</td>
-	</tr>
 	<tr>
 		<td>496</td>
 		<td>Fyrirspurn</td>
@@ -929,7 +835,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=496'>aðgerðir og barátta gegn heimilisofbeldi og ofbeldi gegn konum</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-11-23 17:54</td>
-	</tr>
 	<tr>
 		<td>499</td>
 		<td>Fyrirspurn</td>
@@ -937,7 +842,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=499'>útgjöld til heilbrigðismála</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-11-24 14:54</td>
-	</tr>
 	<tr>
 		<td>500</td>
 		<td>Fyrirspurn</td>
@@ -945,7 +849,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=500'>íslensk ökuskírteini</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-24 14:49</td>
-	</tr>
 	<tr>
 		<td>501</td>
 		<td>Fyrirspurn</td>
@@ -953,7 +856,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=501'>einstaklingar með tengslaröskun</a></td>
 		<td>Píratar</td>
 		<td>2022-11-24 14:57</td>
-	</tr>
 	<tr>
 		<td>502</td>
 		<td>Fyrirspurn</td>
@@ -961,7 +863,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=502'>fylgdarlaus börn</a></td>
 		<td>Píratar</td>
 		<td>2022-11-28 14:31</td>
-	</tr>
 	<tr>
 		<td>503</td>
 		<td>Fyrirspurn</td>
@@ -969,7 +870,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=503'>fylgdarlaus börn</a></td>
 		<td>Píratar</td>
 		<td>2022-11-28 14:31</td>
-	</tr>
 	<tr>
 		<td>504</td>
 		<td>Fyrirspurn</td>
@@ -977,7 +877,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=504'>fylgdarlaus börn</a></td>
 		<td>Píratar</td>
 		<td>2022-11-28 14:31</td>
-	</tr>
 	<tr>
 		<td>510</td>
 		<td>Fyrirspurn</td>
@@ -985,7 +884,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=510'>fasteignalán til neytenda</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-28 17:19</td>
-	</tr>
 	<tr>
 		<td>511</td>
 		<td>Fyrirspurn</td>
@@ -993,7 +891,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=511'>fyrirhugaðar ráðstafanir vegna ÍL-sjóðs</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 17:19</td>
-	</tr>
 	<tr>
 		<td>512</td>
 		<td>Fyrirspurn</td>
@@ -1001,7 +898,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=512'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>513</td>
 		<td>Fyrirspurn</td>
@@ -1009,7 +905,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=513'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>514</td>
 		<td>Fyrirspurn</td>
@@ -1017,7 +912,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=514'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>515</td>
 		<td>Fyrirspurn</td>
@@ -1025,7 +919,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=515'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>516</td>
 		<td>Fyrirspurn</td>
@@ -1033,7 +926,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=516'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>517</td>
 		<td>Fyrirspurn</td>
@@ -1041,7 +933,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=517'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>518</td>
 		<td>Fyrirspurn</td>
@@ -1049,7 +940,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=518'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>519</td>
 		<td>Fyrirspurn</td>
@@ -1057,7 +947,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=519'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>520</td>
 		<td>Fyrirspurn</td>
@@ -1065,7 +954,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=520'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>521</td>
 		<td>Fyrirspurn</td>
@@ -1073,7 +961,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=521'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>522</td>
 		<td>Fyrirspurn</td>
@@ -1081,7 +968,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=522'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>523</td>
 		<td>Fyrirspurn</td>
@@ -1089,7 +975,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=523'>íbúðarhúsnæði í eigu einstaklinga</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-11-28 18:27</td>
-	</tr>
 	<tr>
 		<td>524</td>
 		<td>Fyrirspurn</td>
@@ -1097,7 +982,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=524'>rammaáætlun</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-11-29 17:29</td>
-	</tr>
 	<tr>
 		<td>525</td>
 		<td>Fyrirspurn</td>
@@ -1105,7 +989,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=525'>fjöldi stöðugilda hjá ríkinu</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-05 14:37</td>
-	</tr>
 	<tr>
 		<td>526</td>
 		<td>Fyrirspurn</td>
@@ -1113,7 +996,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=526'>tekjur og gjöld ríkissjóðs</a></td>
 		<td>Viðreisn</td>
 		<td>2022-12-05 14:37</td>
-	</tr>
 	<tr>
 		<td>527</td>
 		<td>Fyrirspurn</td>
@@ -1121,7 +1003,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=527'>úthlutun tollkvóta á matvörum</a></td>
 		<td>Viðreisn</td>
 		<td>2022-12-05 14:37</td>
-	</tr>
 	<tr>
 		<td>545</td>
 		<td>Fyrirspurn</td>
@@ -1129,7 +1010,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=545'>ráðgefandi álit Alþjóðadómstólsins í Haag vegna hernáms Ísraels á landi Palestínu</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-12-05 14:37</td>
-	</tr>
 	<tr>
 		<td>549</td>
 		<td>Fyrirspurn</td>
@@ -1137,7 +1017,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=549'>starfandi lögreglumenn</a></td>
 		<td>Viðreisn</td>
 		<td>2022-12-06 14:01</td>
-	</tr>
 	<tr>
 		<td>551</td>
 		<td>Fyrirspurn</td>
@@ -1145,7 +1024,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=551'>skólaakstur og malarvegir</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 10:15</td>
-	</tr>
 	<tr>
 		<td>552</td>
 		<td>Fyrirspurn</td>
@@ -1153,7 +1031,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=552'>aðgerðir vegna ÍL-sjóðs</a></td>
 		<td>Viðreisn</td>
 		<td>2022-12-08 10:21</td>
-	</tr>
 	<tr>
 		<td>553</td>
 		<td>Fyrirspurn</td>
@@ -1161,7 +1038,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=553'>greiðslur úr Fæðingarorlofssjóði þegar foreldri sætir nálgunarbanni</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-12-08 10:15</td>
-	</tr>
 	<tr>
 		<td>554</td>
 		<td>Fyrirspurn</td>
@@ -1169,7 +1045,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=554'>greiðslumark sauðfjárbænda</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-12-08 11:01</td>
-	</tr>
 	<tr>
 		<td>555</td>
 		<td>Fyrirspurn</td>
@@ -1177,7 +1052,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=555'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 10:21</td>
-	</tr>
 	<tr>
 		<td>556</td>
 		<td>Fyrirspurn</td>
@@ -1185,7 +1059,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=556'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 10:21</td>
-	</tr>
 	<tr>
 		<td>557</td>
 		<td>Fyrirspurn</td>
@@ -1193,7 +1066,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=557'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 10:30</td>
-	</tr>
 	<tr>
 		<td>558</td>
 		<td>Fyrirspurn</td>
@@ -1201,7 +1073,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=558'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 10:30</td>
-	</tr>
 	<tr>
 		<td>559</td>
 		<td>Fyrirspurn</td>
@@ -1209,7 +1080,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=559'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:15</td>
-	</tr>
 	<tr>
 		<td>560</td>
 		<td>Fyrirspurn</td>
@@ -1217,7 +1087,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=560'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:15</td>
-	</tr>
 	<tr>
 		<td>561</td>
 		<td>Fyrirspurn</td>
@@ -1225,7 +1094,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=561'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:01</td>
-	</tr>
 	<tr>
 		<td>562</td>
 		<td>Fyrirspurn</td>
@@ -1233,7 +1101,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=562'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:01</td>
-	</tr>
 	<tr>
 		<td>563</td>
 		<td>Fyrirspurn</td>
@@ -1241,7 +1108,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=563'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:01</td>
-	</tr>
 	<tr>
 		<td>564</td>
 		<td>Fyrirspurn</td>
@@ -1249,7 +1115,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=564'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:01</td>
-	</tr>
 	<tr>
 		<td>565</td>
 		<td>Fyrirspurn</td>
@@ -1257,7 +1122,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=565'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:15</td>
-	</tr>
 	<tr>
 		<td>566</td>
 		<td>Fyrirspurn</td>
@@ -1265,7 +1129,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=566'>skipulag og stofnanir ráðuneytisins</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-08 11:15</td>
-	</tr>
 	<tr>
 		<td>567</td>
 		<td>Fyrirspurn</td>
@@ -1273,7 +1136,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=567'>Ríkisábyrgðasjóður</a></td>
 		<td>Viðreisn</td>
 		<td>2022-12-08 10:21</td>
-	</tr>
 	<tr>
 		<td>570</td>
 		<td>Fyrirspurn</td>
@@ -1281,7 +1143,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=570'>skráning þyrlna</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
 		<td>2022-12-09 16:13</td>
-	</tr>
 	<tr>
 		<td>571</td>
 		<td>Fyrirspurn</td>
@@ -1289,7 +1150,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=571'>verðupplýsingar tryggingafélaga</a></td>
 		<td>Flokkur fólksins</td>
 		<td>2022-12-09 15:57</td>
-	</tr>
 	<tr>
 		<td>574</td>
 		<td>Fyrirspurn</td>
@@ -1297,7 +1157,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=574'>frádráttur frá tekjum erlendra sérfræðinga</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-12-13 13:23</td>
-	</tr>
 	<tr>
 		<td>575</td>
 		<td>Fyrirspurn</td>
@@ -1305,7 +1164,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=575'>neyslurými</a></td>
 		<td>Píratar</td>
 		<td>2022-12-13 13:40</td>
-	</tr>
 	<tr>
 		<td>576</td>
 		<td>Fyrirspurn</td>
@@ -1313,7 +1171,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=576'>staða heimilislauss fólks</a></td>
 		<td>Píratar</td>
 		<td>2022-12-13 13:23</td>
-	</tr>
 	<tr>
 		<td>580</td>
 		<td>Fyrirspurn</td>
@@ -1321,7 +1178,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=580'>áburðarforði</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-14 21:56</td>
-	</tr>
 	<tr>
 		<td>585</td>
 		<td>Fyrirspurn</td>
@@ -1329,7 +1185,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=585'>fylgdarlaus börn</a></td>
 		<td>Framsóknarflokkur</td>
 		<td>2022-12-15 17:48</td>
-	</tr>
 	<tr>
 		<td>591</td>
 		<td>Fyrirspurn</td>
@@ -1337,7 +1192,6 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=591'>fjöldi skurðhjúkrunarfræðinga í skurðaðgerðum</a></td>
 		<td>Sjálfstæðisflokkur</td>
 		<td>2022-12-16 17:06</td>
-	</tr>
 	<tr>
 		<td>592</td>
 		<td>Fyrirspurn</td>
@@ -1345,6 +1199,5 @@ $(function() {
 		<td><a href='http://www.althingi.is/dba-bin/ferill.pl?ltg=153&mnr=592'>Bankasýsla ríkisins</a></td>
 		<td>Samfylkingin</td>
 		<td>2022-12-16 17:42</td>
-	</tr>
 </tbody>
 </table></body></html>

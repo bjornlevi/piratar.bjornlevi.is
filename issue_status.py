@@ -2,6 +2,7 @@
 
 import requests
 import xmltodict
+from datetime import datetime
 import sys, os
 
 session = None
@@ -9,7 +10,8 @@ force = False
 try:
   session = sys.argv[1]
   if len(sys.argv) > 2:
-    force = sys.argv[2]
+    if sys.argv[2] == "True":
+      force = True
 except:
 	sys.exit(0)
 
@@ -21,6 +23,17 @@ data = xmltodict.parse(response.text)
 
 script = """
 $(function() {
+  var file_name = location.href.split("/").slice(-1);
+  if(file_name == "government_committee.html" || file_name == "in_committee.html") {
+    document.getElementById("extras").innerHTML = "#dagar í nefnd";
+  } else if(file_name == "asked.html") {
+    document.getElementById("extras").innerHTML = "#dagar ósvarað";
+  } else if(file_name == "answered.html") {
+    document.getElementById("extras").innerHTML = "#dagar að svara";
+  } else {
+    document.getElementById("extras").remove();
+  }
+
   const ths = $("th");
   let sortOrder = 1;
 
@@ -94,11 +107,10 @@ def get_xml_data(url):
   response = requests.get(url)
   #cache file
   cache_file(url, response.text)
-
   return xmltodict.parse(response.text)
 
 #functions
-def cache_or_fetch(url, force=False):
+def cache_or_fetch(url, force):
   try: 
     os.mkdir("cache")
   except:
@@ -139,6 +151,10 @@ def get_flutningsmenn_data(url):
     except:
       flutningsmenn = ''
   return flutningsmenn
+
+def get_document(url):
+  return cache_or_fetch(url, force)
+
 
 def get_document_data(url):
   data = cache_or_fetch(url, force)
@@ -206,6 +222,48 @@ def find_mp_party(mp, parties):
       return party
   return mp
 
+def get_last_speech_end(url):
+  #ef mál er í nefnd þá er hægt að sjá hvenr málið var sent í nefnd út frá síðustu ræðunni
+  #þingmál - ræður - síðasta ræða - ræðulauk
+  doc = get_document(url)
+  if type(doc[u'þingmál'][u'ræður'][u'ræða']) is list:
+    return doc[u'þingmál'][u'ræður'][u'ræða'][-1][u'ræðulauk']
+  else:
+    return doc[u'þingmál'][u'ræður'][u'ræða'][u'ræðulauk']
+
+def days_ago(date_when):
+  date_when.replace("T", " ")
+  date1 = None
+  try:
+    date1 = datetime.strptime(date_when, '%Y-%m-%d %H:%M:%S')
+  except:
+    date1 = datetime.strptime(date_when, '%Y-%m-%d %H:%M')
+  date2 = datetime.now()
+  return str(abs(date2-date1).days)
+
+def get_asked_date(url):
+  data = get_document(url)
+  doc = data[u'þingmál'][u'þingskjöl'][u'þingskjal']
+  if type(doc) is list:
+    for d in doc:
+      if d['skjalategund'] == "fsp. til skrifl. svars":
+        return d[u'útbýting']
+  else:
+    return doc['útbýting']
+  return None
+
+def get_answered_date(url):
+  data = get_document(url)
+  asked_date = get_asked_date(url)
+  doc = data[u'þingmál'][u'þingskjöl']
+  print(doc)
+  for d in doc:
+    if d['skjalategund'] == "svar":
+      date1 = datetime.strptime(asked_date, '%Y-%m-%d %H:%M')
+      date2 = datetime.strptime(d[u'útbýting'], '%Y-%m-%d %H:%M')
+      return str(abs(date2-date1).days)
+  return None
+
 malstegund = {
   'l': 'Frumvarp til laga', 
   'f': 'Tillaga til þingsályktunar', 
@@ -231,6 +289,7 @@ html_output += """\t<thead>
 \t\t<th data-type='string'>Málsheiti</th>
 \t\t<th data-type='string'>Flokkur</th>
 \t\t<th data-type='string'>Útbýting</th>
+\t\t<th data-type='number' id="extras">Viðbótarupplýsingar</th>
 \t</thead>\n"""
 html_output += "<tbody>\n"
 
@@ -258,6 +317,8 @@ for k in data[u'málaskrá'][u'mál']:
         government_committee += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
         government_committee += "\t\t<td>" + flutningur +"</td>\n"
         government_committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        #bæta við hvenær var sent til nefndar
+        government_committee += "\t\t<td>" + days_ago(get_last_speech_end(k[u'xml'])) + "</td>\n"        
         government_committee += """\t</tr>\n"""
       else:
         committee += """\t<tr>\n"""
@@ -267,6 +328,7 @@ for k in data[u'málaskrá'][u'mál']:
         committee += "\t\t<td><a href='" + k[u'html'] +"'>" + k[u'málsheiti'] + "</a></td>\n"
         committee += "\t\t<td>" + flutningur + "</td>\n"
         committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        committee += "\t\t<td>" + days_ago(get_last_speech_end(k[u'xml'])) + "</td>\n"
         committee += """\t</tr>\n"""
     elif u'Bíður' in document_data[u'issue_status']:
       #ríkisstjórnarmál eða þingmannamál?
@@ -288,7 +350,6 @@ for k in data[u'málaskrá'][u'mál']:
         waiting += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
         waiting += "\t\t<td>" + flutningur + "</td>\n"
         waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-        #bæta við hvenær var sent til nefndar
         waiting += """\t</tr>\n"""    
     elif u'var svarað' in document_data[u'issue_status']:
       answered += """\t<tr>\n"""
@@ -298,7 +359,7 @@ for k in data[u'málaskrá'][u'mál']:
       answered += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
       answered += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
       answered += "\t\t<td>" + document_data[u'issue_published']+"</td>\n"
-      #bæta við hvað tók langan tíma að svara
+      answered += "\t\t<td>" + days_ago(get_asked_date(k[u'xml'])) + "</td>\n"
       answered += """\t</tr>\n"""
     elif u'ekki verið svarað' in document_data[u'issue_status']:
       asked += """\t<tr>\n"""
@@ -308,7 +369,7 @@ for k in data[u'málaskrá'][u'mál']:
       asked += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
       asked += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
       asked += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-      #bæta við fjöldi daga síðan var spurt
+      asked += "\t\t<td>" + get_answered_date(k[u'xml']) + "</td>\n"
       asked += """\t</tr>\n"""
     elif u'Samþykkt' in document_data[u'issue_status']:
       passed += """\t<tr>\n"""

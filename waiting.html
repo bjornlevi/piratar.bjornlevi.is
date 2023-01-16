@@ -1,6 +1,17 @@
 <html><head><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script></head><body>
 <script type='text/javascript'>
 $(function() {
+  var file_name = location.href.split("/").slice(-1);
+  if(file_name == "government_committee.html" || file_name == "in_committee.html") {
+    document.getElementById("extras").innerHTML = "#dagar í nefnd";
+  } else if(file_name == "asked.html") {
+    document.getElementById("extras").innerHTML = "#dagar ósvarað";
+  } else if(file_name == "answered.html") {
+    document.getElementById("extras").innerHTML = "#dagar að svara";
+  } else {
+    document.getElementById("extras").remove();
+  }
+
   const ths = $("th");
   let sortOrder = 1;
 
@@ -72,6 +83,7 @@ $(function() {
 		<th data-type='string'>Málsheiti</th>
 		<th data-type='string'>Flokkur</th>
 		<th data-type='string'>Útbýting</th>
+		<th data-type='number' id="extras">Viðbótarupplýsingar</th>
 	</thead>
 <tbody>
 	<tr>
