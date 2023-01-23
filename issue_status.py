@@ -4,6 +4,7 @@ import requests
 import xmltodict
 from datetime import datetime
 import sys, os
+import traceback
 
 session = None
 force = False
@@ -248,7 +249,7 @@ def get_asked_date(url):
     return doc['útbýting']
   return None
 
-def get_answered_date(url):
+def get_answered_days(url):
   data = get_document(url)
   asked_date = get_asked_date(url)
   doc = data[u'þingmál'][u'þingskjöl'][u'þingskjal']
@@ -305,80 +306,84 @@ for k in data[u'málaskrá'][u'mál']:
   try:
     document_data = get_document_data(k[u'xml'])
     print(k[u'@málsnúmer'])
-    if u'nefnd' in document_data[u'issue_status']:
-      flutningur = str(find_mp_party(str(document_data['mps']), parties))
-      if 'ráðherra' in flutningur: #ríkisstjórnarmál í nefnd
-        government_committee += """\t<tr>\n"""
-        government_committee += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-        government_committee += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
-        government_committee += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
-        government_committee += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
-        government_committee += "\t\t<td>" + flutningur +"</td>\n"
-        government_committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-        print("í nefnd")
-        government_committee += "\t\t<td>" + days_ago(get_last_speech_end(k[u'xml'])) + "</td>\n"        
-        government_committee += """\t</tr>\n"""
-      else: #þingmannamál í nefnd
-        committee += """\t<tr>\n"""
-        committee += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-        committee += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
-        committee += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
-        committee += "\t\t<td><a href='" + k[u'html'] +"'>" + k[u'málsheiti'] + "</a></td>\n"
-        committee += "\t\t<td>" + flutningur + "</td>\n"
-        committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-        committee += "\t\t<td>" + days_ago(get_last_speech_end(k[u'xml'])) + "</td>\n"
-        committee += """\t</tr>\n"""
-    elif u'Bíður' in document_data[u'issue_status']:
-      #ríkisstjórnarmál eða þingmannamál?
-      flutningur = str(find_mp_party(str(document_data['mps']), parties))
-      if 'ráðherra' in flutningur: #ríkisstjórnarmál bíður eftir því að komast í umræðu í þingsal
-        government_waiting += """\t<tr>\n"""
-        government_waiting += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-        government_waiting += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
-        government_waiting += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
-        government_waiting += "\t\t<td><a href='" + k[u'html']+"'>" + k[u'málsheiti'] + "</a></td>\n"
-        government_waiting += "\t\t<td>" + flutningur + "</td>\n"
-        government_waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-        government_waiting += """\t</tr>\n"""    
-      else: #þingmannamál bíður eftir að komast í umræðu í þingsal
-        waiting += """\t<tr>\n"""
-        waiting += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-        waiting += "\t\t<td>" + k[u'málstegund'][u'heiti'] +"</td>\n"
-        waiting += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
-        waiting += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
-        waiting += "\t\t<td>" + flutningur + "</td>\n"
-        waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-        waiting += """\t</tr>\n"""    
-    elif u'var svarað' in document_data[u'issue_status']: #fyrirspurn hefur verið svarað
-      answered += """\t<tr>\n"""
-      answered += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-      answered += "\t\t<td>" + k[u'málstegund'][u'heiti']+"</td>\n"
-      answered += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
-      answered += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
-      answered += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
-      answered += "\t\t<td>" + document_data[u'issue_published']+"</td>\n"
-      answered += "\t\t<td>" + get_answered_date(k[u'xml']) + "</td>\n"
-      answered += """\t</tr>\n"""
-    elif u'ekki verið svarað' in document_data[u'issue_status']: #fyrirspurn hefur ekki verið svarað
-      asked += """\t<tr>\n"""
-      asked += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-      asked += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
-      asked += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
-      asked += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
-      asked += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
-      asked += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-      asked += "\t\t<td>" + days_ago(get_asked_date(k[u'xml'])) + "</td>\n"
-      asked += """\t</tr>\n"""
-    elif u'Samþykkt' in document_data[u'issue_status']: #frumvarp eða þingsályktun hefur verið samþykkt
-      passed += """\t<tr>\n"""
-      passed += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
-      passed += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
-      passed += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
-      passed += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
-      passed += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
-      passed += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
-      passed += """\t</tr>\n"""
-  except:
+    try:
+      if u'nefnd' in document_data[u'issue_status']:
+        flutningur = str(find_mp_party(str(document_data['mps']), parties))
+        if 'ráðherra' in flutningur: #ríkisstjórnarmál í nefnd
+          government_committee += """\t<tr>\n"""
+          government_committee += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+          government_committee += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+          government_committee += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+          government_committee += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+          government_committee += "\t\t<td>" + flutningur +"</td>\n"
+          government_committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+          government_committee += "\t\t<td>" + days_ago(get_last_speech_end(k[u'xml'])) + "</td>\n"        
+          government_committee += """\t</tr>\n"""
+        else: #þingmannamál í nefnd
+          committee += """\t<tr>\n"""
+          committee += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+          committee += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+          committee += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+          committee += "\t\t<td><a href='" + k[u'html'] +"'>" + k[u'málsheiti'] + "</a></td>\n"
+          committee += "\t\t<td>" + flutningur + "</td>\n"
+          committee += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+          committee += "\t\t<td>" + days_ago(get_last_speech_end(k[u'xml'])) + "</td>\n"
+          committee += """\t</tr>\n"""
+      elif u'Bíður' in document_data[u'issue_status']:
+        #ríkisstjórnarmál eða þingmannamál?
+        flutningur = str(find_mp_party(str(document_data['mps']), parties))
+        if 'ráðherra' in flutningur: #ríkisstjórnarmál bíður eftir því að komast í umræðu í þingsal
+          government_waiting += """\t<tr>\n"""
+          government_waiting += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+          government_waiting += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+          government_waiting += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
+          government_waiting += "\t\t<td><a href='" + k[u'html']+"'>" + k[u'málsheiti'] + "</a></td>\n"
+          government_waiting += "\t\t<td>" + flutningur + "</td>\n"
+          government_waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+          government_waiting += """\t</tr>\n"""    
+        else: #þingmannamál bíður eftir að komast í umræðu í þingsal
+          waiting += """\t<tr>\n"""
+          waiting += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+          waiting += "\t\t<td>" + k[u'málstegund'][u'heiti'] +"</td>\n"
+          waiting += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+          waiting += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+          waiting += "\t\t<td>" + flutningur + "</td>\n"
+          waiting += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+          waiting += """\t</tr>\n"""    
+      elif u'var svarað' in document_data[u'issue_status']: #fyrirspurn hefur verið svarað
+        answered += """\t<tr>\n"""
+        answered += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        answered += "\t\t<td>" + k[u'málstegund'][u'heiti']+"</td>\n"
+        answered += "\t\t<td>" + str(document_data['issue_status']) +"</td>\n"
+        answered += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+        answered += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
+        answered += "\t\t<td>" + document_data[u'issue_published']+"</td>\n"
+        answered += "\t\t<td>" + str(int(int(get_answered_days(k[u'xml']))/7*5)) + "</td>\n"
+        answered += """\t</tr>\n"""
+      elif u'ekki verið svarað' in document_data[u'issue_status']: #fyrirspurn hefur ekki verið svarað
+        asked += """\t<tr>\n"""
+        asked += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        asked += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+        asked += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
+        asked += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+        asked += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
+        asked += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        asked += "\t\t<td>" + str(int(int(days_ago(get_asked_date(k[u'xml'])))/7*5)) + "</td>\n"
+        asked += """\t</tr>\n"""
+      elif u'Samþykkt' in document_data[u'issue_status']: #frumvarp eða þingsályktun hefur verið samþykkt
+        passed += """\t<tr>\n"""
+        passed += "\t\t<td>" + k[u'@málsnúmer'] + "</td>\n"
+        passed += "\t\t<td>" + k[u'málstegund'][u'heiti'] + "</td>\n"
+        passed += "\t\t<td>" + str(document_data['issue_status']) + "</td>\n"
+        passed += "\t\t<td><a href='" + k[u'html'] + "'>" + k[u'málsheiti'] + "</a></td>\n"
+        passed += "\t\t<td>" + str(find_mp_party(str(document_data['mps']), parties)) + "</td>\n"
+        passed += "\t\t<td>" + document_data[u'issue_published'] + "</td>\n"
+        passed += """\t</tr>\n"""
+    except:
+      pass #óundirbúinn fyrirspurnartími / sleppa
+  except Exception as e:
+    print(e)
+    traceback.print_exc()
     pass
 
 html_footer = "</tbody>\n"
