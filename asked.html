@@ -12,6 +12,11 @@ $(function() {
     document.getElementById("extras").remove();
   }
 
+  if(file_name == "asked.html" || file_name == "answered.html") {
+    document.getElementById("nefnd").remove();
+  }
+
+
   const ths = $("th");
   let sortOrder = 1;
 
@@ -82,6 +87,8 @@ $(function() {
 		<th data-type='string'>Staða máls</th>
 		<th data-type='string'>Málsheiti</th>
 		<th data-type='string'>Flokkur</th>
+		<th data-type='string'>Flutningsmaður</th>
+		<th data-type='string' id="nefnd">Nefnd</th>
 		<th data-type='string'>Útbýting</th>
 		<th data-type='number' id="extras">Viðbótarupplýsingar</th>
 	</thead>
@@ -92,17 +99,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/152/?ltg=153&mnr=152'>verndartollar á franskar kartöflur</a></td>
 		<td>Viðreisn</td>
+		<td>Þorgerður Katrín Gunnarsdóttir</td>
 		<td>2022-09-20 13:02</td>
-		<td>168</td>
-	</tr>
-	<tr>
-		<td>223</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/223/?ltg=153&mnr=223'>biðtími eftir afplánun</a></td>
-		<td>Píratar</td>
-		<td>2022-09-27 17:39</td>
-		<td>163</td>
+		<td>181</td>
 	</tr>
 	<tr>
 		<td>302</td>
@@ -110,26 +109,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/302/?ltg=153&mnr=302'>eftirlit með fjármálum einkarekinna leikskóla</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Steinunn Þóra Árnadóttir</td>
 		<td>2022-10-11 16:51</td>
-		<td>153</td>
-	</tr>
-	<tr>
-		<td>312</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/312/?ltg=153&mnr=312'>ný sorpbrennslustöð</a></td>
-		<td>Viðreisn</td>
-		<td>2022-10-12 16:05</td>
-		<td>152</td>
-	</tr>
-	<tr>
-		<td>337</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/337/?ltg=153&mnr=337'>landsbyggðarlán Húsnæðis- og mannvirkjastofnunar</a></td>
-		<td>Samfylkingin</td>
-		<td>2022-10-17 17:01</td>
-		<td>149</td>
+		<td>165</td>
 	</tr>
 	<tr>
 		<td>371</td>
@@ -137,44 +119,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/371/?ltg=153&mnr=371'>raforkumál á Vestfjörðum</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Teitur Björn Einarsson</td>
 		<td>2022-10-20 10:17</td>
-		<td>147</td>
-	</tr>
-	<tr>
-		<td>437</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/437/?ltg=153&mnr=437'>íbúðarhúsnæði í eigu einstaklinga og lögaðila</a></td>
-		<td>Viðreisn</td>
-		<td>2022-11-15 15:47</td>
-		<td>128</td>
-	</tr>
-	<tr>
-		<td>448</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/448/?ltg=153&mnr=448'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
-		<td>Píratar</td>
-		<td>2022-11-15 18:27</td>
-		<td>128</td>
-	</tr>
-	<tr>
-		<td>451</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/451/?ltg=153&mnr=451'>áskrift að dagblöðum, tímaritum og öðrum miðlum</a></td>
-		<td>Píratar</td>
-		<td>2022-11-15 19:04</td>
-		<td>128</td>
-	</tr>
-	<tr>
-		<td>493</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/493/?ltg=153&mnr=493'>breyting á fjárhæðum örorkulífeyris, tekjutryggingar og heimilisuppbótar</a></td>
-		<td>Samfylkingin</td>
-		<td>2022-11-23 17:21</td>
-		<td>122</td>
+		<td>160</td>
 	</tr>
 	<tr>
 		<td>495</td>
@@ -182,35 +129,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/495/?ltg=153&mnr=495'>landsmarkmið í loftslagsmálum</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2022-11-23 17:36</td>
-		<td>122</td>
-	</tr>
-	<tr>
-		<td>496</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/496/?ltg=153&mnr=496'>aðgerðir og barátta gegn heimilisofbeldi og ofbeldi gegn konum</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2022-11-23 17:54</td>
-		<td>122</td>
-	</tr>
-	<tr>
-		<td>499</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/499/?ltg=153&mnr=499'>útgjöld til heilbrigðismála</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2022-11-24 14:54</td>
-		<td>122</td>
-	</tr>
-	<tr>
-		<td>503</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/503/?ltg=153&mnr=503'>fylgdarlaus börn</a></td>
-		<td>Píratar</td>
-		<td>2022-11-28 14:31</td>
-		<td>119</td>
+		<td>135</td>
 	</tr>
 	<tr>
 		<td>514</td>
@@ -218,8 +139,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/514/?ltg=153&mnr=514'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
+		<td>Helga Vala Helgadóttir</td>
 		<td>2022-11-28 18:27</td>
-		<td>119</td>
+		<td>131</td>
 	</tr>
 	<tr>
 		<td>520</td>
@@ -227,17 +149,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/520/?ltg=153&mnr=520'>fjölgun starfsfólks og embættismanna</a></td>
 		<td>Samfylkingin</td>
+		<td>Helga Vala Helgadóttir</td>
 		<td>2022-11-28 18:27</td>
-		<td>119</td>
-	</tr>
-	<tr>
-		<td>567</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/567/?ltg=153&mnr=567'>Ríkisábyrgðasjóður</a></td>
-		<td>Viðreisn</td>
-		<td>2022-12-08 10:21</td>
-		<td>112</td>
+		<td>131</td>
 	</tr>
 	<tr>
 		<td>593</td>
@@ -245,8 +159,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/593/?ltg=153&mnr=593'>hringrásarhagkerfið og orkuskipti</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>René Biasone</td>
 		<td>2023-01-23 14:30</td>
-		<td>79</td>
+		<td>92</td>
 	</tr>
 	<tr>
 		<td>600</td>
@@ -254,8 +169,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/600/?ltg=153&mnr=600'>andleg líðan barna</a></td>
 		<td>Samfylkingin</td>
+		<td>Oddný G. Harðardóttir</td>
 		<td>2023-01-24 13:09</td>
-		<td>78</td>
+		<td>91</td>
 	</tr>
 	<tr>
 		<td>604</td>
@@ -263,8 +179,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/604/?ltg=153&mnr=604'>bráðamóttaka Landspítalans</a></td>
 		<td>Miðflokkurinn</td>
+		<td>Bergþór Ólason</td>
 		<td>2023-01-26 15:40</td>
-		<td>77</td>
+		<td>90</td>
 	</tr>
 	<tr>
 		<td>605</td>
@@ -272,17 +189,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/605/?ltg=153&mnr=605'>skattar og gjöld</a></td>
 		<td>Miðflokkurinn</td>
+		<td>Bergþór Ólason</td>
 		<td>2023-01-24 13:10</td>
-		<td>78</td>
-	</tr>
-	<tr>
-		<td>619</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/619/?ltg=153&mnr=619'>viðbrögð við vanvirðandi framkomu af hálfu ráðherra eða ráðuneytisstjóra og sálfræðiþjónusta fyrir starfsmenn ráðuneyta</a></td>
-		<td>Samfylkingin</td>
-		<td>2023-01-24 17:00</td>
-		<td>78</td>
+		<td>91</td>
 	</tr>
 	<tr>
 		<td>622</td>
@@ -290,8 +199,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/622/?ltg=153&mnr=622'>samráð starfshóps um endurskoðun húsaleigulaga við hagaðila</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Ásthildur Lóa Þórsdóttir</td>
 		<td>2023-01-24 13:10</td>
-		<td>78</td>
+		<td>91</td>
 	</tr>
 	<tr>
 		<td>630</td>
@@ -299,8 +209,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/630/?ltg=153&mnr=630'>rannsókn kynferðisbrotamála</a></td>
 		<td>Píratar</td>
+		<td>Gísli Rafn Ólafsson</td>
 		<td>2023-01-25 14:37</td>
-		<td>77</td>
+		<td>90</td>
 	</tr>
 	<tr>
 		<td>637</td>
@@ -308,8 +219,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/637/?ltg=153&mnr=637'>kostnaður við Landspítala við Hringbraut</a></td>
 		<td>Miðflokkurinn</td>
+		<td>Sigmundur Davíð Gunnlaugsson</td>
 		<td>2023-01-26 10:04</td>
-		<td>77</td>
+		<td>90</td>
 	</tr>
 	<tr>
 		<td>638</td>
@@ -317,8 +229,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/638/?ltg=153&mnr=638'>flugrekstrarleyfi þyrlna</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Bjarkey Olsen Gunnarsdóttir</td>
 		<td>2023-01-26 10:04</td>
-		<td>77</td>
+		<td>90</td>
 	</tr>
 	<tr>
 		<td>643</td>
@@ -326,8 +239,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/643/?ltg=153&mnr=643'>markmið um orkuskipti</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-01-26 17:41</td>
-		<td>77</td>
+		<td>89</td>
 	</tr>
 	<tr>
 		<td>644</td>
@@ -335,8 +249,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/644/?ltg=153&mnr=644'>kynsegin fólk í íþróttum</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-01-26 17:52</td>
-		<td>77</td>
+		<td>89</td>
 	</tr>
 	<tr>
 		<td>649</td>
@@ -344,8 +259,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/649/?ltg=153&mnr=649'>markmið hæfniviðmiða í skólaíþróttum</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-01-31 13:03</td>
-		<td>73</td>
+		<td>86</td>
 	</tr>
 	<tr>
 		<td>650</td>
@@ -353,8 +269,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/650/?ltg=153&mnr=650'>gagnsæi við ákvarðanatöku í opinberum hlutafélögum</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-01-31 13:03</td>
-		<td>73</td>
+		<td>86</td>
 	</tr>
 	<tr>
 		<td>666</td>
@@ -362,8 +279,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/666/?ltg=153&mnr=666'>samningar um skólaþjónustu</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Eyjólfur Ármannsson</td>
 		<td>2023-01-31 15:26</td>
-		<td>73</td>
+		<td>86</td>
 	</tr>
 	<tr>
 		<td>670</td>
@@ -371,8 +289,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/670/?ltg=153&mnr=670'>skattalagabrot</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Bjarkey Olsen Gunnarsdóttir</td>
 		<td>2023-01-31 15:35</td>
-		<td>73</td>
+		<td>86</td>
 	</tr>
 	<tr>
 		<td>678</td>
@@ -380,8 +299,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/678/?ltg=153&mnr=678'>lóðarleiga á jörðum í eigu ríkisins</a></td>
 		<td>Viðreisn</td>
+		<td>Guðbrandur Einarsson</td>
 		<td>2023-01-31 15:35</td>
-		<td>73</td>
+		<td>86</td>
 	</tr>
 	<tr>
 		<td>681</td>
@@ -389,8 +309,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/681/?ltg=153&mnr=681'>læknar</a></td>
 		<td>Samfylkingin</td>
+		<td>Þórunn Sveinbjarnardóttir</td>
 		<td>2023-02-01 14:35</td>
-		<td>72</td>
+		<td>85</td>
 	</tr>
 	<tr>
 		<td>682</td>
@@ -398,8 +319,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/682/?ltg=153&mnr=682'>lögbundið eftirlit og eftirfylgni með réttindum fatlaðra barna</a></td>
 		<td>Samfylkingin</td>
+		<td>Oddný G. Harðardóttir</td>
 		<td>2023-02-01 14:35</td>
-		<td>72</td>
+		<td>85</td>
 	</tr>
 	<tr>
 		<td>684</td>
@@ -407,8 +329,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/684/?ltg=153&mnr=684'>fátækt barna</a></td>
 		<td>Samfylkingin</td>
+		<td>Þórunn Sveinbjarnardóttir</td>
 		<td>2023-02-01 14:35</td>
-		<td>72</td>
+		<td>85</td>
 	</tr>
 	<tr>
 		<td>692</td>
@@ -416,8 +339,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/692/?ltg=153&mnr=692'>ofanflóðasjóður</a></td>
 		<td>Framsóknarflokkur</td>
+		<td>Líneik Anna Sævarsdóttir</td>
 		<td>2023-02-02 13:17</td>
-		<td>72</td>
+		<td>85</td>
 	</tr>
 	<tr>
 		<td>700</td>
@@ -425,8 +349,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/700/?ltg=153&mnr=700'>lyfjagjöf við brottvísanir</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-02-02 13:21</td>
-		<td>72</td>
+		<td>85</td>
 	</tr>
 	<tr>
 		<td>708</td>
@@ -434,8 +359,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/708/?ltg=153&mnr=708'>jöfnun orkukostnaðar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-02-06 17:14</td>
-		<td>69</td>
+		<td>81</td>
 	</tr>
 	<tr>
 		<td>709</td>
@@ -443,17 +369,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/709/?ltg=153&mnr=709'>kostnaður íslenska ríkisins vegna skipunar dómara við Landsrétt</a></td>
 		<td>Samfylkingin</td>
+		<td>Helga Vala Helgadóttir</td>
 		<td>2023-02-06 17:08</td>
-		<td>69</td>
-	</tr>
-	<tr>
-		<td>719</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/719/?ltg=153&mnr=719'>ógagnkvæm gilding ökuskírteina</a></td>
-		<td>Píratar</td>
-		<td>2023-02-09 16:43</td>
-		<td>67</td>
+		<td>81</td>
 	</tr>
 	<tr>
 		<td>729</td>
@@ -461,8 +379,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/729/?ltg=153&mnr=729'>vernd í þágu líffræðilegrar fjölbreytni</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-02-09 17:39</td>
-		<td>67</td>
+		<td>79</td>
 	</tr>
 	<tr>
 		<td>730</td>
@@ -470,17 +389,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/730/?ltg=153&mnr=730'>breytingar á sköttum og gjöldum frá ársbyrjun 2018</a></td>
 		<td>Samfylkingin</td>
+		<td>Dagbjört Hákonardóttir</td>
 		<td>2023-02-09 17:39</td>
-		<td>67</td>
-	</tr>
-	<tr>
-		<td>742</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/742/?ltg=153&mnr=742'>biðtími vegna kynleiðréttingaraðgerða</a></td>
-		<td>Vinstrihreyfingin - grænt framboð</td>
-		<td>2023-02-20 14:55</td>
-		<td>59</td>
+		<td>79</td>
 	</tr>
 	<tr>
 		<td>744</td>
@@ -488,8 +399,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/744/?ltg=153&mnr=744'>verkefnið Kveikjum neistann</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ingveldur Anna Sigurðardóttir</td>
 		<td>2023-02-20 14:46</td>
-		<td>59</td>
+		<td>72</td>
 	</tr>
 	<tr>
 		<td>748</td>
@@ -497,17 +409,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/748/?ltg=153&mnr=748'>heilbrigðisþjónusta við intersex og trans fólk</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Jódís Skúladóttir</td>
 		<td>2023-02-20 14:46</td>
-		<td>59</td>
-	</tr>
-	<tr>
-		<td>749</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/749/?ltg=153&mnr=749'>samningur um orkusáttmála</a></td>
-		<td>Píratar</td>
-		<td>2023-02-20 14:46</td>
-		<td>59</td>
+		<td>72</td>
 	</tr>
 	<tr>
 		<td>750</td>
@@ -515,17 +419,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/750/?ltg=153&mnr=750'>raforkuöryggi í Vestmannaeyjum</a></td>
 		<td>Framsóknarflokkur</td>
+		<td>Jóhann Friðrik Friðriksson</td>
 		<td>2023-02-20 17:58</td>
-		<td>59</td>
-	</tr>
-	<tr>
-		<td>752</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/752/?ltg=153&mnr=752'>ráðning starfsfólks með skerta starfsorku</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-02-21 13:10</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>753</td>
@@ -533,8 +429,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/753/?ltg=153&mnr=753'>ráðning starfsfólks með skerta starfsorku</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-02-21 13:10</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>755</td>
@@ -542,8 +439,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/755/?ltg=153&mnr=755'>ráðning starfsfólks með skerta starfsorku</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-02-21 13:10</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>756</td>
@@ -551,8 +449,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/756/?ltg=153&mnr=756'>ráðning starfsfólks með skerta starfsorku</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-02-21 13:10</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>757</td>
@@ -560,8 +459,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/757/?ltg=153&mnr=757'>ráðning starfsfólks með skerta starfsorku</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-02-21 13:10</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>758</td>
@@ -569,17 +469,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/758/?ltg=153&mnr=758'>ráðning starfsfólks með skerta starfsorku</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-02-21 13:11</td>
-		<td>58</td>
-	</tr>
-	<tr>
-		<td>759</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/759/?ltg=153&mnr=759'>ráðning starfsfólks með skerta starfsorku</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-02-21 13:11</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>766</td>
@@ -587,8 +479,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/766/?ltg=153&mnr=766'>neyðarbirgðir af olíu á landsbyggðinni</a></td>
 		<td>Framsóknarflokkur</td>
+		<td>Stefán Vagn Stefánsson</td>
 		<td>2023-02-20 17:58</td>
-		<td>59</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>769</td>
@@ -596,8 +489,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/769/?ltg=153&mnr=769'>veikindafjarvistir barna</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-02-21 13:11</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>770</td>
@@ -605,8 +499,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/770/?ltg=153&mnr=770'>stafrænar umbætur í heilbrigðiskerfinu</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-02-21 13:11</td>
-		<td>58</td>
+		<td>71</td>
 	</tr>
 	<tr>
 		<td>776</td>
@@ -614,8 +509,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/776/?ltg=153&mnr=776'>afbrotatölfræði eftir kyni</a></td>
 		<td>Samfylkingin</td>
+		<td>Magnús Árni Skjöld Magnússon</td>
 		<td>2023-02-22 16:21</td>
-		<td>57</td>
+		<td>70</td>
 	</tr>
 	<tr>
 		<td>781</td>
@@ -623,17 +519,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/781/?ltg=153&mnr=781'>niðurstaða PISA-kannana</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Óli Björn Kárason</td>
 		<td>2023-02-23 13:37</td>
-		<td>57</td>
-	</tr>
-	<tr>
-		<td>787</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/787/?ltg=153&mnr=787'>uppsafnaður halli ríkissjóðs</a></td>
-		<td>Miðflokkurinn</td>
-		<td>2023-02-27 17:18</td>
-		<td>54</td>
+		<td>70</td>
 	</tr>
 	<tr>
 		<td>790</td>
@@ -641,8 +529,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/790/?ltg=153&mnr=790'>tekjur af sölu losunarheimilda</a></td>
 		<td>Miðflokkurinn</td>
+		<td>Bergþór Ólason</td>
 		<td>2023-02-28 13:07</td>
-		<td>53</td>
+		<td>66</td>
 	</tr>
 	<tr>
 		<td>791</td>
@@ -650,8 +539,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/791/?ltg=153&mnr=791'>losunarheimildir</a></td>
 		<td>Miðflokkurinn</td>
+		<td>Bergþór Ólason</td>
 		<td>2023-02-28 13:07</td>
-		<td>53</td>
+		<td>66</td>
 	</tr>
 	<tr>
 		<td>792</td>
@@ -659,8 +549,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/792/?ltg=153&mnr=792'>markmið stjórnvalda um kolefnishlutleysi fyrir Ísland árið 2040</a></td>
 		<td>Viðreisn</td>
+		<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
 		<td>2023-02-28 16:02</td>
-		<td>53</td>
+		<td>65</td>
 	</tr>
 	<tr>
 		<td>794</td>
@@ -668,8 +559,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/794/?ltg=153&mnr=794'>byggingaröryggisgjald</a></td>
 		<td>Framsóknarflokkur</td>
+		<td>Halla Signý Kristjánsdóttir</td>
 		<td>2023-02-28 16:11</td>
-		<td>53</td>
+		<td>65</td>
 	</tr>
 	<tr>
 		<td>797</td>
@@ -677,17 +569,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/797/?ltg=153&mnr=797'>orkunýting bygginga</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-06 14:54</td>
-		<td>49</td>
-	</tr>
-	<tr>
-		<td>798</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/798/?ltg=153&mnr=798'>bann við námavinnslu á hafsbotni</a></td>
-		<td>Píratar</td>
-		<td>2023-03-06 14:54</td>
-		<td>49</td>
+		<td>62</td>
 	</tr>
 	<tr>
 		<td>800</td>
@@ -695,8 +579,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/800/?ltg=153&mnr=800'>hlutverk ríkisendurskoðanda</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-03-01 18:42</td>
-		<td>52</td>
+		<td>65</td>
 	</tr>
 	<tr>
 		<td>812</td>
@@ -704,8 +589,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/812/?ltg=153&mnr=812'>Íslandsbanki</a></td>
 		<td>Viðreisn</td>
+		<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
 		<td>2023-03-06 17:35</td>
-		<td>49</td>
+		<td>61</td>
 	</tr>
 	<tr>
 		<td>813</td>
@@ -713,17 +599,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/813/?ltg=153&mnr=813'>Sjómannaskólinn við Háteigsveg</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Eyjólfur Ármannsson</td>
 		<td>2023-03-06 16:58</td>
-		<td>49</td>
-	</tr>
-	<tr>
-		<td>815</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/815/?ltg=153&mnr=815'>Íslandsbanki og samþjöppun á fjármálamarkaði</a></td>
-		<td>Viðreisn</td>
-		<td>2023-03-07 15:43</td>
-		<td>48</td>
+		<td>61</td>
 	</tr>
 	<tr>
 		<td>825</td>
@@ -731,8 +609,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/825/?ltg=153&mnr=825'>þjónusta sveitarfélaga í skólum fyrir einhverf börn og önnur fötluð börn</a></td>
 		<td>Framsóknarflokkur</td>
+		<td>Hafdís Hrönn Hafsteinsdóttir</td>
 		<td>2023-03-08 16:33</td>
-		<td>47</td>
+		<td>60</td>
 	</tr>
 	<tr>
 		<td>834</td>
@@ -740,17 +619,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/834/?ltg=153&mnr=834'>breytingar á greiðslufyrirkomulagi vegna búsetu á dvalar- og hjúkrunarheimilum</a></td>
 		<td>Samfylkingin</td>
+		<td>Viðar Eggertsson</td>
 		<td>2023-03-13 16:29</td>
-		<td>44</td>
-	</tr>
-	<tr>
-		<td>835</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/835/?ltg=153&mnr=835'>langvinn áhrif COVID-19</a></td>
-		<td>Píratar</td>
-		<td>2023-03-13 16:29</td>
-		<td>44</td>
+		<td>56</td>
 	</tr>
 	<tr>
 		<td>836</td>
@@ -758,17 +629,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/836/?ltg=153&mnr=836'>langvinn áhrif COVID-19</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-13 16:29</td>
-		<td>44</td>
-	</tr>
-	<tr>
-		<td>843</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/843/?ltg=153&mnr=843'>auglýsingar opinberra háskóla</a></td>
-		<td>Miðflokkurinn</td>
-		<td>2023-03-13 16:34</td>
-		<td>44</td>
+		<td>56</td>
 	</tr>
 	<tr>
 		<td>844</td>
@@ -776,35 +639,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/844/?ltg=153&mnr=844'>kostnaður vegna þátttöku Íslands í EES-samstarfinu</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Jakob Frímann Magnússon</td>
 		<td>2023-03-13 16:45</td>
-		<td>44</td>
-	</tr>
-	<tr>
-		<td>848</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/848/?ltg=153&mnr=848'>framkvæmdir við sjúkrahúsið í Stykkishólmi</a></td>
-		<td>Flokkur fólksins</td>
-		<td>2023-03-13 18:58</td>
-		<td>44</td>
-	</tr>
-	<tr>
-		<td>849</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/849/?ltg=153&mnr=849'>auðkenningarleiðir</a></td>
-		<td>Píratar</td>
-		<td>2023-03-14 13:54</td>
-		<td>43</td>
-	</tr>
-	<tr>
-		<td>854</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/854/?ltg=153&mnr=854'>endurupptaka mála í kjölfar dóms Héraðsdóms Reykjavíkur</a></td>
-		<td>Píratar</td>
-		<td>2023-03-14 17:03</td>
-		<td>43</td>
+		<td>56</td>
 	</tr>
 	<tr>
 		<td>855</td>
@@ -812,8 +649,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/855/?ltg=153&mnr=855'>samskipti vegna greinargerðar setts ríkisendurskoðanda um Lindarhvol ehf</a></td>
 		<td>Samfylkingin</td>
+		<td>Jóhann Páll Jóhannsson</td>
 		<td>2023-03-15 16:48</td>
-		<td>42</td>
+		<td>55</td>
 	</tr>
 	<tr>
 		<td>864</td>
@@ -821,17 +659,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/864/?ltg=153&mnr=864'>kolefnisgjald</a></td>
 		<td>Viðreisn</td>
+		<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
 		<td>2023-03-20 16:59</td>
-		<td>39</td>
-	</tr>
-	<tr>
-		<td>868</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/868/?ltg=153&mnr=868'>Heilsugæslan í Grafarvogi</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-03-21 14:43</td>
-		<td>38</td>
+		<td>51</td>
 	</tr>
 	<tr>
 		<td>869</td>
@@ -839,35 +669,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/869/?ltg=153&mnr=869'>hleranir</a></td>
 		<td>Píratar</td>
+		<td>Gísli Rafn Ólafsson</td>
 		<td>2023-03-21 14:43</td>
-		<td>38</td>
-	</tr>
-	<tr>
-		<td>870</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/870/?ltg=153&mnr=870'>íbúðarhúsnæði í Reykjavík</a></td>
-		<td>Viðreisn</td>
-		<td>2023-03-21 14:54</td>
-		<td>38</td>
-	</tr>
-	<tr>
-		<td>872</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/872/?ltg=153&mnr=872'>aðfarargerðir og hagsmunir barna</a></td>
-		<td>Samfylkingin</td>
-		<td>2023-03-21 14:54</td>
-		<td>38</td>
-	</tr>
-	<tr>
-		<td>874</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/874/?ltg=153&mnr=874'>græn svæði í Reykjavík</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-03-22 14:36</td>
-		<td>37</td>
+		<td>51</td>
 	</tr>
 	<tr>
 		<td>875</td>
@@ -875,17 +679,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/875/?ltg=153&mnr=875'>hindranir fjölmiðla á Keflavíkurflugvelli</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-22 14:36</td>
-		<td>37</td>
-	</tr>
-	<tr>
-		<td>876</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/876/?ltg=153&mnr=876'>hindranir fjölmiðla á Keflavíkurflugvelli</a></td>
-		<td>Píratar</td>
-		<td>2023-03-22 14:36</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>878</td>
@@ -893,8 +689,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/878/?ltg=153&mnr=878'>samdráttur í losun gróðurhúsalofttegunda</a></td>
 		<td>Samfylkingin</td>
+		<td>Þórunn Sveinbjarnardóttir</td>
 		<td>2023-03-22 16:41</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>879</td>
@@ -902,8 +699,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/879/?ltg=153&mnr=879'>kostnaður vegna þjónustu við umsækjendur um alþjóðlega vernd</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Inga Sæland</td>
 		<td>2023-03-22 16:41</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>881</td>
@@ -911,8 +709,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/881/?ltg=153&mnr=881'>hlustun samskipta á milli sakborninga og verjenda þeirra</a></td>
 		<td>Píratar</td>
+		<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
 		<td>2023-03-23 14:09</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>882</td>
@@ -920,8 +719,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/882/?ltg=153&mnr=882'>þróun ríkisútgjalda með tilliti til launa- og verðlagsþróunar</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-03-23 14:22</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>883</td>
@@ -929,8 +729,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/883/?ltg=153&mnr=883'>Geðheilsumiðstöð barna</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-23 14:22</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>884</td>
@@ -938,17 +739,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/884/?ltg=153&mnr=884'>söfnun og endurvinnsla veiðarfæra</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-23 14:27</td>
-		<td>37</td>
-	</tr>
-	<tr>
-		<td>885</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/885/?ltg=153&mnr=885'>heimaþjónusta ljósmæðra</a></td>
-		<td>Samfylkingin</td>
-		<td>2023-03-23 14:22</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>887</td>
@@ -956,8 +749,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/887/?ltg=153&mnr=887'>tilkynningar skiptastjóra vegna rökstudds gruns um refsivert athæfi þrotamanns eða annarra</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-03-23 14:27</td>
-		<td>37</td>
+		<td>50</td>
 	</tr>
 	<tr>
 		<td>891</td>
@@ -965,8 +759,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/891/?ltg=153&mnr=891'>staða grunnnáms í listdansi og rekstrarumhverfi listdansskóla</a></td>
 		<td>Samfylkingin</td>
+		<td>Viðar Eggertsson</td>
 		<td>2023-03-23 16:47</td>
-		<td>37</td>
+		<td>49</td>
 	</tr>
 	<tr>
 		<td>892</td>
@@ -974,8 +769,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/892/?ltg=153&mnr=892'>stýrihópur og sérfræðingateymi um heildarendurskoðun á örorkulífeyriskerfinu</a></td>
 		<td>Samfylkingin</td>
+		<td>Jóhann Páll Jóhannsson</td>
 		<td>2023-03-23 16:47</td>
-		<td>37</td>
+		<td>49</td>
 	</tr>
 	<tr>
 		<td>901</td>
@@ -983,8 +779,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/901/?ltg=153&mnr=901'>umferðartafir og hagvöxtur</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Njáll Trausti Friðbertsson</td>
 		<td>2023-03-27 16:47</td>
-		<td>34</td>
+		<td>46</td>
 	</tr>
 	<tr>
 		<td>902</td>
@@ -992,17 +789,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/902/?ltg=153&mnr=902'>fjöldi starfandi sjúkraliða og starfsmannavelta</a></td>
 		<td>Viðreisn</td>
+		<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
 		<td>2023-03-27 16:34</td>
-		<td>34</td>
-	</tr>
-	<tr>
-		<td>904</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/904/?ltg=153&mnr=904'>tilmæli nefndar um eftirlit með lögreglu</a></td>
-		<td>Samfylkingin</td>
-		<td>2023-03-27 17:25</td>
-		<td>34</td>
+		<td>46</td>
 	</tr>
 	<tr>
 		<td>905</td>
@@ -1010,8 +799,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/905/?ltg=153&mnr=905'>flutningur fanga</a></td>
 		<td>Samfylkingin</td>
+		<td>Logi Einarsson</td>
 		<td>2023-03-27 16:47</td>
-		<td>34</td>
+		<td>46</td>
 	</tr>
 	<tr>
 		<td>906</td>
@@ -1019,8 +809,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/906/?ltg=153&mnr=906'>vildarpunktar</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-03-27 17:01</td>
-		<td>34</td>
+		<td>46</td>
 	</tr>
 	<tr>
 		<td>909</td>
@@ -1028,8 +819,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/909/?ltg=153&mnr=909'>forvarnir og viðbrögð við gróðureldum</a></td>
 		<td>Píratar</td>
+		<td>Gísli Rafn Ólafsson</td>
 		<td>2023-03-27 17:47</td>
-		<td>34</td>
+		<td>46</td>
 	</tr>
 	<tr>
 		<td>916</td>
@@ -1037,8 +829,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/916/?ltg=153&mnr=916'>byrjendalæsi og leshraðamælingar</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Eyjólfur Ármannsson</td>
 		<td>2023-03-28 17:12</td>
-		<td>33</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>918</td>
@@ -1046,8 +839,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/918/?ltg=153&mnr=918'>áhrif aldurssamsetningar þjóðarinnar á opinber gjöld</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-03-28 17:12</td>
-		<td>33</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>919</td>
@@ -1055,17 +849,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/919/?ltg=153&mnr=919'>heildartekjur hins opinbera sem hlutfall af landsframleiðslu</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-03-28 18:30</td>
-		<td>33</td>
-	</tr>
-	<tr>
-		<td>928</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/928/?ltg=153&mnr=928'>sjóðir á vegum ráðuneytisins og stofnana þess</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-03-29 17:39</td>
-		<td>32</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>929</td>
@@ -1073,26 +859,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/929/?ltg=153&mnr=929'>sjóðir á vegum ráðuneytisins og stofnana þess</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Hildur Sverrisdóttir</td>
 		<td>2023-03-29 17:39</td>
-		<td>32</td>
-	</tr>
-	<tr>
-		<td>930</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/930/?ltg=153&mnr=930'>sjóðir á vegum ráðuneytisins og stofnana þess</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-03-29 18:18</td>
-		<td>32</td>
-	</tr>
-	<tr>
-		<td>932</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/932/?ltg=153&mnr=932'>sjóðir á vegum ráðuneytisins og stofnana þess</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-03-29 18:18</td>
-		<td>32</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>934</td>
@@ -1100,8 +869,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/934/?ltg=153&mnr=934'>sjóðir á vegum ráðuneytisins og stofnana þess</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Hildur Sverrisdóttir</td>
 		<td>2023-03-29 18:18</td>
-		<td>32</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>935</td>
@@ -1109,8 +879,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/935/?ltg=153&mnr=935'>sjóðir á vegum ráðuneytisins og stofnana þess</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Hildur Sverrisdóttir</td>
 		<td>2023-03-29 18:18</td>
-		<td>32</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>949</td>
@@ -1118,17 +889,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/949/?ltg=153&mnr=949'>bann við olíuleit</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-30 14:53</td>
-		<td>32</td>
-	</tr>
-	<tr>
-		<td>950</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/950/?ltg=153&mnr=950'>aðgerðir Háskóla Íslands gegn einelti, kynferðislegri áreitni, kynbundinni áreitni og ofbeldi</a></td>
-		<td>Flokkur fólksins</td>
-		<td>2023-03-30 15:00</td>
-		<td>32</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>951</td>
@@ -1136,8 +899,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/951/?ltg=153&mnr=951'>uppbætur á lífeyri</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Guðmundur Ingi Kristinsson</td>
 		<td>2023-03-30 15:45</td>
-		<td>32</td>
+		<td>45</td>
 	</tr>
 	<tr>
 		<td>960</td>
@@ -1145,8 +909,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/960/?ltg=153&mnr=960'>börn í afreksíþróttum</a></td>
 		<td>Píratar</td>
+		<td>Eva Sjöfn Helgadóttir</td>
 		<td>2023-03-31 13:20</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>961</td>
@@ -1154,8 +919,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/961/?ltg=153&mnr=961'>meiðsli og eftirlit með íþróttastarfi barna</a></td>
 		<td>Píratar</td>
+		<td>Eva Sjöfn Helgadóttir</td>
 		<td>2023-03-31 13:20</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>962</td>
@@ -1163,8 +929,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/962/?ltg=153&mnr=962'>skimun fyrir krabbameini</a></td>
 		<td>Píratar</td>
+		<td>Eva Sjöfn Helgadóttir</td>
 		<td>2023-03-31 14:48</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>963</td>
@@ -1172,8 +939,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/963/?ltg=153&mnr=963'>krabbameinsgreiningar</a></td>
 		<td>Píratar</td>
+		<td>Eva Sjöfn Helgadóttir</td>
 		<td>2023-03-31 14:48</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>964</td>
@@ -1181,8 +949,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/964/?ltg=153&mnr=964'>úrræði til að komast á vinnumarkað</a></td>
 		<td>Píratar</td>
+		<td>Eva Sjöfn Helgadóttir</td>
 		<td>2023-03-31 14:52</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>965</td>
@@ -1190,8 +959,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/965/?ltg=153&mnr=965'>aðgerðaáætlun til að fækka sjálfsvígum</a></td>
 		<td>Píratar</td>
+		<td>Eva Sjöfn Helgadóttir</td>
 		<td>2023-03-31 14:48</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>966</td>
@@ -1199,17 +969,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/966/?ltg=153&mnr=966'>lánshæfismat Íslands</a></td>
 		<td>Viðreisn</td>
+		<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
 		<td>2023-03-31 14:48</td>
-		<td>31</td>
-	</tr>
-	<tr>
-		<td>967</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/967/?ltg=153&mnr=967'>fræðastörf við Háskóla Íslands</a></td>
-		<td>Flokkur fólksins</td>
-		<td>2023-03-31 14:52</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>968</td>
@@ -1217,17 +979,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/968/?ltg=153&mnr=968'>endurskoðun reglugerðar um hollustuhætti</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-03-31 15:32</td>
-		<td>31</td>
-	</tr>
-	<tr>
-		<td>973</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/973/?ltg=153&mnr=973'>samanburður á framleiðslu á innlendu og innfluttu kjöti</a></td>
-		<td>Framsóknarflokkur</td>
-		<td>2023-03-31 15:53</td>
-		<td>31</td>
+		<td>44</td>
 	</tr>
 	<tr>
 		<td>990</td>
@@ -1235,8 +989,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/990/?ltg=153&mnr=990'>kínversk rannsóknarmiðstöð</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-04-18 13:11</td>
-		<td>18</td>
+		<td>31</td>
 	</tr>
 	<tr>
 		<td>991</td>
@@ -1244,35 +999,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/991/?ltg=153&mnr=991'>verklag lögreglu og sérsveitar ríkislögreglustjóra</a></td>
 		<td>Píratar</td>
+		<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
 		<td>2023-04-18 13:11</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>992</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/992/?ltg=153&mnr=992'>endurskoðun á framkvæmd afgreiðslu umsókna um íslenskan ríkisborgararétt</a></td>
-		<td>Píratar</td>
-		<td>2023-04-18 13:12</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>993</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/993/?ltg=153&mnr=993'>námslán</a></td>
-		<td>Píratar</td>
-		<td>2023-04-18 13:11</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>994</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/994/?ltg=153&mnr=994'>eftirlit með velferð dýra við veiðar á hvölum</a></td>
-		<td>Píratar</td>
-		<td>2023-04-18 13:12</td>
-		<td>18</td>
+		<td>31</td>
 	</tr>
 	<tr>
 		<td>995</td>
@@ -1280,8 +1009,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/995/?ltg=153&mnr=995'>íþróttastarfsemi</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-04-18 13:12</td>
-		<td>18</td>
+		<td>31</td>
 	</tr>
 	<tr>
 		<td>996</td>
@@ -1289,26 +1019,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/996/?ltg=153&mnr=996'>íþróttastarfsemi</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-04-18 13:12</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>997</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/997/?ltg=153&mnr=997'>úthlutanir úr Kvikmyndasjóði</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-04-18 14:59</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>998</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/998/?ltg=153&mnr=998'>bann við olíuleit</a></td>
-		<td>Píratar</td>
-		<td>2023-04-18 17:00</td>
-		<td>18</td>
+		<td>31</td>
 	</tr>
 	<tr>
 		<td>999</td>
@@ -1316,8 +1029,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/999/?ltg=153&mnr=999'>kolefnisjöfnun Stjórnarráðsins</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-04-18 17:00</td>
-		<td>18</td>
+		<td>30</td>
 	</tr>
 	<tr>
 		<td>1000</td>
@@ -1325,26 +1039,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1000/?ltg=153&mnr=1000'>fjármögnun og framkvæmd aðgerðaráætlunar gegn matarsóun</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Steinunn Þóra Árnadóttir</td>
 		<td>2023-04-18 17:00</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>1001</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1001/?ltg=153&mnr=1001'>varnarlínur sauðfjársjúkdóma</a></td>
-		<td>Framsóknarflokkur</td>
-		<td>2023-04-18 17:13</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>1002</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1002/?ltg=153&mnr=1002'>könnun á sannleiksgildi</a></td>
-		<td>Píratar</td>
-		<td>2023-04-19 18:29</td>
-		<td>17</td>
+		<td>30</td>
 	</tr>
 	<tr>
 		<td>1003</td>
@@ -1352,8 +1049,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1003/?ltg=153&mnr=1003'>stuðningur við aðstandendur sjúklinga</a></td>
 		<td>Viðreisn</td>
+		<td>Ástrós Rut Sigurðardóttir</td>
 		<td>2023-04-24 14:57</td>
-		<td>14</td>
+		<td>27</td>
 	</tr>
 	<tr>
 		<td>1004</td>
@@ -1361,8 +1059,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1004/?ltg=153&mnr=1004'>staða ungra langveikra einstaklinga</a></td>
 		<td>Viðreisn</td>
+		<td>Ástrós Rut Sigurðardóttir</td>
 		<td>2023-04-24 14:57</td>
-		<td>14</td>
+		<td>27</td>
 	</tr>
 	<tr>
 		<td>1006</td>
@@ -1370,44 +1069,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1006/?ltg=153&mnr=1006'>kostnaður við leiðtogafund Evrópuráðsins</a></td>
 		<td>Miðflokkurinn</td>
+		<td>Bergþór Ólason</td>
 		<td>2023-04-24 17:01</td>
-		<td>14</td>
-	</tr>
-	<tr>
-		<td>1007</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1007/?ltg=153&mnr=1007'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-04-24 17:15</td>
-		<td>14</td>
-	</tr>
-	<tr>
-		<td>1008</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1008/?ltg=153&mnr=1008'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-04-24 17:15</td>
-		<td>14</td>
-	</tr>
-	<tr>
-		<td>1009</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1009/?ltg=153&mnr=1009'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-04-24 17:15</td>
-		<td>14</td>
-	</tr>
-	<tr>
-		<td>1010</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1010/?ltg=153&mnr=1010'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-04-24 17:24</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1011</td>
@@ -1415,8 +1079,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1011/?ltg=153&mnr=1011'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 17:24</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1012</td>
@@ -1424,8 +1089,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1012/?ltg=153&mnr=1012'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 17:24</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1013</td>
@@ -1433,8 +1099,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1013/?ltg=153&mnr=1013'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 18:08</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1014</td>
@@ -1442,17 +1109,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1014/?ltg=153&mnr=1014'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 18:08</td>
-		<td>14</td>
-	</tr>
-	<tr>
-		<td>1015</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1015/?ltg=153&mnr=1015'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-04-24 18:08</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1016</td>
@@ -1460,8 +1119,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1016/?ltg=153&mnr=1016'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 18:08</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1017</td>
@@ -1469,8 +1129,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1017/?ltg=153&mnr=1017'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 18:08</td>
-		<td>14</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1018</td>
@@ -1478,26 +1139,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1018/?ltg=153&mnr=1018'>ráð, nefndir, stjórnir, starfshópar og stýrihópar</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
 		<td>2023-04-24 18:08</td>
-		<td>14</td>
-	</tr>
-	<tr>
-		<td>1020</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1020/?ltg=153&mnr=1020'>vegaframkvæmdir í Kjósarhreppi</a></td>
-		<td>Píratar</td>
-		<td>2023-04-25 16:34</td>
-		<td>13</td>
-	</tr>
-	<tr>
-		<td>1021</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1021/?ltg=153&mnr=1021'>staða þeirra sem eru óstaðsettir í hús í þjóðskrá</a></td>
-		<td>Píratar</td>
-		<td>2023-04-25 16:34</td>
-		<td>13</td>
+		<td>26</td>
 	</tr>
 	<tr>
 		<td>1022</td>
@@ -1505,17 +1149,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1022/?ltg=153&mnr=1022'>raforkumál í Kjósarhreppi</a></td>
 		<td>Píratar</td>
+		<td>Gísli Rafn Ólafsson</td>
 		<td>2023-04-25 17:02</td>
-		<td>13</td>
-	</tr>
-	<tr>
-		<td>1023</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1023/?ltg=153&mnr=1023'>póstnúmer Kjósarhrepps</a></td>
-		<td>Píratar</td>
-		<td>2023-04-25 17:02</td>
-		<td>13</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1024</td>
@@ -1523,8 +1159,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1024/?ltg=153&mnr=1024'>fjarskipti í Kjósarhreppi</a></td>
 		<td>Píratar</td>
+		<td>Gísli Rafn Ólafsson</td>
 		<td>2023-04-25 18:07</td>
-		<td>13</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1025</td>
@@ -1532,8 +1169,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1025/?ltg=153&mnr=1025'>aðgengi að heilbrigðisþjónustu í Kjósarhreppi</a></td>
 		<td>Píratar</td>
+		<td>Gísli Rafn Ólafsson</td>
 		<td>2023-04-25 16:34</td>
-		<td>13</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1026</td>
@@ -1541,8 +1179,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1026/?ltg=153&mnr=1026'>eftirlit með sölu áfengis</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-04-25 16:19</td>
-		<td>13</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1027</td>
@@ -1550,8 +1189,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1027/?ltg=153&mnr=1027'>samskipti vegna fjárhagsstöðu Landhelgisgæslu Íslands</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-04-25 17:02</td>
-		<td>13</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1029</td>
@@ -1559,8 +1199,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1029/?ltg=153&mnr=1029'>afplánun í fangelsi</a></td>
 		<td>Samfylkingin</td>
+		<td>Viðar Eggertsson</td>
 		<td>2023-04-25 16:34</td>
-		<td>13</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1030</td>
@@ -1568,8 +1209,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1030/?ltg=153&mnr=1030'>riðuveiki</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-04-27 14:47</td>
-		<td>12</td>
+		<td>25</td>
 	</tr>
 	<tr>
 		<td>1031</td>
@@ -1577,17 +1219,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1031/?ltg=153&mnr=1031'>áætlanir um mönnun í heilbrigðiskerfinu</a></td>
 		<td>Samfylkingin</td>
+		<td>Guðný Birna Guðmundsdóttir</td>
 		<td>2023-04-27 16:14</td>
-		<td>12</td>
-	</tr>
-	<tr>
-		<td>1032</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1032/?ltg=153&mnr=1032'>biðtími eftir sjúkrabíl og sjúkraflugi</a></td>
-		<td>Samfylkingin</td>
-		<td>2023-04-27 16:14</td>
-		<td>12</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<td>1033</td>
@@ -1595,8 +1229,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1033/?ltg=153&mnr=1033'>heimilislæknar</a></td>
 		<td>Samfylkingin</td>
+		<td>Guðný Birna Guðmundsdóttir</td>
 		<td>2023-04-27 16:14</td>
-		<td>12</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<td>1034</td>
@@ -1604,8 +1239,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1034/?ltg=153&mnr=1034'>læknar</a></td>
 		<td>Samfylkingin</td>
+		<td>Guðný Birna Guðmundsdóttir</td>
 		<td>2023-04-27 16:25</td>
-		<td>12</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<td>1035</td>
@@ -1613,8 +1249,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1035/?ltg=153&mnr=1035'>gjaldskyld bílastæði</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Guðmundur Ingi Kristinsson</td>
 		<td>2023-04-27 16:25</td>
-		<td>12</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<td>1036</td>
@@ -1622,8 +1259,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1036/?ltg=153&mnr=1036'>stöðugildi lækna og hjúkrunarfræðinga</a></td>
 		<td>Samfylkingin</td>
+		<td>Guðný Birna Guðmundsdóttir</td>
 		<td>2023-04-27 16:28</td>
-		<td>12</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<td>1037</td>
@@ -1631,8 +1269,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1037/?ltg=153&mnr=1037'>fjöldi íbúa í íbúðum</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-04-27 16:41</td>
-		<td>12</td>
+		<td>24</td>
 	</tr>
 	<tr>
 		<td>1038</td>
@@ -1640,8 +1279,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1038/?ltg=153&mnr=1038'>fitubjúgur</a></td>
 		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Lilja Rafney Magnúsdóttir</td>
 		<td>2023-05-02 13:39</td>
-		<td>8</td>
+		<td>21</td>
 	</tr>
 	<tr>
 		<td>1039</td>
@@ -1649,8 +1289,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1039/?ltg=153&mnr=1039'>hampsteypa</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-05-02 13:39</td>
-		<td>8</td>
+		<td>21</td>
 	</tr>
 	<tr>
 		<td>1040</td>
@@ -1658,17 +1299,19 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1040/?ltg=153&mnr=1040'>endurvinnsla vara sem innihalda litín</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-05-02 13:39</td>
-		<td>8</td>
+		<td>21</td>
 	</tr>
 	<tr>
 		<td>1041</td>
 		<td>Fyrirspurn</td>
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1041/?ltg=153&mnr=1041'>ávísun ópíóðalyfja</a></td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1041/?ltg=153&mnr=1041'>ávísun ópíóíðalyfja</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-05-02 13:39</td>
-		<td>8</td>
+		<td>21</td>
 	</tr>
 	<tr>
 		<td>1042</td>
@@ -1676,26 +1319,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1042/?ltg=153&mnr=1042'>netöryggi</a></td>
 		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
 		<td>2023-05-02 13:39</td>
-		<td>8</td>
-	</tr>
-	<tr>
-		<td>1043</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1043/?ltg=153&mnr=1043'>ábyrgð sveitarfélaga á innviðum</a></td>
-		<td>Píratar</td>
-		<td>2023-05-02 13:39</td>
-		<td>8</td>
-	</tr>
-	<tr>
-		<td>1044</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1044/?ltg=153&mnr=1044'>opinberar fjársafnanir</a></td>
-		<td>Píratar</td>
-		<td>2023-05-02 13:39</td>
-		<td>8</td>
+		<td>21</td>
 	</tr>
 	<tr>
 		<td>1045</td>
@@ -1703,8 +1329,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1045/?ltg=153&mnr=1045'>staða framkvæmda í samgönguáætlun</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-05-02 17:10</td>
-		<td>8</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<td>1046</td>
@@ -1712,8 +1339,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1046/?ltg=153&mnr=1046'>ellilífeyrir</a></td>
 		<td>Samfylkingin</td>
+		<td>Viðar Eggertsson</td>
 		<td>2023-05-03 14:39</td>
-		<td>7</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<td>1048</td>
@@ -1721,8 +1349,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1048/?ltg=153&mnr=1048'>samskipti sýslumanns og barnaverndar</a></td>
 		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
 		<td>2023-05-03 16:50</td>
-		<td>7</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<td>1049</td>
@@ -1730,17 +1359,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1049/?ltg=153&mnr=1049'>tollaflokkun pitsuosts</a></td>
 		<td>Viðreisn</td>
+		<td>Hanna Katrín Friðriksson</td>
 		<td>2023-05-03 17:10</td>
-		<td>7</td>
-	</tr>
-	<tr>
-		<td>1050</td>
-		<td>Fyrirspurn</td>
-		<td>Fyrirspurninni hefur ekki verið svarað.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1050/?ltg=153&mnr=1050'>þættirnir Skuggastríð</a></td>
-		<td>Sjálfstæðisflokkur</td>
-		<td>2023-05-03 17:10</td>
-		<td>7</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<td>1051</td>
@@ -1748,8 +1369,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1051/?ltg=153&mnr=1051'>matvörugátt</a></td>
 		<td>Samfylkingin</td>
+		<td>Jóhann Páll Jóhannsson</td>
 		<td>2023-05-03 17:03</td>
-		<td>7</td>
+		<td>20</td>
 	</tr>
 	<tr>
 		<td>1054</td>
@@ -1757,8 +1379,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1054/?ltg=153&mnr=1054'>samstarf eða sameining framhaldsskóla</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-05-08 17:25</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1055</td>
@@ -1766,8 +1389,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1055/?ltg=153&mnr=1055'>kínversk rannsóknamiðstöð</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-05-08 17:25</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1056</td>
@@ -1775,8 +1399,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1056/?ltg=153&mnr=1056'>flugstöð innanlandsflugs á Reykjavíkurflugvelli</a></td>
 		<td>Píratar</td>
+		<td>Andrés Ingi Jónsson</td>
 		<td>2023-05-08 17:25</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1057</td>
@@ -1784,8 +1409,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1057/?ltg=153&mnr=1057'>ættleiðing barna og staða þeirra þegar foreldri fellur frá</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-05-08 17:25</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1058</td>
@@ -1793,8 +1419,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1058/?ltg=153&mnr=1058'>staða barna þegar foreldri fellur frá</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-05-08 17:25</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1059</td>
@@ -1802,8 +1429,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1059/?ltg=153&mnr=1059'>staða barna þegar foreldri fellur frá</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-05-08 17:40</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1060</td>
@@ -1811,8 +1439,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1060/?ltg=153&mnr=1060'>staða barna þegar foreldri fellur frá</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
 		<td>2023-05-08 17:40</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1061</td>
@@ -1820,8 +1449,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1061/?ltg=153&mnr=1061'>sjúkraflug</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Berglind Ósk Guðmundsdóttir</td>
 		<td>2023-05-08 17:40</td>
-		<td>4</td>
+		<td>16</td>
 	</tr>
 	<tr>
 		<td>1064</td>
@@ -1829,8 +1459,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1064/?ltg=153&mnr=1064'>láglendisvegur um Mýrdal og göng í gegnum Reynisfjall</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Ásmundur Friðriksson</td>
 		<td>2023-05-09 16:54</td>
-		<td>3</td>
+		<td>15</td>
 	</tr>
 	<tr>
 		<td>1065</td>
@@ -1838,8 +1469,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1065/?ltg=153&mnr=1065'>mat Framkvæmdasýslunnar - Ríkiseigna (FSRE) á húsnæðisþörf stofnana ríkisins</a></td>
 		<td>Framsóknarflokkur</td>
+		<td>Ágúst Bjarni Garðarsson</td>
 		<td>2023-05-09 17:22</td>
-		<td>3</td>
+		<td>15</td>
 	</tr>
 	<tr>
 		<td>1067</td>
@@ -1847,8 +1479,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1067/?ltg=153&mnr=1067'>heimavigtun og endurvigtun sjávarafla</a></td>
 		<td>Flokkur fólksins</td>
+		<td>Sigurjón Þórðarson</td>
 		<td>2023-05-10 17:18</td>
-		<td>2</td>
+		<td>15</td>
 	</tr>
 	<tr>
 		<td>1068</td>
@@ -1856,8 +1489,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1068/?ltg=153&mnr=1068'>hjón á hjúkrunarheimilum</a></td>
 		<td>Viðreisn</td>
+		<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
 		<td>2023-05-10 17:18</td>
-		<td>2</td>
+		<td>15</td>
 	</tr>
 	<tr>
 		<td>1069</td>
@@ -1865,8 +1499,9 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1069/?ltg=153&mnr=1069'>staða einstæðra foreldra á endurhæfingarlífeyri</a></td>
 		<td>Samfylkingin</td>
+		<td>Vilborg Kristín Oddsdóttir</td>
 		<td>2023-05-10 17:18</td>
-		<td>2</td>
+		<td>15</td>
 	</tr>
 	<tr>
 		<td>1070</td>
@@ -1874,8 +1509,589 @@ $(function() {
 		<td>Fyrirspurninni hefur ekki verið svarað.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1070/?ltg=153&mnr=1070'>rússneskir togarar á Reykjaneshrygg</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
 		<td>2023-05-10 16:44</td>
-		<td>2</td>
+		<td>15</td>
+	</tr>
+	<tr>
+		<td>1071</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1071/?ltg=153&mnr=1071'>vinnubrögð úrskurðarnefndar velferðarmála í barnaverndarmálum</a></td>
+		<td>Píratar</td>
+		<td>Björn Leví Gunnarsson</td>
+		<td>2023-05-15 14:44</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1075</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1075/?ltg=153&mnr=1075'>byggingareftirlit</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1076</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1076/?ltg=153&mnr=1076'>útgefin sveinsbréf</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1077</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1077/?ltg=153&mnr=1077'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1078</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1078/?ltg=153&mnr=1078'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1079</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1079/?ltg=153&mnr=1079'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1080</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1080/?ltg=153&mnr=1080'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1081</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1081/?ltg=153&mnr=1081'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1082</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1082/?ltg=153&mnr=1082'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1083</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1083/?ltg=153&mnr=1083'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1084</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1084/?ltg=153&mnr=1084'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1085</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1085/?ltg=153&mnr=1085'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1086</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1086/?ltg=153&mnr=1086'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1087</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1087/?ltg=153&mnr=1087'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1088</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1088/?ltg=153&mnr=1088'>netöryggi</a></td>
+		<td>Píratar</td>
+		<td>Indriði Ingi Stefánsson</td>
+		<td>2023-05-15 14:45</td>
+		<td>12</td>
+	</tr>
+	<tr>
+		<td>1089</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1089/?ltg=153&mnr=1089'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:34</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1090</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1090/?ltg=153&mnr=1090'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:34</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1091</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1091/?ltg=153&mnr=1091'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:34</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1092</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1092/?ltg=153&mnr=1092'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:34</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1093</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1093/?ltg=153&mnr=1093'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:34</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1094</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1094/?ltg=153&mnr=1094'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:39</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1095</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1095/?ltg=153&mnr=1095'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:46</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1096</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1096/?ltg=153&mnr=1096'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 13:46</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1097</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1097/?ltg=153&mnr=1097'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 14:06</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1098</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1098/?ltg=153&mnr=1098'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 14:06</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1099</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1099/?ltg=153&mnr=1099'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 14:06</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1100</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1100/?ltg=153&mnr=1100'>endurmat útgjalda</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 14:06</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1101</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1101/?ltg=153&mnr=1101'>framhaldsskólar</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
+		<td>2023-05-16 13:19</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1103</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1103/?ltg=153&mnr=1103'>skimun fyrir krabbameini</a></td>
+		<td>Miðflokkurinn</td>
+		<td>Bergþór Ólason</td>
+		<td>2023-05-16 13:19</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1104</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1104/?ltg=153&mnr=1104'>starfsmenn á Landspítala</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 16:17</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td>1105</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1105/?ltg=153&mnr=1105'>kynjahlutfall í háskólanámi</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-16 15:42</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>1106</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1106/?ltg=153&mnr=1106'>endurskoðun laga um Menntasjóð námsmanna</a></td>
+		<td>Flokkur fólksins</td>
+		<td>Ásthildur Lóa Þórsdóttir</td>
+		<td>2023-05-23 13:03</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1107</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1107/?ltg=153&mnr=1107'>viðskiptareikningar við Seðlabanka Íslands</a></td>
+		<td>Flokkur fólksins</td>
+		<td>Ásthildur Lóa Þórsdóttir</td>
+		<td>2023-05-23 13:03</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1110</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1110/?ltg=153&mnr=1110'>framboð háskólanáms fyrir fatlað fólk</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-23 15:43</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1111</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1111/?ltg=153&mnr=1111'>viðurkenning á háskólagráðum erlendra einstaklinga</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Bryndís Haraldsdóttir</td>
+		<td>2023-05-23 15:43</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1112</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1112/?ltg=153&mnr=1112'>Ríkisútvarpið</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
+		<td>2023-05-23 15:43</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1113</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1113/?ltg=153&mnr=1113'>afeitrun vegna áfengismeðferðar</a></td>
+		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Bjarkey Olsen Gunnarsdóttir</td>
+		<td>2023-05-23 15:55</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1114</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1114/?ltg=153&mnr=1114'>starfsemi geðheilsuteyma</a></td>
+		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Bjarkey Olsen Gunnarsdóttir</td>
+		<td>2023-05-23 15:55</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1115</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1115/?ltg=153&mnr=1115'>stuðningur á húsnæðismarkaði</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Guðrún Hafsteinsdóttir</td>
+		<td>2023-05-23 16:03</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>1117</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1117/?ltg=153&mnr=1117'>hjúkrunarrými á Vesturlandi</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Teitur Björn Einarsson</td>
+		<td>2023-05-23 15:55</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>1118</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1118/?ltg=153&mnr=1118'>einkarekstur heilsugæslu í Reykjanesbæ</a></td>
+		<td>Samfylkingin</td>
+		<td>Oddný G. Harðardóttir</td>
+		<td>2023-05-24 17:41</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>1119</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1119/?ltg=153&mnr=1119'>vistráðningar EES-borgara</a></td>
+		<td>Píratar</td>
+		<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+		<td>2023-05-24 17:41</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>1124</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1124/?ltg=153&mnr=1124'>stafræn endurgerð íslensks prentmáls</a></td>
+		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Steinunn Þóra Árnadóttir</td>
+		<td>2023-05-30 16:38</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1125</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1125/?ltg=153&mnr=1125'>kaup á vopnum og varnarbúnaði í aðdraganda leiðtogafundar Evrópuráðsins</a></td>
+		<td>Píratar</td>
+		<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+		<td>2023-05-30 15:29</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>1126</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1126/?ltg=153&mnr=1126'>lögfræðiálit Lagastofnunar HÍ</a></td>
+		<td>Flokkur fólksins</td>
+		<td>Inga Sæland</td>
+		<td>2023-05-30 15:42</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>1127</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1127/?ltg=153&mnr=1127'>útboð Vegagerðarinnar</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Vilhjálmur Árnason</td>
+		<td>2023-05-30 17:09</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1128</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1128/?ltg=153&mnr=1128'>gjöld vegna fiskeldis</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Teitur Björn Einarsson</td>
+		<td>2023-05-30 17:09</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1129</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1129/?ltg=153&mnr=1129'>algild hönnun og nýbygging Alþingis</a></td>
+		<td>Framsóknarflokkur</td>
+		<td>Ágúst Bjarni Garðarsson</td>
+		<td>2023-05-30 15:33</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>1130</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1130/?ltg=153&mnr=1130'>breytingar á sköttum og gjöldum</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Óli Björn Kárason</td>
+		<td>2023-05-30 17:09</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1131</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1131/?ltg=153&mnr=1131'>fjármagnstekjur umfram atvinnutekjur</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Guðrún Hafsteinsdóttir</td>
+		<td>2023-05-30 17:32</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1135</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1135/?ltg=153&mnr=1135'>dvalarleyfisskírteini</a></td>
+		<td>Píratar</td>
+		<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+		<td>2023-05-30 18:00</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1136</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1136/?ltg=153&mnr=1136'>gistináttaskattur</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
+		<td>2023-05-30 18:00</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1137</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1137/?ltg=153&mnr=1137'>meðgöngu- og ungbarnavernd á landsbyggðinni</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Berglind Ósk Guðmundsdóttir</td>
+		<td>2023-05-31 18:01</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1138</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1138/?ltg=153&mnr=1138'>framkvæmdir í Gufudalssveit</a></td>
+		<td>Sjálfstæðisflokkur</td>
+		<td>Teitur Björn Einarsson</td>
+		<td>2023-05-31 18:01</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1139</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1139/?ltg=153&mnr=1139'>hjúkrunarrými</a></td>
+		<td>Samfylkingin</td>
+		<td>Kristrún Frostadóttir</td>
+		<td>2023-05-31 18:42</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1140</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1140/?ltg=153&mnr=1140'>málsmeðferðartími Útlendingastofnunar</a></td>
+		<td>Píratar</td>
+		<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+		<td>2023-05-31 18:42</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1141</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1141/?ltg=153&mnr=1141'>fjöldi legurýma</a></td>
+		<td>Samfylkingin</td>
+		<td>Kristrún Frostadóttir</td>
+		<td>2023-05-31 18:42</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>1142</td>
+		<td>Fyrirspurn</td>
+		<td>Fyrirspurninni hefur ekki verið svarað.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1142/?ltg=153&mnr=1142'>Menntasjóður námsmanna</a></td>
+		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Steinunn Þóra Árnadóttir</td>
+		<td>2023-06-01 15:14</td>
+		<td>0</td>
 	</tr>
 </tbody>
 </table></body></html>

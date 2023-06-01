@@ -12,6 +12,11 @@ $(function() {
     document.getElementById("extras").remove();
   }
 
+  if(file_name == "asked.html" || file_name == "answered.html") {
+    document.getElementById("nefnd").remove();
+  }
+
+
   const ths = $("th");
   let sortOrder = 1;
 
@@ -82,36 +87,22 @@ $(function() {
 		<th data-type='string'>Staða máls</th>
 		<th data-type='string'>Málsheiti</th>
 		<th data-type='string'>Flokkur</th>
+		<th data-type='string'>Flutningsmaður</th>
+		<th data-type='string' id="nefnd">Nefnd</th>
 		<th data-type='string'>Útbýting</th>
 		<th data-type='number' id="extras">Viðbótarupplýsingar</th>
 	</thead>
 <tbody>
-	<tr>
-		<td>144</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 2. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/144/?ltg=153&mnr=144'>skipulagslög</a></td>
-		<td>innviðaráðherra</td>
-		<td>2022-09-16 15:07</td>
-		<td>4</td>
-	</tr>
 	<tr>
 		<td>153</td>
 		<td>Frumvarp til laga</td>
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/153/?ltg=153&mnr=153'>kirkjugarðar, greftrun og líkbrennsla</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-09-20 13:02</td>
-		<td>234</td>
-	</tr>
-	<tr>
-		<td>432</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 2. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/432/?ltg=153&mnr=432'>breyting á ýmsum lögum um skatta og gjöld</a></td>
-		<td>fjármála- og efnahagsráðherra</td>
-		<td>2022-11-15 14:42</td>
-		<td>4</td>
+		<td>252</td>
 	</tr>
 	<tr>
 		<td>529</td>
@@ -119,8 +110,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/529/?ltg=153&mnr=529'>sóttvarnalög</a></td>
 		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-12-02 12:55</td>
-		<td>94</td>
+		<td>111</td>
 	</tr>
 	<tr>
 		<td>530</td>
@@ -128,8 +121,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/530/?ltg=153&mnr=530'>tóbaksvarnir</a></td>
 		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-12-02 12:55</td>
-		<td>150</td>
+		<td>167</td>
 	</tr>
 	<tr>
 		<td>531</td>
@@ -137,8 +132,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/531/?ltg=153&mnr=531'>póstþjónusta</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2022-12-02 12:55</td>
-		<td>94</td>
+		<td>111</td>
 	</tr>
 	<tr>
 		<td>535</td>
@@ -146,53 +143,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/535/?ltg=153&mnr=535'>lögreglulög</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-12-02 12:55</td>
-		<td>94</td>
-	</tr>
-	<tr>
-		<td>536</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/536/?ltg=153&mnr=536'>raforkulög</a></td>
-		<td>umhverfis-, orku- og loftslagsráðherra</td>
-		<td>2022-12-02 12:55</td>
-		<td>5</td>
-	</tr>
-	<tr>
-		<td>538</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 2. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/538/?ltg=153&mnr=538'>veiðar í fiskveiðilandhelgi Íslands</a></td>
-		<td>matvælaráðherra</td>
-		<td>2022-12-02 12:55</td>
-		<td>12</td>
-	</tr>
-	<tr>
-		<td>540</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/540/?ltg=153&mnr=540'>opinbert eftirlit Matvælastofnunar</a></td>
-		<td>matvælaráðherra</td>
-		<td>2022-12-02 12:55</td>
-		<td>94</td>
-	</tr>
-	<tr>
-		<td>541</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/541/?ltg=153&mnr=541'>Seðlabanki Íslands</a></td>
-		<td>forsætisráðherra</td>
-		<td>2022-12-02 12:55</td>
-		<td>150</td>
-	</tr>
-	<tr>
-		<td>543</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/543/?ltg=153&mnr=543'>fjölmiðlar</a></td>
-		<td>menningar- og viðskiptaráðherra</td>
-		<td>2022-12-02 12:55</td>
-		<td>150</td>
+		<td>111</td>
 	</tr>
 	<tr>
 		<td>589</td>
@@ -200,17 +154,21 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/589/?ltg=153&mnr=589'>umferðarlög</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2022-12-16 11:49</td>
-		<td>94</td>
+		<td>111</td>
 	</tr>
 	<tr>
-		<td>597</td>
+		<td>741</td>
 		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/597/?ltg=153&mnr=597'>íþrótta- og æskulýðsstarf</a></td>
-		<td>mennta- og barnamálaráðherra</td>
-		<td>2023-01-16 13:00</td>
-		<td>83</td>
+		<td>Í nefnd eftir 2. umræðu.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/741/?ltg=153&mnr=741'>safnalög o.fl.</a></td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
+		<td>2023-02-20 14:45</td>
+		<td>9</td>
 	</tr>
 	<tr>
 		<td>795</td>
@@ -218,17 +176,10 @@ $(function() {
 		<td>Í nefnd eftir fyrri umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/795/?ltg=153&mnr=795'>aðgerðaáætlun gegn hatursorðræðu fyrir árin 2023-2026</a></td>
 		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-02-28 19:21</td>
-		<td>67</td>
-	</tr>
-	<tr>
-		<td>803</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/803/?ltg=153&mnr=803'>nafnskírteini</a></td>
-		<td>dómsmálaráðherra</td>
-		<td>2023-03-06 14:55</td>
-		<td>66</td>
+		<td>84</td>
 	</tr>
 	<tr>
 		<td>806</td>
@@ -236,26 +187,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/806/?ltg=153&mnr=806'>skilameðferð lánastofnana og verðbréfafyrirtækja</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2023-03-06 14:55</td>
-		<td>66</td>
-	</tr>
-	<tr>
-		<td>856</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/856/?ltg=153&mnr=856'>heilbrigðisstarfsmenn</a></td>
-		<td>heilbrigðisráðherra</td>
-		<td>2023-03-15 16:48</td>
-		<td>47</td>
-	</tr>
-	<tr>
-		<td>857</td>
-		<td>Tillaga til þingsályktunar</td>
-		<td>Í nefnd eftir fyrri umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/857/?ltg=153&mnr=857'>aðgerðaáætlun í geðheilbrigðismálum fyrir árin 2023-2027</a></td>
-		<td>heilbrigðisráðherra</td>
-		<td>2023-03-15 16:48</td>
-		<td>47</td>
+		<td>84</td>
 	</tr>
 	<tr>
 		<td>858</td>
@@ -263,8 +198,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/858/?ltg=153&mnr=858'>Land og skógur</a></td>
 		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-03-20 14:34</td>
-		<td>52</td>
+		<td>70</td>
 	</tr>
 	<tr>
 		<td>861</td>
@@ -272,8 +209,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/861/?ltg=153&mnr=861'>stjórn fiskveiða</a></td>
 		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2023-03-21 13:18</td>
-		<td>52</td>
+		<td>69</td>
 	</tr>
 	<tr>
 		<td>880</td>
@@ -281,8 +220,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/880/?ltg=153&mnr=880'>rekstraraðilar sérhæfðra sjóða o.fl.</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2023-03-23 11:03</td>
-		<td>47</td>
+		<td>64</td>
 	</tr>
 	<tr>
 		<td>889</td>
@@ -290,8 +231,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/889/?ltg=153&mnr=889'>hollustuhættir og mengunarvarnir</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-03-23 15:48</td>
-		<td>47</td>
+		<td>64</td>
 	</tr>
 	<tr>
 		<td>890</td>
@@ -299,8 +242,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/890/?ltg=153&mnr=890'>Evrópska efnahagssvæðið</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2023-03-23 15:48</td>
-		<td>25</td>
+		<td>42</td>
 	</tr>
 	<tr>
 		<td>893</td>
@@ -308,8 +253,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/893/?ltg=153&mnr=893'>dómstólar</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-23 16:47</td>
-		<td>47</td>
+		<td>65</td>
 	</tr>
 	<tr>
 		<td>894</td>
@@ -317,8 +264,10 @@ $(function() {
 		<td>Í nefnd eftir fyrri umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/894/?ltg=153&mnr=894'>fjármálaáætlun fyrir árin 2024--2028</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjárlaganefnd</td>
 		<td>2023-03-29 17:17</td>
-		<td>26</td>
+		<td>43</td>
 	</tr>
 	<tr>
 		<td>895</td>
@@ -326,17 +275,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/895/?ltg=153&mnr=895'>lögheimili og aðsetur</a></td>
 		<td>innviðaráðherra</td>
-		<td>2023-03-27 14:31</td>
-		<td>46</td>
-	</tr>
-	<tr>
-		<td>896</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/896/?ltg=153&mnr=896'>Innheimtustofnun sveitarfélaga</a></td>
 		<td>innviðaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-27 14:31</td>
-		<td>46</td>
+		<td>63</td>
 	</tr>
 	<tr>
 		<td>899</td>
@@ -344,26 +286,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/899/?ltg=153&mnr=899'>kvikmyndalög</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-27 15:41</td>
-		<td>46</td>
-	</tr>
-	<tr>
-		<td>914</td>
-		<td>Tillaga til þingsályktunar</td>
-		<td>Í nefnd eftir fyrri umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/914/?ltg=153&mnr=914'>landbúnaðarstefna til ársins 2040</a></td>
-		<td>matvælaráðherra</td>
-		<td>2023-03-28 13:59</td>
-		<td>45</td>
-	</tr>
-	<tr>
-		<td>915</td>
-		<td>Tillaga til þingsályktunar</td>
-		<td>Í nefnd eftir fyrri umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/915/?ltg=153&mnr=915'>matvælastefna til ársins 2040</a></td>
-		<td>matvælaráðherra</td>
-		<td>2023-03-28 13:59</td>
-		<td>45</td>
+		<td>63</td>
 	</tr>
 	<tr>
 		<td>922</td>
@@ -371,8 +297,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/922/?ltg=153&mnr=922'>breyting á ýmsum lögum í þágu barna</a></td>
 		<td>mennta- og barnamálaráðherra</td>
+		<td>mennta- og barnamálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-30 12:19</td>
-		<td>20</td>
+		<td>37</td>
 	</tr>
 	<tr>
 		<td>938</td>
@@ -380,8 +308,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/938/?ltg=153&mnr=938'>lyfjalög og lækningatæki</a></td>
 		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-03-30 10:15</td>
-		<td>20</td>
+		<td>37</td>
 	</tr>
 	<tr>
 		<td>939</td>
@@ -389,8 +319,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/939/?ltg=153&mnr=939'>tæknifrjóvgun og notkun kynfrumna og fósturvísa manna til stofnfrumurannsókna</a></td>
 		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-03-30 10:15</td>
-		<td>19</td>
+		<td>37</td>
 	</tr>
 	<tr>
 		<td>940</td>
@@ -398,8 +330,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/940/?ltg=153&mnr=940'>aðbúnaður, hollustuhættir og öryggi á vinnustöðum</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-03-30 14:14</td>
-		<td>26</td>
+		<td>43</td>
 	</tr>
 	<tr>
 		<td>941</td>
@@ -407,8 +341,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/941/?ltg=153&mnr=941'>uppbygging og rekstur flugvalla og þjónusta við flugumferð</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-03-30 12:19</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>942</td>
@@ -416,8 +352,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/942/?ltg=153&mnr=942'>ríkislögmaður</a></td>
 		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-30 13:58</td>
-		<td>26</td>
+		<td>43</td>
 	</tr>
 	<tr>
 		<td>943</td>
@@ -425,8 +363,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/943/?ltg=153&mnr=943'>raforkulög</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2023-03-30 13:58</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>944</td>
@@ -434,8 +374,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/944/?ltg=153&mnr=944'>útlendingar</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-30 13:58</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>945</td>
@@ -443,8 +385,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/945/?ltg=153&mnr=945'>kosningalög o.fl.</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>stjórnskipunar- og eftirlitsnefnd</td>
 		<td>2023-03-30 13:58</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>946</td>
@@ -452,8 +396,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/946/?ltg=153&mnr=946'>vopnalög</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-30 13:58</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>947</td>
@@ -461,17 +407,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/947/?ltg=153&mnr=947'>fjarskipti o.fl.</a></td>
 		<td>háskóla-, iðnaðar- og nýsköpunarráðherra</td>
-		<td>2023-03-31 15:24</td>
-		<td>18</td>
-	</tr>
-	<tr>
-		<td>948</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/948/?ltg=153&mnr=948'>handiðnaður</a></td>
 		<td>háskóla-, iðnaðar- og nýsköpunarráðherra</td>
-		<td>2023-03-31 15:34</td>
-		<td>18</td>
+		<td>umhverfis- og samgöngunefnd</td>
+		<td>2023-03-31 15:24</td>
+		<td>35</td>
 	</tr>
 	<tr>
 		<td>952</td>
@@ -479,8 +418,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/952/?ltg=153&mnr=952'>virðisaukaskattur o.fl.</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2023-03-30 15:21</td>
-		<td>25</td>
+		<td>42</td>
 	</tr>
 	<tr>
 		<td>953</td>
@@ -488,8 +429,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/953/?ltg=153&mnr=953'>afvopnun o.fl.</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2023-03-30 15:31</td>
-		<td>25</td>
+		<td>42</td>
 	</tr>
 	<tr>
 		<td>956</td>
@@ -497,17 +440,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/956/?ltg=153&mnr=956'>Mennta- og skólaþjónustustofa</a></td>
 		<td>mennta- og barnamálaráðherra</td>
+		<td>mennta- og barnamálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-31 11:32</td>
-		<td>20</td>
-	</tr>
-	<tr>
-		<td>957</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/957/?ltg=153&mnr=957'>lax- og silungsveiði</a></td>
-		<td>matvælaráðherra</td>
-		<td>2023-03-31 11:16</td>
-		<td>26</td>
+		<td>37</td>
 	</tr>
 	<tr>
 		<td>974</td>
@@ -515,8 +451,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/974/?ltg=153&mnr=974'>alþjóðlegar þvingunaraðgerðir og frysting fjármuna</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>25</td>
+		<td>42</td>
 	</tr>
 	<tr>
 		<td>975</td>
@@ -524,8 +462,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/975/?ltg=153&mnr=975'>vaktstöð siglinga</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>976</td>
@@ -533,17 +473,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/976/?ltg=153&mnr=976'>veiðar í fiskveiðilandhelgi Íslands og stjórn fiskveiða</a></td>
 		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>26</td>
-	</tr>
-	<tr>
-		<td>978</td>
-		<td>Tillaga til þingsályktunar</td>
-		<td>Í nefnd eftir fyrri umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/978/?ltg=153&mnr=978'>aðgerðaáætlun í málefnum hönnunar og arkitektúrs fyrir árin 2023-2026</a></td>
-		<td>menningar- og viðskiptaráðherra</td>
-		<td>2023-04-03 17:42</td>
-		<td>18</td>
+		<td>43</td>
 	</tr>
 	<tr>
 		<td>979</td>
@@ -551,8 +484,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/979/?ltg=153&mnr=979'>fjölmiðlar</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>18</td>
+		<td>35</td>
 	</tr>
 	<tr>
 		<td>980</td>
@@ -560,8 +495,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/980/?ltg=153&mnr=980'>rafrænar skuldaviðurkenningar</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>18</td>
+		<td>35</td>
 	</tr>
 	<tr>
 		<td>981</td>
@@ -569,8 +506,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/981/?ltg=153&mnr=981'>endurskoðendur og endurskoðun o.fl.</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>17</td>
+		<td>35</td>
 	</tr>
 	<tr>
 		<td>982</td>
@@ -578,8 +517,10 @@ $(function() {
 		<td>Í nefnd eftir fyrri umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/982/?ltg=153&mnr=982'>aðgerðir til eflingar þekkingarsamfélagi á Íslandi til ársins 2025</a></td>
 		<td>háskóla-, iðnaðar- og nýsköpunarráðherra</td>
+		<td>háskóla-, iðnaðar- og nýsköpunarráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>18</td>
+		<td>35</td>
 	</tr>
 	<tr>
 		<td>983</td>
@@ -587,8 +528,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/983/?ltg=153&mnr=983'>raforkulög og Orkustofnun</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2023-04-03 17:42</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>986</td>
@@ -596,17 +539,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/986/?ltg=153&mnr=986'>heilbrigðisþjónusta o.fl.</a></td>
 		<td>heilbrigðisráðherra</td>
-		<td>2023-04-03 17:43</td>
-		<td>19</td>
-	</tr>
-	<tr>
-		<td>987</td>
-		<td>Frumvarp til laga</td>
-		<td>Í nefnd eftir 1. umræðu.</td>
-		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/987/?ltg=153&mnr=987'>heilbrigðisstarfsmenn</a></td>
 		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-04-03 17:43</td>
-		<td>19</td>
+		<td>36</td>
 	</tr>
 	<tr>
 		<td>1028</td>
@@ -614,8 +550,10 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1028/?ltg=153&mnr=1028'>tímabundnar undanþágur frá skipulags- og byggingarlöggjöf og skipulagi</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-04-25 17:02</td>
-		<td>12</td>
+		<td>30</td>
 	</tr>
 	<tr>
 		<td>1052</td>
@@ -623,6 +561,8 @@ $(function() {
 		<td>Í nefnd eftir 1. umræðu.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1052/?ltg=153&mnr=1052'>skipulagslög</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-05-08 14:40</td>
-		<td>4</td>
+		<td>21</td>
 	</tr>

@@ -12,6 +12,11 @@ $(function() {
     document.getElementById("extras").remove();
   }
 
+  if(file_name == "asked.html" || file_name == "answered.html") {
+    document.getElementById("nefnd").remove();
+  }
+
+
   const ths = $("th");
   let sortOrder = 1;
 
@@ -82,6 +87,8 @@ $(function() {
 		<th data-type='string'>Staða máls</th>
 		<th data-type='string'>Málsheiti</th>
 		<th data-type='string'>Flokkur</th>
+		<th data-type='string'>Flutningsmaður</th>
+		<th data-type='string' id="nefnd">Nefnd</th>
 		<th data-type='string'>Útbýting</th>
 		<th data-type='number' id="extras">Viðbótarupplýsingar</th>
 	</thead>
@@ -92,6 +99,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1/?ltg=153&mnr=1'>fjárlög 2023</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjárlaganefnd</td>
 		<td>2022-09-13 14:43</td>
 	</tr>
 	<tr>
@@ -100,6 +109,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/2/?ltg=153&mnr=2'>breyting á ýmsum lögum vegna fjárlaga 2023</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-09-13 14:43</td>
 	</tr>
 	<tr>
@@ -108,6 +119,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/136/?ltg=153&mnr=136'>framhaldsfræðsla</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-09-16 14:16</td>
 	</tr>
 	<tr>
@@ -116,7 +129,19 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/137/?ltg=153&mnr=137'>evrópskir langtímafjárfestingarsjóðir</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-09-16 14:10</td>
+	</tr>
+	<tr>
+		<td>144</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/144/?ltg=153&mnr=144'>skipulagslög</a></td>
+		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
+		<td>2022-09-16 15:07</td>
 	</tr>
 	<tr>
 		<td>166</td>
@@ -124,6 +149,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/166/?ltg=153&mnr=166'>greiðslureikningar</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-09-21 15:55</td>
 	</tr>
 	<tr>
@@ -132,6 +159,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/167/?ltg=153&mnr=167'>leigubifreiðaakstur</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2022-09-21 16:17</td>
 	</tr>
 	<tr>
@@ -140,6 +169,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/188/?ltg=153&mnr=188'>Vísinda- og nýsköpunarráð</a></td>
 		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-09-22 10:11</td>
 	</tr>
 	<tr>
@@ -148,6 +179,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/211/?ltg=153&mnr=211'>sjúklingatrygging</a></td>
 		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-09-24 16:32</td>
 	</tr>
 	<tr>
@@ -156,6 +189,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/212/?ltg=153&mnr=212'>landamæri</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-09-27 13:05</td>
 	</tr>
 	<tr>
@@ -164,6 +199,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/226/?ltg=153&mnr=226'>skráning raunverulegra eigenda</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-09-27 18:14</td>
 	</tr>
 	<tr>
@@ -172,6 +209,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/227/?ltg=153&mnr=227'>hlutafélög o.fl.</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-09-27 18:14</td>
 	</tr>
 	<tr>
@@ -180,6 +219,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/272/?ltg=153&mnr=272'>húsaleigulög</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-10-07 17:20</td>
 	</tr>
 	<tr>
@@ -188,6 +229,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/277/?ltg=153&mnr=277'>gjaldþrotaskipti o.fl.</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-10-07 17:20</td>
 	</tr>
 	<tr>
@@ -196,6 +239,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/278/?ltg=153&mnr=278'>meðferð einkamála o.fl.</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-10-07 17:20</td>
 	</tr>
 	<tr>
@@ -204,6 +249,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/279/?ltg=153&mnr=279'>farþegaflutningar og farmflutningar á landi</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2022-10-07 17:20</td>
 	</tr>
 	<tr>
@@ -212,6 +259,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/280/?ltg=153&mnr=280'>ákvörðun nr. 53/2021, nr. 54/2021, nr. 385/2021 og nr. 146/2022 um breytingar á IX. viðauka við EES-samninginn</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-10-07 17:20</td>
 	</tr>
 	<tr>
@@ -220,6 +269,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/281/?ltg=153&mnr=281'>ákvörðun nr. 6/2022 um breytingu á II. viðauka við EES-samninginn</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-10-07 17:20</td>
 	</tr>
 	<tr>
@@ -228,6 +279,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/310/?ltg=153&mnr=310'>veiting ríkisborgararéttar</a></td>
 		<td>allsherjar- og menntamálanefnd</td>
+		<td>allsherjar- og menntamálanefnd</td>
+		<td>Ekki í nefnd</td>
 		<td>2022-10-12 17:01</td>
 	</tr>
 	<tr>
@@ -236,6 +289,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/326/?ltg=153&mnr=326'>skyldutrygging lífeyrisréttinda og starfsemi lífeyrissjóða</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-10-14 16:45</td>
 	</tr>
 	<tr>
@@ -244,6 +299,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/327/?ltg=153&mnr=327'>staðfesting ríkisreiknings 2021</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjárlaganefnd</td>
 		<td>2022-10-14 16:45</td>
 	</tr>
 	<tr>
@@ -252,6 +309,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/328/?ltg=153&mnr=328'>peningamarkaðssjóðir</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-10-14 16:45</td>
 	</tr>
 	<tr>
@@ -260,6 +319,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/381/?ltg=153&mnr=381'>fjármálafyrirtæki og vátryggingastarfsemi</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-10-21 10:58</td>
 	</tr>
 	<tr>
@@ -268,6 +329,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/382/?ltg=153&mnr=382'>útlendingar</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-10-21 10:58</td>
 	</tr>
 	<tr>
@@ -276,6 +339,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/390/?ltg=153&mnr=390'>hollustuhættir og mengunarvarnir o.fl.</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2022-10-26 14:39</td>
 	</tr>
 	<tr>
@@ -284,6 +349,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/409/?ltg=153&mnr=409'>fjáraukalög 2022</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjárlaganefnd</td>
 		<td>2022-11-08 17:27</td>
 	</tr>
 	<tr>
@@ -292,6 +359,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/415/?ltg=153&mnr=415'>upplýsingagjöf um sjálfbærni á sviði fjármálaþjónustu og flokkunarkerfi fyrir sjálfbærar fjárfestingar</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-11-08 15:17</td>
 	</tr>
 	<tr>
@@ -300,6 +369,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/428/?ltg=153&mnr=428'>meðferð sakamála</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-11-14 14:40</td>
 	</tr>
 	<tr>
@@ -308,7 +379,19 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/429/?ltg=153&mnr=429'>menningarminjar</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-11-14 14:40</td>
+	</tr>
+	<tr>
+		<td>432</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/432/?ltg=153&mnr=432'>breyting á ýmsum lögum um skatta og gjöld</a></td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
+		<td>2022-11-15 14:42</td>
 	</tr>
 	<tr>
 		<td>433</td>
@@ -316,6 +399,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/433/?ltg=153&mnr=433'>sértryggð skuldabréf og fjármálafyrirtæki</a></td>
 		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-11-15 14:42</td>
 	</tr>
 	<tr>
@@ -324,6 +409,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/434/?ltg=153&mnr=434'>ákvarðanir nr. 138/2022, nr. 249/2022 og nr. 151/2022 um breytingar á IX. viðauka og bókun 37 við EES-samninginn</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-11-15 13:09</td>
 	</tr>
 	<tr>
@@ -332,6 +419,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/435/?ltg=153&mnr=435'>félagsleg aðstoð</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-11-15 17:21</td>
 	</tr>
 	<tr>
@@ -340,6 +429,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/442/?ltg=153&mnr=442'>tímabundnar endurgreiðslur vegna hljóðritunar á tónlist</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2022-11-15 15:47</td>
 	</tr>
 	<tr>
@@ -348,6 +439,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/475/?ltg=153&mnr=475'>ákvörðun nr. 396/2021 um breytingu á XX. viðauka við EES- samninginn o.fl.</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-11-17 15:54</td>
 	</tr>
 	<tr>
@@ -356,6 +449,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/476/?ltg=153&mnr=476'>persónuvernd og vinnsla persónuupplýsinga</a></td>
 		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-11-21 14:47</td>
 	</tr>
 	<tr>
@@ -364,6 +459,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/487/?ltg=153&mnr=487'>þjóðaröryggisstefna fyrir Ísland</a></td>
 		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-11-22 13:07</td>
 	</tr>
 	<tr>
@@ -372,6 +469,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/490/?ltg=153&mnr=490'>veiðigjald</a></td>
 		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2022-11-23 09:29</td>
 	</tr>
 	<tr>
@@ -380,6 +479,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/528/?ltg=153&mnr=528'>staðfesting rammasamnings um fiskveiðar milli Íslands og Færeyja</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -388,6 +489,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/532/?ltg=153&mnr=532'>þjónusta við fatlað fólk með langvarandi stuðningsþarfir</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -396,6 +499,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/533/?ltg=153&mnr=533'>almannatryggingar og félagsleg aðstoð</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -404,6 +509,18 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/534/?ltg=153&mnr=534'>almannatryggingar</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>536</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/536/?ltg=153&mnr=536'>raforkulög</a></td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -412,6 +529,18 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/537/?ltg=153&mnr=537'>stjórn fiskveiða</a></td>
 		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>538</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/538/?ltg=153&mnr=538'>veiðar í fiskveiðilandhelgi Íslands</a></td>
+		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -420,6 +549,18 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/539/?ltg=153&mnr=539'>stjórn fiskveiða</a></td>
 		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2022-12-02 12:55</td>
+	</tr>
+	<tr>
+		<td>541</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/541/?ltg=153&mnr=541'>Seðlabanki Íslands</a></td>
+		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -428,6 +569,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/542/?ltg=153&mnr=542'>tónlist</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2022-12-02 12:55</td>
 	</tr>
 	<tr>
@@ -436,6 +579,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/568/?ltg=153&mnr=568'>almannatryggingar</a></td>
 		<td>velferðarnefnd</td>
+		<td>velferðarnefnd</td>
+		<td>Ekki í nefnd</td>
 		<td>2022-12-08 17:50</td>
 	</tr>
 	<tr>
@@ -444,6 +589,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/572/?ltg=153&mnr=572'>úrvinnslugjald</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
 		<td>2022-12-09 18:36</td>
 	</tr>
 	<tr>
@@ -452,6 +599,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/573/?ltg=153&mnr=573'>ríkisendurskoðandi og endurskoðun ríkisreikninga</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Birgir Ármannsson</td>
+		<td>stjórnskipunar- og eftirlitsnefnd</td>
 		<td>2022-12-09 16:51</td>
 	</tr>
 	<tr>
@@ -460,6 +609,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/579/?ltg=153&mnr=579'>skattar og gjöld</a></td>
 		<td>efnahags- og viðskiptanefnd</td>
+		<td>efnahags- og viðskiptanefnd</td>
+		<td>Ekki í nefnd</td>
 		<td>2022-12-14 21:33</td>
 	</tr>
 	<tr>
@@ -468,6 +619,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/581/?ltg=153&mnr=581'>hungursneyðin í Úkraínu</a></td>
 		<td>Sjálfstæðisflokkur</td>
+		<td>Diljá Mist Einarsdóttir</td>
+		<td>utanríkismálanefnd</td>
 		<td>2022-12-15 13:47</td>
 	</tr>
 	<tr>
@@ -476,7 +629,29 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/587/?ltg=153&mnr=587'>frestun á fundum Alþingis</a></td>
 		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>Ekki í nefnd</td>
 		<td>2022-12-16 10:28</td>
+	</tr>
+	<tr>
+		<td>588</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/588/?ltg=153&mnr=588'>fjármögnunarviðskipti með verðbréf</a></td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>fjármála- og efnahagsráðherra</td>
+		<td>efnahags- og viðskiptanefnd</td>
+		<td>2022-12-16 11:49</td>
+	</tr>
+	<tr>
+		<td>596</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/596/?ltg=153&mnr=596'>stjórn fiskveiða</a></td>
+		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-01-16 13:00</td>
 	</tr>
 	<tr>
 		<td>645</td>
@@ -484,6 +659,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/645/?ltg=153&mnr=645'>atvinnuréttindi útlendinga</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-01-31 13:03</td>
 	</tr>
 	<tr>
@@ -492,6 +669,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/689/?ltg=153&mnr=689'>tónlistarstefna fyrir árin 2023--2030</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-02-01 17:04</td>
 	</tr>
 	<tr>
@@ -500,6 +679,8 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/690/?ltg=153&mnr=690'>myndlistarstefna til 2030</a></td>
 		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-02-01 17:04</td>
 	</tr>
 	<tr>
@@ -508,6 +689,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/712/?ltg=153&mnr=712'>hafnalög</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-02-08 14:57</td>
 	</tr>
 	<tr>
@@ -516,6 +699,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/735/?ltg=153&mnr=735'>stefnur og aðgerðaáætlanir á sviði húsnæðis- og skipulagsmála o.fl.</a></td>
 		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
 		<td>2023-02-20 14:42</td>
 	</tr>
 	<tr>
@@ -524,7 +709,19 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/738/?ltg=153&mnr=738'>ákvarðanir nr. 69/2021 og nr. 70/2021 um breytingar á XIX. viðauka og nr. 270/2022 um breytingu á XXII. viðauka við EES-samninginn</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2023-02-20 14:43</td>
+	</tr>
+	<tr>
+		<td>751</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/751/?ltg=153&mnr=751'>leiga skráningarskyldra ökutækja</a></td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-02-21 13:10</td>
 	</tr>
 	<tr>
 		<td>782</td>
@@ -532,7 +729,19 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/782/?ltg=153&mnr=782'>málefni innflytjenda og vinnumarkaðsaðgerðir</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-02-28 13:42</td>
+	</tr>
+	<tr>
+		<td>804</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/804/?ltg=153&mnr=804'>efling barnamenningar fyrir árin 2024-2028</a></td>
+		<td>forsætisráðherra</td>
+		<td>forsætisráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
+		<td>2023-03-06 14:55</td>
 	</tr>
 	<tr>
 		<td>805</td>
@@ -540,7 +749,19 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/805/?ltg=153&mnr=805'>ákvörðun nr. 59/2021 um breytingu á XI. viðauka (Rafræn fjarskipti, hljóð- og myndmiðlun og upplýsingasamfélagið) við EES-samninginn o.fl.</a></td>
 		<td>utanríkisráðherra</td>
+		<td>utanríkisráðherra</td>
+		<td>utanríkismálanefnd</td>
 		<td>2023-03-06 14:55</td>
+	</tr>
+	<tr>
+		<td>809</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/809/?ltg=153&mnr=809'>framfylgd ályktana Vestnorræna ráðsins árið 2022</a></td>
+		<td>Íslandsdeild Vestnorræna ráðsins</td>
+		<td>Íslandsdeild Vestnorræna ráðsins</td>
+		<td>utanríkismálanefnd</td>
+		<td>2023-03-06 17:35</td>
 	</tr>
 	<tr>
 		<td>820</td>
@@ -548,6 +769,8 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/820/?ltg=153&mnr=820'>veiting ríkisborgararéttar</a></td>
 		<td>allsherjar- og menntamálanefnd</td>
+		<td>allsherjar- og menntamálanefnd</td>
+		<td>Ekki í nefnd</td>
 		<td>2023-03-07 17:38</td>
 	</tr>
 	<tr>
@@ -556,6 +779,18 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/821/?ltg=153&mnr=821'>Orkuveita Reykjavíkur</a></td>
 		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-03-08 14:47</td>
+	</tr>
+	<tr>
+		<td>822</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/822/?ltg=153&mnr=822'>dómstólar</a></td>
+		<td>dómsmálaráðherra</td>
+		<td>dómsmálaráðherra</td>
+		<td>allsherjar- og menntamálanefnd</td>
 		<td>2023-03-08 14:47</td>
 	</tr>
 	<tr>
@@ -564,7 +799,29 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/823/?ltg=153&mnr=823'>aukið aðgengi að hjálpartækjum fyrir blinda, sjónskerta og einstaklinga með samþætta sjón- og heyrnarskerðingu</a></td>
 		<td>velferðarnefnd</td>
+		<td>velferðarnefnd</td>
+		<td>Ekki í nefnd</td>
 		<td>2023-03-08 16:18</td>
+	</tr>
+	<tr>
+		<td>856</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/856/?ltg=153&mnr=856'>heilbrigðisstarfsmenn</a></td>
+		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
+		<td>2023-03-15 16:48</td>
+	</tr>
+	<tr>
+		<td>857</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/857/?ltg=153&mnr=857'>aðgerðaáætlun í geðheilbrigðismálum fyrir árin 2023-2027</a></td>
+		<td>heilbrigðisráðherra</td>
+		<td>heilbrigðisráðherra</td>
+		<td>velferðarnefnd</td>
+		<td>2023-03-15 16:48</td>
 	</tr>
 	<tr>
 		<td>860</td>
@@ -572,7 +829,79 @@ $(function() {
 		<td>Samþykkt sem ályktun Alþingis.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/860/?ltg=153&mnr=860'>aðgerðaáætlun um þjónustu við eldra fólk fyrir árin 2023--2027</a></td>
 		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>félags- og vinnumarkaðsráðherra</td>
+		<td>velferðarnefnd</td>
 		<td>2023-03-20 14:35</td>
+	</tr>
+	<tr>
+		<td>896</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/896/?ltg=153&mnr=896'>Innheimtustofnun sveitarfélaga</a></td>
+		<td>innviðaráðherra</td>
+		<td>innviðaráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
+		<td>2023-03-27 14:31</td>
+	</tr>
+	<tr>
+		<td>912</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/912/?ltg=153&mnr=912'>náttúruvernd</a></td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis-, orku- og loftslagsráðherra</td>
+		<td>umhverfis- og samgöngunefnd</td>
+		<td>2023-03-28 13:30</td>
+	</tr>
+	<tr>
+		<td>914</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/914/?ltg=153&mnr=914'>landbúnaðarstefna til ársins 2040</a></td>
+		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-03-28 13:59</td>
+	</tr>
+	<tr>
+		<td>915</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/915/?ltg=153&mnr=915'>matvælastefna til ársins 2040</a></td>
+		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-03-28 13:59</td>
+	</tr>
+	<tr>
+		<td>948</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/948/?ltg=153&mnr=948'>handiðnaður</a></td>
+		<td>háskóla-, iðnaðar- og nýsköpunarráðherra</td>
+		<td>háskóla-, iðnaðar- og nýsköpunarráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-03-31 15:34</td>
+	</tr>
+	<tr>
+		<td>957</td>
+		<td>Frumvarp til laga</td>
+		<td>Samþykkt sem lög frá Alþingi.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/957/?ltg=153&mnr=957'>lax- og silungsveiði</a></td>
+		<td>matvælaráðherra</td>
+		<td>matvælaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-03-31 11:16</td>
+	</tr>
+	<tr>
+		<td>978</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/978/?ltg=153&mnr=978'>aðgerðaáætlun í málefnum hönnunar og arkitektúrs fyrir árin 2023-2026</a></td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>menningar- og viðskiptaráðherra</td>
+		<td>atvinnuveganefnd</td>
+		<td>2023-04-03 17:42</td>
 	</tr>
 	<tr>
 		<td>1063</td>
@@ -580,7 +909,19 @@ $(function() {
 		<td>Samþykkt sem lög frá Alþingi.</td>
 		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1063/?ltg=153&mnr=1063'>veiting ríkisborgararéttar</a></td>
 		<td>allsherjar- og menntamálanefnd</td>
+		<td>allsherjar- og menntamálanefnd</td>
+		<td>Ekki í nefnd</td>
 		<td>2023-05-09 16:50</td>
+	</tr>
+	<tr>
+		<td>1074</td>
+		<td>Tillaga til þingsályktunar</td>
+		<td>Samþykkt sem ályktun Alþingis.</td>
+		<td><a href='https://www.althingi.is//thingstorf/thingmalalistar-eftir-thingum/ferill/153/1074/?ltg=153&mnr=1074'>kaup á færanlegu neyðarsjúkrahúsi fyrir Úkraínu</a></td>
+		<td>Vinstrihreyfingin - grænt framboð</td>
+		<td>Katrín Jakobsdóttir</td>
+		<td>utanríkismálanefnd</td>
+		<td>2023-05-15 14:44</td>
 	</tr>
 </tbody>
 </table></body></html>
