@@ -152,6 +152,15 @@ for k in delta_breytingar:
 
     table[delta_breytingar[k]] = percentage_diff_list
 
+# Sum up row
+table['month'].append("Ársbreyting")
+for k in table:
+    if k == "month":
+        continue
+    else:
+        v = table[k]
+        table[k].append(float(v[-1])/float(v[-13]))
+
 # Define the desired column order
 desired_column_order = [
     'month', 
@@ -180,7 +189,7 @@ desired_column_order = [
     "Ferðir og flutningar",
     "IS07 Δ",
     "Bensín og olíur", 
-    "IS0722 Δ"
+    "IS0722 Δ",
 ] 
 
 # Convert the dictionary to a pandas DataFrame
@@ -191,6 +200,11 @@ df = df[desired_column_order]
 
 # Convert the DataFrame to an HTML table
 html_table = df.to_html(index=False)
+
+# Create the summary table
+summary_table = {
+    "Breyta": []
+}
 
 # Create the full HTML content
 html_content = f"""
