@@ -159,7 +159,11 @@ for k in table:
         continue
     else:
         v = table[k]
-        table[k].append(float(v[-1])/float(v[-13]))
+        if "Δ" in k:
+            scope = v[-13:-1]
+            table[k].append(float(sum(scope))/float(len(scope)))  #meðaltal undanfarinna 12 mánaða
+        else:
+            table[k].append(float(v[-1])/float(v[-13])) #hlutfallsleg breyting á vísitölu frá því fyrir ári síðan
 
 # Define the desired column order
 desired_column_order = [
