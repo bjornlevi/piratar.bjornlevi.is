@@ -67,7 +67,6 @@ $(function() {
       _a *= 1;
       _b *= 1;
     } else if (type === "string") {
-      //全て小文字に揃えている。toLowerCase()
       _a = _a.toLowerCase();
       _b = _b.toLowerCase();
     }
