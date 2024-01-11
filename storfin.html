@@ -1,0 +1,1799 @@
+
+<html>
+<head>
+	<title>Ræður</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
+</head>
+<body>
+	<script type='text/javascript'>
+$(function() {
+  var file_name = location.href.split("/").slice(-1);
+
+  const ths = $("th");
+  let sortOrder = 1;
+
+  ths.on("click", function() {
+    const rows = sortRows(this);
+    rebuildTbody(rows);
+    updateClassName(this);
+    sortOrder *= -1; 
+  })
+
+  function sortRows(th) {
+    const rows = $.makeArray($('tbody > tr'));
+    const col = th.cellIndex;
+    const type = th.dataset.type;
+    rows.sort(function(a, b) {
+      return compare(a, b, col, type) * sortOrder;      
+    });
+    return rows;
+  }
+
+  function compare(a, b, col, type) {
+    let _a = a.children[col].textContent;
+    let _b = b.children[col].textContent;
+    if (type === "number") {
+      _a *= 1;
+      _b *= 1;
+    } else if (type === "string") {
+      _a = _a.toLowerCase();
+      _b = _b.toLowerCase();
+    }
+
+    if (_a < _b) {
+      return -1;
+    }
+    if (_a > _b) {
+      return 1;
+    }
+    return 0;
+  }
+
+  function rebuildTbody(rows) {
+    const tbody = $("tbody");
+    while (tbody.firstChild) {
+      tbody.remove(tbody.firstChild);
+    }
+
+    let j;
+    for (j=0; j<rows.length; j++) {
+      tbody.append(rows[j]);
+    }
+  }
+
+  function updateClassName(th) {
+    let k;
+    for (k=0; k<ths.length; k++) {
+      ths[k].className = "";
+    }
+    th.className = sortOrder === 1 ? "asc" : "desc";   
+  }
+  
+});
+</script>
+	<table id='table_speeches' border='1'>
+		<thead>
+			<th data-type='number'>Málsnúmer</th>
+			<th data-type='string'>Dagsetning</th>
+			<th data-type='string'>Ræðumaður</th>
+		</thead>
+		
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:32:50</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:34:41</td>
+	<td>Eva Sjöfn Helgadóttir</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:36:51</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:39:10</td>
+	<td>Líneik Anna Sævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:41:19</td>
+	<td>Andrés Ingi Jónsson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:43:54</td>
+	<td>Bjarni Jónsson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:46:18</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:48:38</td>
+	<td>Lilja Rannveig Sigurgeirsdóttir</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:51:00</td>
+	<td>Hanna Katrín Friðriksson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:53:29</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:55:51</td>
+	<td>Elva Dögg Sigurðardóttir</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T13:58:02</td>
+	<td>Þorgerður Katrín Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T14:00:25</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T14:02:25</td>
+	<td>Ragnar Sigurðsson</td>
+</tr>
+
+<tr>
+	<td>111</td>
+	<td>2023-09-19T14:04:05</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:04:09</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:06:15</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:08:43</td>
+	<td>Hafdís Hrönn Hafsteinsdóttir</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:10:54</td>
+	<td>Aðalsteinn Haukur Sverrisson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:13:32</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:15:59</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:18:42</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:20:59</td>
+	<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:23:44</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:26:14</td>
+	<td>Ragnar Sigurðsson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:28:34</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:30:50</td>
+	<td>Halldóra Mogensen</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:33:10</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:35:26</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>120</td>
+	<td>2023-09-20T15:37:46</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:32:14</td>
+	<td>Lenya Rún Taha Karim</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:34:32</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:36:59</td>
+	<td>Brynhildur Björnsdóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:39:21</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:41:54</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:44:12</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:46:23</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:48:47</td>
+	<td>Birgir Þórarinsson</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:51:01</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:53:22</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:55:29</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:57:48</td>
+	<td>Ágúst Bjarni Garðarsson</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T10:59:58</td>
+	<td>Elva Dögg Sigurðardóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T11:02:03</td>
+	<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>151</td>
+	<td>2023-09-28T11:04:23</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:17:17</td>
+	<td>Þorgerður Katrín Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:19:37</td>
+	<td>Hildur Sverrisdóttir</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:22:01</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:24:28</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:27:07</td>
+	<td>Elva Dögg Sigurðardóttir</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:29:15</td>
+	<td>Indriði Ingi Stefánsson</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:31:23</td>
+	<td>Eyjólfur Ármannsson</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:33:55</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:36:08</td>
+	<td>Jódís Skúladóttir</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:38:41</td>
+	<td>Óli Björn Kárason</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:41:14</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:43:50</td>
+	<td>Teitur Björn Einarsson</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:46:23</td>
+	<td>Ágúst Bjarni Garðarsson</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:48:33</td>
+	<td>Logi Einarsson</td>
+</tr>
+
+<tr>
+	<td>168</td>
+	<td>2023-10-10T14:50:44</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:02:10</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:04:30</td>
+	<td>Berglind Harpa Svavarsdóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:06:57</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:09:11</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:11:35</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:13:50</td>
+	<td>Þórarinn Ingi Pétursson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:16:07</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:18:24</td>
+	<td>Hanna Katrín Friðriksson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:20:41</td>
+	<td>Tómas A. Tómasson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:23:24</td>
+	<td>Jódís Skúladóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:25:51</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:28:06</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:30:32</td>
+	<td>Þorgerður Katrín Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:32:48</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>173</td>
+	<td>2023-10-11T15:35:11</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:33:42</td>
+	<td>Jón Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:36:02</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:38:29</td>
+	<td>Berglind Harpa Svavarsdóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:40:56</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:43:13</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:45:28</td>
+	<td>Ingibjörg Isaksen</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:48:08</td>
+	<td>Þórhildur Sunna Ævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:50:26</td>
+	<td>Bryndís Haraldsdóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:52:55</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:55:25</td>
+	<td>Þorgerður Katrín Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T13:57:52</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T14:00:21</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T14:02:54</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T14:04:54</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>200</td>
+	<td>2023-10-17T14:07:17</td>
+	<td>Halla Signý Kristjánsdóttir</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:07:02</td>
+	<td>Njáll Trausti Friðbertsson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:09:12</td>
+	<td>Jón Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:11:50</td>
+	<td>Bryndís Haraldsdóttir</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:13:55</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:16:17</td>
+	<td>Líneik Anna Sævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:18:35</td>
+	<td>Logi Einarsson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:20:44</td>
+	<td>Hanna Katrín Friðriksson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:22:54</td>
+	<td>Ágúst Bjarni Garðarsson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:25:10</td>
+	<td>Tómas A. Tómasson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:27:42</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:30:09</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:32:23</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:34:43</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:37:03</td>
+	<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>202</td>
+	<td>2023-10-18T15:39:49</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:02:50</td>
+	<td>Líneik Anna Sævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:05:11</td>
+	<td>Jón Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:07:39</td>
+	<td>Vilhjálmur Árnason</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:09:54</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:12:19</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:14:37</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:16:47</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:19:15</td>
+	<td>Elva Dögg Sigurðardóttir</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:21:28</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:23:55</td>
+	<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:26:32</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:28:54</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:31:05</td>
+	<td>Birgir Ármannsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:31:34</td>
+	<td>Orri Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:33:24</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>235</td>
+	<td>2023-10-25T15:35:53</td>
+	<td>Guðmundur Andri Thorsson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:32:06</td>
+	<td>Þórhildur Sunna Ævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:34:38</td>
+	<td>Berglind Harpa Svavarsdóttir</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:36:56</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:39:15</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:41:46</td>
+	<td>Bryndís Haraldsdóttir</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:44:00</td>
+	<td>Njáll Trausti Friðbertsson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:46:17</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:48:24</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:50:45</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:53:18</td>
+	<td>Daði Már Kristófersson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:55:18</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:57:39</td>
+	<td>Halldóra Fríða Þorvaldsdóttir</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T13:59:42</td>
+	<td>Logi Einarsson</td>
+</tr>
+
+<tr>
+	<td>266</td>
+	<td>2023-11-07T14:04:23</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:05:58</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:08:20</td>
+	<td>Björgvin Jóhannesson</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:10:44</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:12:57</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:15:01</td>
+	<td>Lilja Rannveig Sigurgeirsdóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:17:00</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:19:25</td>
+	<td>Líneik Anna Sævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:21:41</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:24:09</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:26:32</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:28:47</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:31:00</td>
+	<td>Jódís Skúladóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:32:55</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:35:03</td>
+	<td>Halldór Auðar Svansson</td>
+</tr>
+
+<tr>
+	<td>273</td>
+	<td>2023-11-08T15:37:12</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:02:19</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:04:36</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:06:50</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:09:10</td>
+	<td>Magnús Árni Skjöld Magnússon</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:11:34</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:13:42</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:15:54</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:18:33</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:20:44</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:22:46</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:25:03</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:27:26</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:29:31</td>
+	<td>Jódís Skúladóttir</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:32:19</td>
+	<td>Halldór Auðar Svansson</td>
+</tr>
+
+<tr>
+	<td>317</td>
+	<td>2023-11-15T15:34:27</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:02:13</td>
+	<td>Hanna Katrín Friðriksson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:04:32</td>
+	<td>Ágúst Bjarni Garðarsson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:06:36</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:08:54</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:11:07</td>
+	<td>Hildur Sverrisdóttir</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:13:03</td>
+	<td>Vilhjálmur Árnason</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:15:40</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:18:11</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:20:21</td>
+	<td>Jóhann Friðrik Friðriksson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:22:28</td>
+	<td>Ragna Sigurðardóttir</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:24:57</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:27:22</td>
+	<td>Logi Einarsson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:29:34</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:31:49</td>
+	<td>Magnús Árni Skjöld Magnússon</td>
+</tr>
+
+<tr>
+	<td>338</td>
+	<td>2023-11-21T14:34:09</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:02:05</td>
+	<td>Líneik Anna Sævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:04:16</td>
+	<td>Bryndís Haraldsdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:06:34</td>
+	<td>Hildur Sverrisdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:08:55</td>
+	<td>Ragna Sigurðardóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:10:32</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:12:49</td>
+	<td>Lilja Rannveig Sigurgeirsdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:15:06</td>
+	<td>Halldóra Mogensen</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:17:27</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:19:36</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:21:57</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:24:27</td>
+	<td>Þórhildur Sunna Ævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:26:40</td>
+	<td>Halla Signý Kristjánsdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:28:44</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:31:13</td>
+	<td>Magnús Árni Skjöld Magnússon</td>
+</tr>
+
+<tr>
+	<td>341</td>
+	<td>2023-11-22T15:33:29</td>
+	<td>Orri Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:32:09</td>
+	<td>Eva Sjöfn Helgadóttir</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:34:26</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:37:07</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:39:43</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:42:10</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:44:41</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:47:02</td>
+	<td>Eyjólfur Ármannsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:49:18</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:51:37</td>
+	<td>Ágúst Bjarni Garðarsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:53:50</td>
+	<td>Lilja Rannveig Sigurgeirsdóttir</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:55:57</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T13:58:13</td>
+	<td>Berglind Harpa Svavarsdóttir</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T14:00:31</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T14:02:37</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>372</td>
+	<td>2023-11-28T14:04:53</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:33:43</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:35:42</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:37:49</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:39:44</td>
+	<td>Bjarni Jónsson</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:42:25</td>
+	<td>Bryndís Haraldsdóttir</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:44:50</td>
+	<td>Jón Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:47:17</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:49:07</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:51:23</td>
+	<td>Steinunn Þóra Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:53:57</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:56:22</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T13:58:41</td>
+	<td>Kári Gautason</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T14:00:36</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T14:03:00</td>
+	<td>Greta Ósk Óskarsdóttir</td>
+</tr>
+
+<tr>
+	<td>407</td>
+	<td>2023-12-05T14:05:41</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:02:43</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:05:12</td>
+	<td>Eyjólfur Ármannsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:07:59</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:10:15</td>
+	<td>Hanna Katrín Friðriksson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:12:51</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:15:14</td>
+	<td>Jón Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:17:43</td>
+	<td>Ingibjörg Isaksen</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:20:12</td>
+	<td>Valgerður Árnadóttir</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:22:31</td>
+	<td>Líneik Anna Sævarsdóttir</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:24:41</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:27:11</td>
+	<td>Arndís Anna Kristínardóttir Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:29:39</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:32:07</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:34:40</td>
+	<td>Orri Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>415</td>
+	<td>2023-12-06T15:36:39</td>
+	<td>Guðmundur Andri Thorsson</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:35:52</td>
+	<td>Jódís Skúladóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:38:06</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:40:21</td>
+	<td>Inga Sæland</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:42:37</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:44:49</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:47:12</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:49:30</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:51:38</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:53:51</td>
+	<td>Hafdís Hrönn Hafsteinsdóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:56:08</td>
+	<td>Sigmar Guðmundsson</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T13:58:21</td>
+	<td>Jón Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T14:00:47</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T14:03:11</td>
+	<td>Greta Ósk Óskarsdóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T14:05:38</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>453</td>
+	<td>2023-12-12T14:07:53</td>
+	<td>Lilja Rannveig Sigurgeirsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:02:36</td>
+	<td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:05:19</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:07:28</td>
+	<td>Diljá Mist Einarsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:09:43</td>
+	<td>Jakob Frímann Magnússon</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:12:30</td>
+	<td>Dagbjört Hákonardóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:14:49</td>
+	<td>Gunnhildur Fríða Hallgrímsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:17:02</td>
+	<td>Þorgerður Katrín Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:19:33</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:21:46</td>
+	<td>Greta Ósk Óskarsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:24:00</td>
+	<td>Björn Leví Gunnarsson</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:25:42</td>
+	<td>Bjarkey Olsen Gunnarsdóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:27:50</td>
+	<td>Jóhann Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:30:03</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:32:23</td>
+	<td>Ingibjörg Isaksen</td>
+</tr>
+
+<tr>
+	<td>462</td>
+	<td>2023-12-13T15:34:31</td>
+	<td>Njáll Trausti Friðbertsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:32:04</td>
+	<td>Birgir Þórarinsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:34:07</td>
+	<td>Orri Páll Jóhannsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:36:04</td>
+	<td>Guðmundur Ingi Kristinsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:38:19</td>
+	<td>Logi Einarsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:40:18</td>
+	<td>Hanna Katrín Friðriksson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:42:30</td>
+	<td>Halla Signý Kristjánsdóttir</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:44:33</td>
+	<td>Þórunn Sveinbjarnardóttir</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:46:41</td>
+	<td>Birgir Ármannsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:47:37</td>
+	<td>Ásthildur Lóa Þórsdóttir</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:50:34</td>
+	<td>Gunnhildur Fríða Hallgrímsdóttir</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:52:35</td>
+	<td>Gísli Rafn Ólafsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:54:54</td>
+	<td>Andrés Ingi Jónsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:57:33</td>
+	<td>Oddný G. Harðardóttir</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T11:59:52</td>
+	<td>Guðbrandur Einarsson</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T12:02:07</td>
+	<td>Bergþór Ólason</td>
+</tr>
+
+<tr>
+	<td>490</td>
+	<td>2023-12-15T12:03:58</td>
+	<td>Ásmundur Friðriksson</td>
+</tr>
+
+	</table>
+</body>
+</html>
