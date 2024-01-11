@@ -170,14 +170,16 @@ html_template = Template("""
 		'málsheiti': 'Störf þingsins', 
 		'slóðir': 
 			{
-			'xml': 'http://www.althingi.is/altext/xml/thingmalalisti/bmal/?lthing=154&malnr=490'}
-			}, 
-		'slóðir': 
-			{
-			'hljóð': 'http://www.althingi.is/raedur/play.mp3?start=2023-12-15T11:59:52&end=2023-12-15T12:02:03', 
-			'xml': 'http://www.althingi.is/xml/154/raedur/rad20231215T115952.xml', 
-			'html': 'http://www.althingi.is/altext/raeda/154/rad20231215T115952.html'}
+			'xml': 'http://www.althingi.is/altext/xml/thingmalalisti/bmal/?lthing=154&malnr=490'
 			}
+		}, 
+	'slóðir': 
+		{
+		'hljóð': 'http://www.althingi.is/raedur/play.mp3?start=2023-12-15T11:59:52&end=2023-12-15T12:02:03', 
+		'xml': 'http://www.althingi.is/xml/154/raedur/rad20231215T115952.xml', 
+		'html': 'http://www.althingi.is/altext/raeda/154/rad20231215T115952.html'
+		}
+}
 '''
 
 content_template = Template("""
@@ -191,9 +193,9 @@ content_template = Template("""
 content = ""
 for s in storfin:
 	#substitute $mrn, $dags, $speaker
-	#link = Template("<a href='$link'>$nafn</a>").safe_substitute(link=s[u'mál'][u'slóðir'][u'html'], nafn=s[u'nafn'])
+	link = Template("<a href='$link'>$nafn</a>").safe_substitute(link=s[u'slóðir'][u'html'], nafn=s[u'ræðumaður'][u'nafn'])
 	try:
-		content += content_template.substitute(mnr=s[u'mál'][u'málsnúmer'], dags=s[u'ræðahófst'], speaker=s[u'ræðumaður'][u'nafn'])
+		content += content_template.substitute(mnr=s[u'mál'][u'málsnúmer'], dags=s[u'ræðahófst'], speaker=link)
 	except:
 		print(s)
 
