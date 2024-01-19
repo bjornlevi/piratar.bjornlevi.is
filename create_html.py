@@ -22,6 +22,7 @@ SELECT
     tm.stadamals,
     r.utbyting,
     r.skjalategund,
+    tm.nefnd,
     tm.html,
     r.flutningsmadur_name,
     r.flutningsmadur_radherra,

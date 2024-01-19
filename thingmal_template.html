@@ -73,6 +73,9 @@
                 <th class="sorting">Skjalategund</th>
                 <th class="sorting">Flutningsmaður</th>
                 <th class="sorting">Þingflokkur</th>
+                {% if 'nefnd' in filter %}
+                <th class="sorting">Nefnd</th>
+                {% endif %}
                 <th class="sorting">Útbýting</th>
             </tr>
         </thead>
@@ -115,6 +118,7 @@
                     {% else %}
                         <td>{{ row.thingflokkur }}</td>
                     {% endif %}
+                    <td>{{ row.nefnd }}</td>
                     <td>{{ row.utbyting }}</td>
                 </tr>            
             {% elif filter == "rikisstjorn_bida_umraedu" and row.flutningsmadur_radherra and 'Bíður' in row.stadamals %}
@@ -169,6 +173,7 @@
                     {% else %}
                         <td>{{ row.thingflokkur }}</td>
                     {% endif %}
+                    <td>{{ row.nefnd }}</td>
                     <td>{{ row.utbyting }}</td>
                 </tr>                
             {% elif filter == "thingmannamal_bida_umraedu" and 'Bíður' in row.stadamals and not row.flutningsmadur_radherra %}

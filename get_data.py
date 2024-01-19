@@ -189,8 +189,6 @@ cursor.execute('''
         thingnumer INTEGER,
         utbyting TEXT,
         skjalategund TEXT,
-        html TEXT,
-        pdf TEXT,
         xml TEXT,
         UNIQUE(skjalsnumer, thingnumer)
     )
@@ -236,7 +234,7 @@ cursor.execute('''
         thingnumer INTEGER,
         malsnumer INTEGER,
         utbyting TEXT,
-        skjalategund TEXT,
+        skjalategund TEXT,      
         html TEXT,
         pdf TEXT,
         UNIQUE(skjalsnumer, thingnumer)
@@ -361,6 +359,7 @@ cursor.execute('''
         malstegund TEXT,
         stadamals TEXT,
         framsogumadur TEXT,
+        nefnd TEXT,
         html TEXT,
         xml TEXT,
         UNIQUE(malnumer, thingnumer)
@@ -396,13 +395,24 @@ for xml_link in xml_link_list:
         pass
     html = mal['slóð']['html']
     xml = mal['slóð']['xml']
+    # Find the first atkvæðagreiðsla containing the 'til' tag
+    nefnd = ''
+    if 'atkvæðagreiðslur' in data['þingmál']:
+        try:
+            at = data['þingmál']['atkvæðagreiðslur']['atkvæðagreiðsla']
+            for a in at:
+                if 'til' in a:
+                    nefnd = a['til']['#text']
+                    break
+        except:
+            pass
 
     # Insert or ignore the data into the database
     cursor.execute('''
         INSERT OR IGNORE INTO thingmal
-        (malnumer, thingnumer, malsheiti, malstegund, stadamals, framsogumadur, html, xml)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (malnumer, thingnumer, malsheiti, malstegund, stadamals, framsogumadur, html, xml))
+        (malnumer, thingnumer, malsheiti, malstegund, stadamals, framsogumadur, nefnd, html, xml)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (malnumer, thingnumer, malsheiti, malstegund, stadamals, framsogumadur, nefnd, html, xml))
 
     # Commit the changes
     conn.commit()
@@ -446,7 +456,7 @@ for raeda in data['ræðulisti']['ræða']:
             raeda_data = cache_or_fetch(raeda['slóðir']['xml'], force)
             raeda_texti = json.dumps(raeda_data['ræða']['ræðutexti'])
         except: 
-            print(raeda_texti)
+            pass
     else:
         raeda_texti = ""
 
