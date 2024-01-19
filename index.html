@@ -1,50 +1,89 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>piratar.bjornlevi.is - alls konar upplýsingar úr þinginu</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">    
+    <title>piratar.bjornlevi.is</title>
 </head>
 <body>
-<h1>piratar.bjornlevi.is</h1>
-<table>
-	<tr>
-		<th><h3>Ríkisstjórnarmál</h3></th>
-		<th><h3>Þingmannamál</h3></th>
-		<th><h3>Fyrirspurnir</h3></th>
-	</tr>
-	<tr>
-		<td><a href="government_waiting.html">Ríkistjórnarmál sem bíða umræðu</a></td>
-		<td><a href="waiting.html">Þingmál sem bíða umræðu</a></td>
-		<td><a href="asked.html">Ósvaraðar fyrirspurnir</a></td>
-	</tr>		
-	<tr>
-		<td><a href="government_committee.html">Ríkisstjórnarmál í nefnd</a></td>
-		<td><a href="in_committee.html">Þingmál í nefnd</a></td>
-		<td><a href="answered.html">Svaraðar fyrirspurnir</a></td>
-	</tr>
-	<tr>
-		<td colspan="3"><h3>Allt þingið</h3></td>
-	</tr>
-	<tr>
-		<td><a href="passed.html">Samþykkt mál</a></td>
-		<td colspan="2"><a href="storfin.html">Störf þingsins</a></td>
-	</tr>
-	<tr>
-		<td colspan="3"><h3>Aðrar upplýsingar</h3></td>
-	</tr>
-	<tr>
-		<td colspan="3"><a href="visitala.html">Vísitala neysluverðs</a></td>
-	</tr>
-</table>
-<script>
-	document.write("Skjalið var síðast uppfært: " + " " +document.lastModified);
-</script>
+    <h1 class="center">
+        <img src="img/piratar.png" height="40px">
+        <a href="index.html" class="header-link">Upplýsingasíða fyrir þingmál og fleira</a>
+        <img src="img/piratar.png" height="40px">
+    </h1>
+    <nav class="center">
+        
+            <div class="dropdown">
+                <button class="dropbtn">Ríkisstjórnarmál</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_rikisstjorn_bida_umraedu.html">Bíða umræðu</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_rikisstjorn_samthykkt.html">Samþykkt</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Þingmannamál</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_thingmannamal_samthykkt.html">Samþykkt</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Fyrirspurnir</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+    </nav>
+<img src="img/piratar.png" class="center">
 </body>
 </html>
