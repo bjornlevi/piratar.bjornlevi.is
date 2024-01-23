@@ -329,9 +329,6 @@ for xml_link in xml_link_list:
                     VALUES (?, ?, ?, ?)
                 ''', (skjalsnumer, rada, nafn, xml))
         elif isinstance(flutningsmenn, dict):
-            if skjalsnumer == 383:
-                print(thingskjal)
-                print(flutningsmenn['ráðherra'])
             rada = int(flutningsmenn['@röð'])
             nafn = ''
             try:
