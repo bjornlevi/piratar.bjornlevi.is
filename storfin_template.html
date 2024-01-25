@@ -13,7 +13,7 @@
     <h1 class="center">
         <img src="img/piratar.png" height="40px">        
         <a href="index.html" class="header-link">
-       Óundirbúnar fyrirspurnir
+       Störf þingsins
         </a>   
         <img src="img/piratar.png" height="40px">
     </h1>
@@ -40,8 +40,7 @@
         <thead>
             <tr>
                 <th>Málsnúmer</th>
-                <th>Fyrirspurn</th>
-                <th>Fyrirspyrjandi</th>
+                <th>Ræðumaður</th>
                 <th>Dagsetning</th>
                 <th>Þingflokkur</th>
                 <th class="hide_column">Ræða</th>         
@@ -51,8 +50,7 @@
             {% for row in rows %}
                 <tr>
                     <td class="details-control">{{ row.mal_numer }}</td>
-                    <td><a href="{{ row.raeda_html }}">{{ row.mal_heiti }}</a></td>
-                    <td>{{ row.nafn }}</td>
+                    <td><a href="{{ row.raeda_html }}">{{ row.nafn }}</a></td>
                     <td>{{ row.raeda_hofst }}</td>
                     <td>{{ row.thingflokkur }}</td>
                     <td class="hide_column">{{ row.raeda_texti }}</td>
@@ -63,7 +61,7 @@
     <script>
         function format ( d ) {
             // `d` is the original data object for the row
-            return '<div>'+d[5]+'</div>';
+            return '<div>'+d[4]+'</div>';
         }
 
         $(document).ready(function() {

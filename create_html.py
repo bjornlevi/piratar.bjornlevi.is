@@ -56,7 +56,8 @@ aliases = {
     "thingmal_thingmannamal_bida_umraedu.html": "Bíða umræðu",
     "thingmal_thingmannamal_i_nefnd.html": "Í nefnd",
     "thingmal_thingmannamal_samthykkt.html": "Samþykkt",
-    "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir"
+    "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir",
+    "raedur_storfin.html": "Störf þingsins"
     # Add more entries as needed
 }
 
@@ -180,6 +181,25 @@ template = env.get_template(template_file)
 # Render the template with the query results
 output_html = template.render(rows=rows, categories=categories, aliases=aliases)
 with open('raedur_oundirbunar.html', 'w') as f:
+    f.write(output_html)
+
+query = """select r.*, tm.* from raedur r
+join thingmenn tm on r.raedumadur = tm.nafn
+where mal_tegund = "st"
+"""
+cursor.execute(query)
+results = cursor.fetchall()
+columns = [column[0] for column in cursor.description]
+# Convert the list of tuples to a list of dictionaries
+rows = [dict(zip(columns, row)) for row in results]
+
+# Specify the template file and create a Jinja2 environment
+template_file = 'storfin_template.html'
+template = env.get_template(template_file)
+
+# Render the template with the query results
+output_html = template.render(rows=rows, categories=categories, aliases=aliases)
+with open('raedur_storfin.html', 'w') as f:
     f.write(output_html)
 
 conn.close()
