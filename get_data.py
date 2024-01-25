@@ -430,6 +430,7 @@ cursor.execute('''
         dagur TEXT,
         mal_numer INTEGER,
         mal_heiti TEXT,
+        mal_tegund TEXT,
         raeda_hofst TEXT,
         raeda_lauk TEXT,
         raeda_texti TEXT,
@@ -437,6 +438,24 @@ cursor.execute('''
     )
 ''')
 conn.commit()
+
+def fix_text(obj, indent = 1):
+    if isinstance(obj, list):
+        htmls = []
+        for k in obj:
+            htmls.append(fix_text(k,indent+1))
+
+        return '[<div style="margin-left: %dem">%s</div>]' % (indent, ',<br>'.join(htmls))
+
+    if isinstance(obj, dict):
+        htmls = []
+        for k in obj:
+            htmls.append("<span style='font-style: italic; color: #888'>%s</span>: %s" % (k,fix_text(obj[k],indent+1)))
+
+        return '{<div style="margin-left: %dem">%s</div>}' % (indent, ',<br>'.join(htmls))
+
+    return str(obj)
+
 # Iterate through the XML data and insert into the database
 counter = 1
 for raeda in data['ræðulisti']['ræða']:
@@ -454,11 +473,14 @@ for raeda in data['ræðulisti']['ræða']:
     if 'xml' in raeda['slóðir']:
         try:
             raeda_data = cache_or_fetch(raeda['slóðir']['xml'], force)
-            raeda_texti = json.dumps(raeda_data['ræða']['ræðutexti'])
-        except: 
-            pass
+            raeda_texti = fix_text(raeda_data['ræða']['ræðutexti'])
+        except Exception as e:
+            print(e)
+            raeda_texti = "Villa í XML ræðutexta, vinsamlega smellið á tengilinn hér fyrir ofan."
+        mal_tegund = raeda_data['ræða']['umsýsla']['mál']["@málstegund"]
     else:
         raeda_texti = ""
+        mal_tegund = ""
 
     if counter%20 == 0:
         print(str(round(counter/len(data['ræðulisti']['ræða']),2)*100)+"%", end='                \r')  
@@ -466,9 +488,9 @@ for raeda in data['ræðulisti']['ræða']:
 
     # Insert into the database
     cursor.execute('''
-        INSERT INTO raedur (raedumadur, dagur, mal_numer, mal_heiti, raeda_hofst, raeda_lauk, raeda_texti, raeda_html)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-    ''', (raedumadur, dagur, mal_numer, mal_heiti, raeda_hofst, raeda_lauk, raeda_texti, raeda_html))
+        INSERT INTO raedur (raedumadur, dagur, mal_numer, mal_heiti, mal_tegund, raeda_hofst, raeda_lauk, raeda_texti, raeda_html)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (raedumadur, dagur, mal_numer, mal_heiti, mal_tegund, raeda_hofst, raeda_lauk, raeda_texti, raeda_html))
 
 conn.commit()
 conn.close()

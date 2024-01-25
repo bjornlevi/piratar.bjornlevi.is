@@ -56,6 +56,7 @@ aliases = {
     "thingmal_thingmannamal_bida_umraedu.html": "Bíða umræðu",
     "thingmal_thingmannamal_i_nefnd.html": "Í nefnd",
     "thingmal_thingmannamal_samthykkt.html": "Samþykkt",
+    "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir"
     # Add more entries as needed
 }
 
@@ -64,6 +65,7 @@ categories = {
     "Ríkisstjórnarmál": [f for f in filtered_files if "thingmal_rikisstjorn" in f.lower()],
     "Þingmannamál": [f for f in filtered_files if "thingmal_thingmannamal" in f.lower()],
     "Fyrirspurnir": [f for f in filtered_files if "fyrirspurnir" in f.lower()],
+    "Ræður": [f for f in filtered_files if "raedur" in f.lower()],
 }
 
 
@@ -160,6 +162,26 @@ output_html = template.render(filter="svarad", rows=rows, categories=categories,
 with open('fyrirspurnir_svarad.html', 'w') as f:
     f.write(output_html)
 
+#Búa til html fyrir ræður. Óundirbúnar og störfin
+query = """select r.*, tm.* from raedur r
+join thingmenn tm on r.raedumadur = tm.nafn
+where mal_tegund = "ft"
+"""
+cursor.execute(query)
+results = cursor.fetchall()
+columns = [column[0] for column in cursor.description]
+# Convert the list of tuples to a list of dictionaries
+rows = [dict(zip(columns, row)) for row in results]
+
+# Specify the template file and create a Jinja2 environment
+template_file = 'oundirbunar_template.html'
+template = env.get_template(template_file)
+
+# Render the template with the query results
+output_html = template.render(rows=rows, categories=categories, aliases=aliases)
+with open('raedur_oundirbunar.html', 'w') as f:
+    f.write(output_html)
+
 conn.close()
 
 #create index file
@@ -172,3 +194,4 @@ template = template_env.get_template("index_template.html")
 output = template.render(categories=categories, aliases=aliases)
 with open("index.html", "w") as index_file:
     index_file.write(output)
+
