@@ -8,7 +8,7 @@ import json
 
 force = False
 try:
-    if sys.argv[1] == "True":
+    if sys.argv[2] == "True":
       force = True
 except:
     sys.exit(0)
@@ -405,8 +405,6 @@ for xml_link in xml_link_list:
                     break
         except:
             pass
-
-    print(malnumer, stadamals)
 
     # Insert or ignore the data into the database
     cursor.execute('''
