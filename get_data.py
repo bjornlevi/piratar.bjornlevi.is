@@ -13,6 +13,8 @@ try:
 except:
     sys.exit(0)
 
+print(force)
+
 def cache_file(url, contents):
   file_name = "cache/"+url.replace('/','-')
   with open(file_name, "w") as f:
@@ -56,7 +58,6 @@ try:
     if os.path.exists('thing.db'):
         os.remove('thing.db')
 except Exception as e:
-    print(e)
     sys.exit(0)
 
 # Ná í upplýsingar um löggjafarþing
@@ -175,7 +176,6 @@ for mal in mal_list:
     except sqlite3.Error as e:
         # Rollback the transaction in case of an error
         conn.rollback()
-        print(f"Error: {e}")
 
 # Ná í upplýsingar um þingskjöl
 print("Næ i þingskjalalista")
@@ -220,7 +220,6 @@ for thingskjal in thingskjol_list:
     except sqlite3.Error as e:
         # Rollback the transaction in case of an error
         conn.rollback()
-        print(f"Error: {e}")
 
 #Ná í upplýsingar um einstaka þingskjöl
 print("Næ í upplýsingar um einstaka þingskjöl")
@@ -406,6 +405,8 @@ for xml_link in xml_link_list:
                     break
         except:
             pass
+
+    print(malnumer, stadamals)
 
     # Insert or ignore the data into the database
     cursor.execute('''
