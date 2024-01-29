@@ -123,6 +123,7 @@ query = """SELECT
     t1.malsnumer,
     tm.html,
     tm.malsheiti,
+    tm.stadamals,
     t1.utbyting,
     t1.skjalategund,
     CASE

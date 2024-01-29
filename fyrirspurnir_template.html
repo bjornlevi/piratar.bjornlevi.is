@@ -53,16 +53,16 @@
         </thead>
         <tbody>
             {% for row in rows %}
-                {% if filter == "osvarad" %}
+                {% if "ekki verið" in row.stadamals and filter == "osvarad"%}
                     <tr>
                         <td>{{ row.malsnumer }}</td>
                         <td><a href="{{ row.html }}">{{ row.malsheiti }}</a></td>
                         <td>{{ row.nafn }}</td>
                         <td>{{ row.utbyting }}</td>
-                        <td>Ekkert svar</td>
+                        <td>{{ row.stadamals }}</td>
                         <td>{{ row.days_between }}</td>
                     </tr>
-                {% elif row.svar_dagsetning and filter == "svarad"%}
+                {% elif "var svarað" in row.stadamals and filter == "svarad" %}
                     <tr>
                         <td>{{ row.malsnumer }}</td>
                         <td><a href="{{ row.html }}">{{ row.malsheiti }}</a></td>
