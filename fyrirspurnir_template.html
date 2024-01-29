@@ -60,7 +60,7 @@
                         <td>{{ row.nafn }}</td>
                         <td>{{ row.utbyting }}</td>
                         <td>{{ row.stadamals }}</td>
-                        <td>{{ row.days_between }}</td>
+                        <td>{{ row.days_between|round }}</td>
                     </tr>
                 {% elif "var svarað" in row.stadamals and filter == "svarad" %}
                     <tr>
@@ -69,7 +69,7 @@
                         <td>{{ row.nafn }}</td>
                         <td>{{ row.utbyting }}</td>
                         <td>{{ row.svar_dagsetning }}</td>
-                        <td>{{ row.days_between }}</td>
+                        <td>{{ row.days_between|round }}</td>
                     </tr>
                 {% endif %}
             {% endfor %}
