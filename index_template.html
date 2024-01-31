@@ -42,7 +42,8 @@
                     {{ row.malsheiti }}
                 {% else %}
                     {% if row.html_link %}
-                        <a href="{{ row.html_link }}">{{ row.malsheiti }}</a> - {{ row.skjalategund }} - {{ row.umraeda }} - 
+                        <a href="{{ row.html_link }}">{{ row.malsheiti }}</a> 
+                        - {{ row.skyring }} - {{ row.skjalategund }} - {{ row.umraeda }} - 
                     {% else %}
                         {{ row.malsheiti }}
                     {% endif %}            

@@ -500,7 +500,7 @@ conn.commit()
 #Ná í dagskrá þingsins
 print("Næ i dagskrá þingsins")
 url = "https://www.althingi.is/altext/xml/dagskra/thingfundur/"
-data = cache_or_fetch(url, True)
+data = cache_or_fetch(url, force)
 
 # Create tables to store the parsed data
 cursor.execute('''
@@ -513,43 +513,49 @@ cursor.execute('''
         malsnumer INTEGER,
         malsstegund TEXT,
         malsflokkur TEXT,
+        skyring TEXT,
         umraeda TEXT,
         html_link TEXT,
         PRIMARY KEY (thingfundur_numer, lidur_numer)
     )
 ''')
-try: #ef það er enginn þingfundur
-    # Insert parsed data into the SQLite tables
-    thingfundur = data['dagskráþingfundar']['þingfundur']
-    thingfundur_numer = thingfundur['@númer']
-    fundarheiti = thingfundur['fundarheiti']
-    hefst = thingfundur['hefst']['texti']
+
+# Insert parsed data into the SQLite tables
+thingfundur = data['dagskráþingfundar']['þingfundur']
+thingfundur_numer = thingfundur['@númer']
+fundarheiti = thingfundur['fundarheiti']
+hefst = thingfundur['hefst']['texti']
 
 
-    # Insert data from dagskrárliður elements
-    for dagskrarlidur in thingfundur['dagskrá']['dagskrárliður']:
-        lidur_numer = dagskrarlidur['@númer']
-        malsnumer = dagskrarlidur['mál']['@málsnúmer']
-        malsheiti = dagskrarlidur['mál']['málsheiti']
-        malsflokkur = dagskrarlidur['mál']['@málsflokkur']
-        if 'umræða' in dagskrarlidur:
-            if '#text' in dagskrarlidur['umræða']:
-                umraeda = dagskrarlidur['umræða']['#text']
-            else:
-                umraeda = ''
+# Insert data from dagskrárliður elements
+for dagskrarlidur in thingfundur['dagskrá']['dagskrárliður']:
+    lidur_numer = dagskrarlidur['@númer']
+    malsnumer = dagskrarlidur['mál']['@málsnúmer']
+    malsheiti = dagskrarlidur['mál']['málsheiti']
+    malsflokkur = dagskrarlidur['mál']['@málsflokkur']
+    if 'athugasemd' in dagskrarlidur:
+        if 'skýring' in dagskrarlidur['athugasemd']:
+            skyring = dagskrarlidur['athugasemd']['skýring']
+        else:
+            skyring = ''
+    else:
+        skyring = ''
+    if 'umræða' in dagskrarlidur:
+        if '#text' in dagskrarlidur['umræða']:
+            umraeda = dagskrarlidur['umræða']['#text']
         else:
             umraeda = ''
-        html_link = dagskrarlidur['mál']['html']
+    else:
+        umraeda = ''
+    html_link = dagskrarlidur['mál']['html']
 
-        cursor.execute('''
-            INSERT INTO dagskra
-            (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, umraeda, html_link)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, umraeda, html_link))
+    cursor.execute('''
+        INSERT INTO dagskra
+        (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ''', (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link))
 
-    # Commit changes and close connection
-    conn.commit()
-except:
-    pass
+# Commit changes and close connection
+conn.commit()
 
 conn.close()
