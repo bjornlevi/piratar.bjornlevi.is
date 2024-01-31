@@ -20,6 +20,7 @@ SELECT
     r.malsnumer,
     tm.malsheiti,
     tm.stadamals,
+    m.efnisgreining,
     r.utbyting,
     r.skjalategund,
     tm.nefnd,
@@ -31,6 +32,7 @@ FROM
     RankedFlutningsmadur r
 JOIN
     thingmal tm ON r.malsnumer = tm.malnumer
+JOIN malaskra m ON r.malsnumer = m.malsnumer
 LEFT JOIN
     thingmenn tm ON r.flutningsmadur_name = tm.nafn
 WHERE
