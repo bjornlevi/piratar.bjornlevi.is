@@ -203,16 +203,29 @@ output_html = template.render(rows=rows, categories=categories, aliases=aliases)
 with open('raedur_storfin.html', 'w') as f:
     f.write(output_html)
 
-conn.close()
-
 #create index file
+#dagskrá þingsins
+query = """SELECT *, count(d.malsnumer) FROM dagskra d
+join thingskjal ts on ts.malsnumer = d.malsnumer
+join flutningsmadur f on f.skjalsnumer = ts.skjalsnumer
+group by d.malsnumer
+order by d.lidur_numer
+"""
+
+cursor.execute(query)
+results = cursor.fetchall()
+columns = [column[0] for column in cursor.description]
+# Convert the list of tuples to a list of dictionaries
+rows = [dict(zip(columns, row)) for row in results]
+
 # Jinja2 template for index.html
 template_loader = FileSystemLoader(searchpath="./")
 template_env = Environment(loader=template_loader)
 template = template_env.get_template("index_template.html")
 
 # Generate index.html
-output = template.render(categories=categories, aliases=aliases)
+output = template.render(categories=categories, rows=rows, aliases=aliases)
 with open("index.html", "w") as index_file:
     index_file.write(output)
 
+conn.close()

@@ -255,7 +255,11 @@ conn.commit()
 counter = 0
 for xml_link in xml_link_list:    
     counter += 1
-    data = cache_or_fetch(xml_link[0], force)
+    try:
+        data = cache_or_fetch(xml_link[0], force)
+    except:
+        print(xml_link)
+        pass
     if counter%20 == 0:
         print(str(round(counter/len(xml_link_list),2)*100)+"%", end='               \r')
 
@@ -492,4 +496,60 @@ for raeda in data['ræðulisti']['ræða']:
     ''', (raedumadur, dagur, mal_numer, mal_heiti, mal_tegund, raeda_hofst, raeda_lauk, raeda_texti, raeda_html))
 
 conn.commit()
+
+#Ná í dagskrá þingsins
+print("Næ i dagskrá þingsins")
+url = "https://www.althingi.is/altext/xml/dagskra/thingfundur/"
+data = cache_or_fetch(url, True)
+
+# Create tables to store the parsed data
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS dagskra (
+        thingfundur_numer INTEGER,
+        fundarheiti TEXT,
+        hefst TEXT,
+        lidur_numer INTEGER,
+        malsheiti TEXT,
+        malsnumer INTEGER,
+        malsstegund TEXT,
+        malsflokkur TEXT,
+        umraeda TEXT,
+        html_link TEXT,
+        PRIMARY KEY (thingfundur_numer, lidur_numer)
+    )
+''')
+try: #ef það er enginn þingfundur
+    # Insert parsed data into the SQLite tables
+    thingfundur = data['dagskráþingfundar']['þingfundur']
+    thingfundur_numer = thingfundur['@númer']
+    fundarheiti = thingfundur['fundarheiti']
+    hefst = thingfundur['hefst']['texti']
+
+
+    # Insert data from dagskrárliður elements
+    for dagskrarlidur in thingfundur['dagskrá']['dagskrárliður']:
+        lidur_numer = dagskrarlidur['@númer']
+        malsnumer = dagskrarlidur['mál']['@málsnúmer']
+        malsheiti = dagskrarlidur['mál']['málsheiti']
+        malsflokkur = dagskrarlidur['mál']['@málsflokkur']
+        if 'umræða' in dagskrarlidur:
+            if '#text' in dagskrarlidur['umræða']:
+                umraeda = dagskrarlidur['umræða']['#text']
+            else:
+                umraeda = ''
+        else:
+            umraeda = ''
+        html_link = dagskrarlidur['mál']['html']
+
+        cursor.execute('''
+            INSERT INTO dagskra
+            (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, umraeda, html_link)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, umraeda, html_link))
+
+    # Commit changes and close connection
+    conn.commit()
+except:
+    pass
+
 conn.close()

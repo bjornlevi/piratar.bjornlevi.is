@@ -32,6 +32,31 @@
             </div>
         {% endfor %}
     </nav>
-<img src="img/piratar.png" class="center">
+    {% if rows is defined and rows|length > 0 %}
+        <h2>Dagskrá fundar: {{ rows[0].fundarheiti }}</h2>
+        <h3>{{ rows[0].hefst }}</h3>
+        <ol>
+        {% for row in rows %}
+            <li>
+                {% if row.malsflokkur == 'B' %}
+                    {{ row.malsheiti }}
+                {% else %}
+                    {% if row.html_link %}
+                        <a href="{{ row.html_link }}">{{ row.malsheiti }}</a> - {{ row.skjalategund }} - {{ row.umraeda }} - 
+                    {% else %}
+                        {{ row.malsheiti }}
+                    {% endif %}            
+                    {% if row.radherra %}
+                        {{ row.radherra }}
+                    {% else %}
+                        {{ row.nafn }}
+                    {% endif %}
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <h2>Engin dagskrá komin fyrir næsta fund</h2>
+    {% endif %}
 </body>
 </html>
