@@ -37,7 +37,7 @@ JOIN malaskra m ON r.malsnumer = m.malsnumer
 LEFT JOIN
     thingmenn tm ON r.flutningsmadur_name = tm.nafn
 WHERE
-    r.skjalategund IN ('frumvarp', 'þáltill.', 'stjórnarfrumvarp', 'stjórnartillaga')
+    r.skjalategund IN ('frumvarp', 'þáltill.', 'stjórnarfrumvarp', 'stjórnartillaga', 'frumvarp nefndar')
     AND r.row_num = 1;"""
 
 #Prepare navigation
@@ -143,7 +143,7 @@ nefnd_alias = {
     "VEL": "Velferðarnefnd",
     "FRA": "Framtíðarnefnd"
 }
-output_html = template.render(rows=rows, filter='AVN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+output_html = template.render(rows=rows, filter='AMN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
 with open('nefndir_AMN.html', 'w') as f:
     f.write(output_html)
 output_html = template.render(rows=rows, filter='ATV', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
