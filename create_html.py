@@ -171,7 +171,6 @@ output_html = template.render(rows=rows, filter='FRA', nefnd_alias=nefnd_alias, 
 with open('nefndir_FRA.html', 'w') as f:
     f.write(output_html)
 
-
 print("Upplýsingar um þingskjöl tilbúin")
 
 #Búa til html um fyrirspurnir

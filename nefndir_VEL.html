@@ -2,19 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nefndir - Velferðarnefnd</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="style.css">    
-    <style>
-        /* Optional: Set a max-width for the table container to prevent it from expanding too much */
-        #table-container {
-            max-width: 100%;
-            overflow-x: auto;
-        }
-    </style>    
+    <link rel="stylesheet" href="style.css">   
 </head>
 <body>    
     <h1 class="center">
@@ -25,2509 +17,1621 @@
         <img src="img/piratar.png" height="40px">
     </h1>
     <nav class="center">
-    
-        <div class="dropdown">
-            <button class="dropbtn">Ríkisstjórnarmál</button>
-            <div class="dropdown-content">
-                <table>
-                    <tr>
-                        <th></th>
-                    </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_rikisstjorn_bida_umraedu.html">Bíða umræðu</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_rikisstjorn_samthykkt.html">Samþykkt</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
-                        </tr>
-                    
-                </table>
-            </div>
-        </div>
-    
-        <div class="dropdown">
-            <button class="dropbtn">Þingmannamál</button>
-            <div class="dropdown-content">
-                <table>
-                    <tr>
-                        <th></th>
-                    </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_thingmannamal_samthykkt.html">Samþykkt</a></td>
-                        </tr>
-                    
-                </table>
-            </div>
-        </div>
-    
-        <div class="dropdown">
-            <button class="dropbtn">Nefndir</button>
-            <div class="dropdown-content">
-                <table>
-                    <tr>
-                        <th></th>
-                    </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_UMS.html">Umhverfis- og samgöngunefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_UTN.html">Utanríkismálanefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_SEN.html">Stjórnskipunar- og eftirlitsnefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_EVN.html">Efnahags- og viðskiptanefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_ATV.html">Atvinnuveganefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_FLN.html">Fjárlaganefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_AMN.html">Allsherjar- og menntamálanefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_VEL.html">Velferðarnefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_FRA.html">Framtíðarnefnd</a></td>
-                        </tr>
-                    
-                </table>
-            </div>
-        </div>
-    
-        <div class="dropdown">
-            <button class="dropbtn">Fyrirspurnir</button>
-            <div class="dropdown-content">
-                <table>
-                    <tr>
-                        <th></th>
-                    </tr>
-                    
-                        <tr>
-                            <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
-                        </tr>
-                    
-                </table>
-            </div>
-        </div>
-    
-        <div class="dropdown">
-            <button class="dropbtn">Ræður</button>
-            <div class="dropdown-content">
-                <table>
-                    <tr>
-                        <th></th>
-                    </tr>
-                    
-                        <tr>
-                            <td><a href="raedur_oundirbunar.html">Óundirbúnar fyrirspurnir</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="raedur_storfin.html">Störf þingsins</a></td>
-                        </tr>
-                    
-                </table>
-            </div>
-        </div>
-    
-        <div class="dropdown">
-            <button class="dropbtn">Gögn</button>
-            <div class="dropdown-content">
-                <table>
-                    <tr>
-                        <th></th>
-                    </tr>
-                    
-                        <tr>
-                            <td><a href="gogn_visitala.html">Vísitala neysluverðs</a></td>
-                        </tr>
-                    
-                </table>
-            </div>
-        </div>
         
+            <div class="dropdown">
+                <button class="dropbtn">Ríkisstjórnarmál</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_rikisstjorn_bida_umraedu.html">Bíða umræðu</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_rikisstjorn_samthykkt.html">Samþykkt</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Þingmannamál</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="thingmal_thingmannamal_samthykkt.html">Samþykkt</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Nefndir</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_UMS.html">Umhverfis- og samgöngunefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_UTN.html">Utanríkismálanefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_SEN.html">Stjórnskipunar- og eftirlitsnefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_EVN.html">Efnahags- og viðskiptanefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_ATV.html">Atvinnuveganefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_FLN.html">Fjárlaganefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_AMN.html">Allsherjar- og menntamálanefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_VEL.html">Velferðarnefnd</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="nefndir_FRA.html">Framtíðarnefnd</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Fyrirspurnir</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Ræður</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="raedur_oundirbunar.html">Óundirbúnar fyrirspurnir</a></td>
+                            </tr>
+                        
+                            <tr>
+                                <td><a href="raedur_storfin.html">Störf þingsins</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn">Gögn</button>
+                <div class="dropdown-content">
+                    <table>
+                        <tr>
+                            <th></th>
+                        </tr>
+                        
+                            <tr>
+                                <td><a href="gogn_visitala.html">Vísitala neysluverðs</a></td>
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+            
     </nav>
-    <div id="table-container">
-        <table id="nefndir" class="display stripe" style="width:100%">
-            <thead>
+    <table class="stripe" id="nefndir" border="1">
+        <thead>
+            <tr>
+                <th class="sorting">Malsnr.</th>
+                <th class="sorting">Staða máls</th>
+                <th class="sorting">Málsheiti</th>
+                <th class="sorting">Skjalategund</th>
+                <th class="sorting">Flutningsmaður</th>
+                <th class="sorting">Þingflokkur</th>
+                <th class="sorting">Nefnd</th>
+                <th class="sorting">Útbýting</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            
+        
+            
+        
+            
+        
+            
                 <tr>
-                    <th class="sorting">Malsnr.</th>
-                    <th class="sorting">Staða máls</th>
-                    <th class="sorting">Málsheiti</th>
-                    <th class="sorting">Skjalategund</th>
-                    <th class="sorting">Flutningsmaður</th>
-                    <th class="sorting">Þingflokkur</th>
-                    <th class="sorting">Nefnd</th>
-                    <th class="sorting">Útbýting</th>
-                </tr>
-            </thead>
-            <tbody>
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>4</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=4">
-                                skattleysi launatekna undir 400.000 kr.
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Inga Sæland</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-13 19:42</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>8</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=8">
-                                þróunaráætlun og tilraunaverkefni fyrir ræktun lyfjahamps og notkun kannabislyfja í lækningaskyni
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Ásmundur Friðriksson</td>
-                        
-                        
-                            <td>Sjálfstæðisflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 15:43</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>10</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=10">
-                                leyfisskylda og eftirlit með áfangaheimilum
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Jódís Skúladóttir</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-26 16:21</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>11</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=11">
-                                fæðingar- og foreldraorlof
-                                
-                                    (afkomuöryggi, meðgönguorlof, vinnutímastytting foreldris)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Jóhann Páll Jóhannsson</td>
-                        
-                        
-                            <td>Samfylkingin</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-18 17:10</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>16</td>
-                        <td>Bíður 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=16">
-                                tæknifrjóvgun o.fl.
-                                
-                                    (greiðsluþátttaka hins opinbera)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Hildur Sverrisdóttir</td>
-                        
-                        
-                            <td>Sjálfstæðisflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-19 13:14</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>19</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=19">
-                                þjóðarmarkmið um fastan heimilislækni og heimilisteymi
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Kristrún Frostadóttir</td>
-                        
-                        
-                            <td>Samfylkingin</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-11-06 14:41</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>20</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=20">
-                                almannatryggingar
-                                
-                                    (fjárhæðir fylgi launavísitölu)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Inga Sæland</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 11:18</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>27</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=27">
-                                greiðsluaðlögun einstaklinga
-                                
-                                    (málsmeðferð og skilyrði)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>félags- og vinnumarkaðsráðherra</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-12-01 15:19</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>28</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=28">
-                                húsaleigulög
-                                
-                                    (réttarstaða leigjanda íbúðarhúsnæðis og leigubremsa)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Inga Sæland</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 12:38</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>36</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=36">
-                                samningur Sameinuðu þjóðanna um réttindi fatlaðs fólks
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Inga Sæland</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 12:46</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>54</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=54">
-                                fjármögnun á tækjakosti til bráðagreiningar á heilsugæslunni á Egilsstöðum
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Berglind Harpa Svavarsdóttir</td>
-                        
-                        
-                            <td>Sjálfstæðisflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-13 19:43</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>59</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=59">
-                                þjónusta vegna vímuefnavanda
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Diljá Mist Einarsdóttir</td>
-                        
-                        
-                            <td>Sjálfstæðisflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-13 19:43</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>76</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=76">
-                                þjónustu- og þekkingarmiðstöð fyrir blinda, sjónskerta og einstaklinga með samþætta sjón- og heyrnarskerðingu
-                                
-                                    (heiti stofnunar)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Inga Sæland</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 12:38</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>77</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=77">
-                                ókeypis getnaðarvarnir fyrir einstaklinga yngri en 25 ára
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Lilja Rannveig Sigurgeirsdóttir</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 12:46</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>79</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=79">
-                                réttindi og skyldur starfsmanna ríkisins
-                                
-                                    (áminningar og setning embættismanna um stundarsakir)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Diljá Mist Einarsdóttir</td>
-                        
-                        
-                            <td>Sjálfstæðisflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 14:33</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>83</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=83">
-                                aðgerðaáætlun til að efla Sjúkrahúsið á Akureyri
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Ingibjörg Isaksen</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 14:14</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>95</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=95">
-                                skipun starfshóps um rétt til að annast veikt eða slasað barn
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Bjarkey Olsen Gunnarsdóttir</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-14 17:13</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>102</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=102">
-                                ávana- og fíkniefni
-                                
-                                    (afglæpavæðing vörslu neysluskammta)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Halldóra Mogensen</td>
-                        
-                        
-                            <td>Píratar</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-18 14:45</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>108</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=108">
-                                almannatryggingar
-                                
-                                    (frítekjumark vegna lífeyristekna)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Inga Sæland</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-18 14:45</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>111</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=111">
-                                almannatryggingar
-                                
-                                    (raunleiðrétting)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Björn Leví Gunnarsson</td>
-                        
-                        
-                            <td>Píratar</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-18 14:45</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>138</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=138">
-                                almannatryggingar
-                                
-                                    (aldursviðbót)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Guðmundur Ingi Kristinsson</td>
-                        
-                        
-                            <td>Flokkur fólksins</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-19 13:15</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>141</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=141">
-                                réttindi og skyldur starfsmanna ríkisins
-                                
-                                    (stöðuveitingar)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Jóhann Páll Jóhannsson</td>
-                        
-                        
-                            <td>Samfylkingin</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-19 15:08</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>224</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=224">
-                                lyfjalög og lækningatæki
-                                
-                                    (upplýsingar um birgðastöðu)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>heilbrigðisráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-20 18:19</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>225</td>
-                        <td>Samþykkt sem lög frá Alþingi.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=225">
-                                heilbrigðisþjónusta o.fl.
-                                
-                                    (refsiábyrgð heilbrigðisstofnana og rannsókn alvarlegra atvika)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>heilbrigðisráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-20 17:41</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>226</td>
-                        <td>Samþykkt sem lög frá Alþingi.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=226">
-                                tóbaksvarnir
-                                
-                                    (innihaldsefni, umbúðir o.fl.)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>heilbrigðisráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-20 17:49</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>241</td>
-                        <td>Samþykkt sem ályktun Alþingis.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=241">
-                                framkvæmdaáætlun á sviði barnaverndar 2023--2027
-                                
-                            </a></td>
-                        <td>stjórnartillaga</td>
-                        
-                            <td>mennta- og barnamálaráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-26 13:17</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>264</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=264">
-                                sorgarleyfi
-                                
-                                    (makamissir)
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
-                        
-                        
-                            <td>Viðreisn</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-09-28 10:23</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>313</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=313">
-                                félagafrelsi á vinnumarkaði
-                                
-                            </a></td>
-                        <td>frumvarp</td>
-                        
-                            <td>Óli Björn Kárason</td>
-                        
-                        
-                            <td>Sjálfstæðisflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-10-09 14:33</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>384</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=384">
-                                sjúkrahúsinu á Akureyri verði gert kleift að framkvæma hjartaþræðingar
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Logi Einarsson</td>
-                        
-                        
-                            <td>Samfylkingin</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-10-18 17:08</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>402</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=402">
-                                gjaldfrjálsar skólamáltíðir og umgjörð þeirra
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Steinunn Þóra Árnadóttir</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-10-24 13:09</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>408</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=408">
-                                innleiðing lýðheilsumats í íslenska löggjöf
-                                
-                            </a></td>
-                        <td>þáltill.</td>
-                        
-                            <td>Jóhann Friðrik Friðriksson</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-10-25 14:43</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>497</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=497">
-                                barnaverndarlög og félagsþjónusta sveitarfélaga
-                                
-                                    (reglugerðarheimildir)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>mennta- og barnamálaráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-11-13 16:41</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>508</td>
-                        <td>Samþykkt sem lög frá Alþingi.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=508">
-                                tímabundinn stuðningur til greiðslu launa vegna náttúruhamfara í Grindavíkurbæ
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>félags- og vinnumarkaðsráðherra</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-11-17 15:59</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>509</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=509">
-                                húsnæðisstefna fyrir árin 2024--2038 ásamt fimm ára aðgerðaáætlun fyrir árin 2024--2028
-                                
-                            </a></td>
-                        <td>stjórnartillaga</td>
-                        
-                            <td>innviðaráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-11-20 14:59</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>537</td>
-                        <td>Samþykkt sem lög frá Alþingi.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=537">
-                                sértækur húsnæðisstuðningur vegna náttúruhamfara í Grindavíkurbæ
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>innviðaráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-11-27 15:18</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>583</td>
-                        <td>Samþykkt sem lög frá Alþingi.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=583">
-                                almennar íbúðir og húsnæðismál
-                                
-                                    (almennar íbúðir vegna náttúruhamfara í Grindavíkurbæ)
-                                
-                            </a></td>
-                        <td>frumvarp nefndar</td>
-                        
-                            <td>Líneik Anna Sævarsdóttir</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-12-14 22:27</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>584</td>
-                        <td>Í nefnd eftir fyrri umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=584">
-                                framkvæmdaáætlun í málefnum fatlaðs fólks fyrir árin 2024--2027
-                                
-                            </a></td>
-                        <td>stjórnartillaga</td>
-                        
-                            <td>félags- og vinnumarkaðsráðherra</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2023-12-15 16:26</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>609</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=609">
-                                tímabundinn stuðningur til greiðslu launa vegna náttúruhamfara í Grindavíkurbæ
-                                
-                                    (framlenging)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>félags- og vinnumarkaðsráðherra</td>
-                        
-                        
-                            <td>Vinstrihreyfingin - grænt framboð</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2024-01-23 14:19</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-                    <tr>
-                        <td>618</td>
-                        <td>Í nefnd eftir 1. umræðu.</td>
-                        <td>
-                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=618">
-                                sértækur húsnæðisstuðningur vegna náttúruhamfara í Grindavíkurbæ
-                                
-                                    (framlenging gildistíma stuðningsúrræðis)
-                                
-                            </a></td>
-                        <td>stjórnarfrumvarp</td>
-                        
-                            <td>innviðaráðherra</td>
-                        
-                        
-                            <td>Framsóknarflokkur</td>
-                        
-                        <td>velferðarnefnd</td>
-                        <td>2024-01-24 13:09</td>
-                    </tr>    
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            <!-- render different rows based on filter: -->
-            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
-                
-            
-            </tbody>            
-        </table>
-    </div>
+                    <td>4</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=4">
+                            skattleysi launatekna undir 400.000 kr.
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Inga Sæland</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-13 19:42</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>8</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=8">
+                            þróunaráætlun og tilraunaverkefni fyrir ræktun lyfjahamps og notkun kannabislyfja í lækningaskyni
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Ásmundur Friðriksson</td>
+                    
+                    
+                        <td>Sjálfstæðisflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 15:43</td>
+                </tr>    
+            
+        
+            
+        
+            
+                <tr>
+                    <td>10</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=10">
+                            leyfisskylda og eftirlit með áfangaheimilum
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Jódís Skúladóttir</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-26 16:21</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>11</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=11">
+                            fæðingar- og foreldraorlof
+                            
+                                (afkomuöryggi, meðgönguorlof, vinnutímastytting foreldris)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Jóhann Páll Jóhannsson</td>
+                    
+                    
+                        <td>Samfylkingin</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-18 17:10</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>16</td>
+                    <td>Bíður 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=16">
+                            tæknifrjóvgun o.fl.
+                            
+                                (greiðsluþátttaka hins opinbera)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Hildur Sverrisdóttir</td>
+                    
+                    
+                        <td>Sjálfstæðisflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-19 13:14</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>19</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=19">
+                            þjóðarmarkmið um fastan heimilislækni og heimilisteymi
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Kristrún Frostadóttir</td>
+                    
+                    
+                        <td>Samfylkingin</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-11-06 14:41</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>20</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=20">
+                            almannatryggingar
+                            
+                                (fjárhæðir fylgi launavísitölu)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Inga Sæland</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 11:18</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>27</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=27">
+                            greiðsluaðlögun einstaklinga
+                            
+                                (málsmeðferð og skilyrði)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>félags- og vinnumarkaðsráðherra</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-12-01 15:19</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>28</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=28">
+                            húsaleigulög
+                            
+                                (réttarstaða leigjanda íbúðarhúsnæðis og leigubremsa)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Inga Sæland</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 12:38</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>36</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=36">
+                            samningur Sameinuðu þjóðanna um réttindi fatlaðs fólks
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Inga Sæland</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 12:46</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>54</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=54">
+                            fjármögnun á tækjakosti til bráðagreiningar á heilsugæslunni á Egilsstöðum
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Berglind Harpa Svavarsdóttir</td>
+                    
+                    
+                        <td>Sjálfstæðisflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-13 19:43</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>59</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=59">
+                            þjónusta vegna vímuefnavanda
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Diljá Mist Einarsdóttir</td>
+                    
+                    
+                        <td>Sjálfstæðisflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-13 19:43</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>76</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=76">
+                            þjónustu- og þekkingarmiðstöð fyrir blinda, sjónskerta og einstaklinga með samþætta sjón- og heyrnarskerðingu
+                            
+                                (heiti stofnunar)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Inga Sæland</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 12:38</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>77</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=77">
+                            ókeypis getnaðarvarnir fyrir einstaklinga yngri en 25 ára
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Lilja Rannveig Sigurgeirsdóttir</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 12:46</td>
+                </tr>    
+            
+        
+            
+        
+            
+                <tr>
+                    <td>79</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=79">
+                            réttindi og skyldur starfsmanna ríkisins
+                            
+                                (áminningar og setning embættismanna um stundarsakir)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Diljá Mist Einarsdóttir</td>
+                    
+                    
+                        <td>Sjálfstæðisflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 14:33</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>83</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=83">
+                            aðgerðaáætlun til að efla Sjúkrahúsið á Akureyri
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Ingibjörg Isaksen</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 14:14</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>95</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=95">
+                            skipun starfshóps um rétt til að annast veikt eða slasað barn
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Bjarkey Olsen Gunnarsdóttir</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-14 17:13</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>102</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=102">
+                            ávana- og fíkniefni
+                            
+                                (afglæpavæðing vörslu neysluskammta)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Halldóra Mogensen</td>
+                    
+                    
+                        <td>Píratar</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-18 14:45</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>108</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=108">
+                            almannatryggingar
+                            
+                                (frítekjumark vegna lífeyristekna)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Inga Sæland</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-18 14:45</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>111</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=111">
+                            almannatryggingar
+                            
+                                (raunleiðrétting)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Björn Leví Gunnarsson</td>
+                    
+                    
+                        <td>Píratar</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-18 14:45</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>138</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=138">
+                            almannatryggingar
+                            
+                                (aldursviðbót)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Guðmundur Ingi Kristinsson</td>
+                    
+                    
+                        <td>Flokkur fólksins</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-19 13:15</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>141</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=141">
+                            réttindi og skyldur starfsmanna ríkisins
+                            
+                                (stöðuveitingar)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Jóhann Páll Jóhannsson</td>
+                    
+                    
+                        <td>Samfylkingin</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-19 15:08</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>224</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=224">
+                            lyfjalög og lækningatæki
+                            
+                                (upplýsingar um birgðastöðu)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>heilbrigðisráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-20 18:19</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>225</td>
+                    <td>Samþykkt sem lög frá Alþingi.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=225">
+                            heilbrigðisþjónusta o.fl.
+                            
+                                (refsiábyrgð heilbrigðisstofnana og rannsókn alvarlegra atvika)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>heilbrigðisráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-20 17:41</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>226</td>
+                    <td>Samþykkt sem lög frá Alþingi.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=226">
+                            tóbaksvarnir
+                            
+                                (innihaldsefni, umbúðir o.fl.)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>heilbrigðisráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-20 17:49</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>241</td>
+                    <td>Samþykkt sem ályktun Alþingis.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=241">
+                            framkvæmdaáætlun á sviði barnaverndar 2023--2027
+                            
+                        </a>
+                    </td>
+                    <td>stjórnartillaga</td>
+                    
+                        <td>mennta- og barnamálaráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-26 13:17</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>264</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=264">
+                            sorgarleyfi
+                            
+                                (makamissir)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Þorbjörg Sigríður Gunnlaugsdóttir</td>
+                    
+                    
+                        <td>Viðreisn</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-09-28 10:23</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>313</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=313">
+                            félagafrelsi á vinnumarkaði
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp</td>
+                    
+                        <td>Óli Björn Kárason</td>
+                    
+                    
+                        <td>Sjálfstæðisflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-10-09 14:33</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>384</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=384">
+                            sjúkrahúsinu á Akureyri verði gert kleift að framkvæma hjartaþræðingar
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Logi Einarsson</td>
+                    
+                    
+                        <td>Samfylkingin</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-10-18 17:08</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>402</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=402">
+                            gjaldfrjálsar skólamáltíðir og umgjörð þeirra
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Steinunn Þóra Árnadóttir</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-10-24 13:09</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>408</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=408">
+                            innleiðing lýðheilsumats í íslenska löggjöf
+                            
+                        </a>
+                    </td>
+                    <td>þáltill.</td>
+                    
+                        <td>Jóhann Friðrik Friðriksson</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-10-25 14:43</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>497</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=497">
+                            barnaverndarlög og félagsþjónusta sveitarfélaga
+                            
+                                (reglugerðarheimildir)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>mennta- og barnamálaráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-11-13 16:41</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>508</td>
+                    <td>Samþykkt sem lög frá Alþingi.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=508">
+                            tímabundinn stuðningur til greiðslu launa vegna náttúruhamfara í Grindavíkurbæ
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>félags- og vinnumarkaðsráðherra</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-11-17 15:59</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>509</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=509">
+                            húsnæðisstefna fyrir árin 2024--2038 ásamt fimm ára aðgerðaáætlun fyrir árin 2024--2028
+                            
+                        </a>
+                    </td>
+                    <td>stjórnartillaga</td>
+                    
+                        <td>innviðaráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-11-20 14:59</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>537</td>
+                    <td>Samþykkt sem lög frá Alþingi.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=537">
+                            sértækur húsnæðisstuðningur vegna náttúruhamfara í Grindavíkurbæ
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>innviðaráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-11-27 15:18</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>583</td>
+                    <td>Samþykkt sem lög frá Alþingi.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=583">
+                            almennar íbúðir og húsnæðismál
+                            
+                                (almennar íbúðir vegna náttúruhamfara í Grindavíkurbæ)
+                            
+                        </a>
+                    </td>
+                    <td>frumvarp nefndar</td>
+                    
+                        <td>Líneik Anna Sævarsdóttir</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-12-14 22:27</td>
+                </tr>    
+            
+        
+            
+                <tr>
+                    <td>584</td>
+                    <td>Í nefnd eftir fyrri umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=584">
+                            framkvæmdaáætlun í málefnum fatlaðs fólks fyrir árin 2024--2027
+                            
+                        </a>
+                    </td>
+                    <td>stjórnartillaga</td>
+                    
+                        <td>félags- og vinnumarkaðsráðherra</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2023-12-15 16:26</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>609</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=609">
+                            tímabundinn stuðningur til greiðslu launa vegna náttúruhamfara í Grindavíkurbæ
+                            
+                                (framlenging)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>félags- og vinnumarkaðsráðherra</td>
+                    
+                    
+                        <td>Vinstrihreyfingin - grænt framboð</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2024-01-23 14:19</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <tr>
+                    <td>618</td>
+                    <td>Í nefnd eftir 1. umræðu.</td>
+                    <td>
+                        <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=618">
+                            sértækur húsnæðisstuðningur vegna náttúruhamfara í Grindavíkurbæ
+                            
+                                (framlenging gildistíma stuðningsúrræðis)
+                            
+                        </a>
+                    </td>
+                    <td>stjórnarfrumvarp</td>
+                    
+                        <td>innviðaráðherra</td>
+                    
+                    
+                        <td>Framsóknarflokkur</td>
+                    
+                    <td>velferðarnefnd</td>
+                    <td>2024-01-24 13:09</td>
+                </tr>    
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        </tbody>            
+    </table>
     <script>
-        $(document).ready(function() {
-            var table = $('.nefndir').DataTable({
-                "lengthChange": false,
-                "paging": false,
-                "scrollX": true,
-                "scrollCollapse": true
-            });
+      $(document).ready(function() {
+        $('#nefndir').DataTable({
+          "lengthChange": false,
+          "paging": false,
+          "searching": true 
         });
-    </script>      
+      });
+    </script>     
 </body>
 </html>

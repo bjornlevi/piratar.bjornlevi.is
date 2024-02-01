@@ -81,9 +81,6 @@
         </thead>
         <tbody>
         {% for row in rows %}
-        <!-- render different rows based on filter: -->
-        <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
-        <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
             {% if filter == "rikisstjorn_samþykkt" and 'Samþykkt' in row.stadamals and row.flutningsmadur_radherra %}
                 <tr>
                     <td>{{ row.malsnumer }}</td>
