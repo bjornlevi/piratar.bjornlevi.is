@@ -1,5 +1,6 @@
 from jinja2 import Template, Environment, FileSystemLoader
 import sqlite3, os
+import get_hagstofa
 
 conn = sqlite3.connect('thing.db')
 cursor = conn.cursor()
@@ -59,7 +60,8 @@ aliases = {
     "thingmal_thingmannamal_i_nefnd.html": "Í nefnd",
     "thingmal_thingmannamal_samthykkt.html": "Samþykkt",
     "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir",
-    "raedur_storfin.html": "Störf þingsins"
+    "raedur_storfin.html": "Störf þingsins",
+    "gogn_visitala.html": "Vísitala neysluverðs"
     # Add more entries as needed
 }
 
@@ -69,6 +71,7 @@ categories = {
     "Þingmannamál": [f for f in filtered_files if "thingmal_thingmannamal" in f.lower()],
     "Fyrirspurnir": [f for f in filtered_files if "fyrirspurnir" in f.lower()],
     "Ræður": [f for f in filtered_files if "raedur" in f.lower()],
+    "Gögn": [f for f in filtered_files if "gogn" in f.lower()],
 }
 
 
@@ -203,6 +206,14 @@ template = env.get_template(template_file)
 # Render the template with the query results
 output_html = template.render(rows=rows, categories=categories, aliases=aliases)
 with open('raedur_storfin.html', 'w') as f:
+    f.write(output_html)
+
+#Hagstofugögn
+template_file = 'visitala_template.html'
+template = env.get_template(template_file)
+data, order = get_hagstofa.get_visitala_data()
+output_html = template.render(data=data, order=order, categories=categories, aliases=aliases)
+with open('gogn_visitala.html', 'w') as f:
     f.write(output_html)
 
 #create index file

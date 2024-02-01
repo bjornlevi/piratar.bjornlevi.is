@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Þróun vísitölu neysluverðs</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+    <style>
+        /* Optional: Set a max-width for the table container to prevent it from expanding too much */
+        #table-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>    
+</head>
+<body>    
+    <h1 class="center">
+        <img src="img/piratar.png" height="40px">        
+        <a href="index.html" class="header-link">
+        Þróun vísitölu neysluverðs
+        </a>   
+        <img src="img/piratar.png" height="40px">
+    </h1>
+    <nav class="center">
+    {% for category, files in categories.items() %}
+        <div class="dropdown">
+            <button class="dropbtn">{{ category }}</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    {% for file in files %}
+                        <tr>
+                            <td><a href="{{ file }}">{{ aliases.get(file, file) }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    {% endfor %}    
+    </nav>
+    <div id="table-container">
+        <table id="visitala" class="display stripe" style="width:100%">
+            <thead>
+                <tr>
+                    {% for column in order %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in range(data['Mánuður']|length) %}
+                    <tr>
+                        {% for key in order %}
+                            <td>{{ data[key][i] }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var table = $('.visitala').DataTable({
+                "lengthChange": false,
+                "paging": false,
+                "scrollX": true,
+                "scrollCollapse": true
+            });
+        });
+    </script>      
+</body>
+</html>
