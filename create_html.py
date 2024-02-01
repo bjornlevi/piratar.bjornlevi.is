@@ -59,6 +59,15 @@ aliases = {
     "thingmal_thingmannamal_bida_umraedu.html": "Bíða umræðu",
     "thingmal_thingmannamal_i_nefnd.html": "Í nefnd",
     "thingmal_thingmannamal_samthykkt.html": "Samþykkt",
+    "nefndir_AMN.html": "Allsherjar- og menntamálanefnd",
+    "nefndir_ATV.html": "Atvinnuveganefnd",
+    "nefndir_EVN.html": "Efnahags- og viðskiptanefnd",
+    "nefndir_FLN.html": "Fjárlaganefnd",
+    "nefndir_SEN.html": "Stjórnskipunar- og eftirlitsnefnd",
+    "nefndir_UMS.html": "Umhverfis- og samgöngunefnd",
+    "nefndir_UTN.html": "Utanríkismálanefnd",
+    "nefndir_VEL.html": "Velferðarnefnd",
+    "nefndir_FRA.html": "Framtíðarnefnd",
     "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir",
     "raedur_storfin.html": "Störf þingsins",
     "gogn_visitala.html": "Vísitala neysluverðs"
@@ -69,11 +78,11 @@ aliases = {
 categories = {
     "Ríkisstjórnarmál": [f for f in filtered_files if "thingmal_rikisstjorn" in f.lower()],
     "Þingmannamál": [f for f in filtered_files if "thingmal_thingmannamal" in f.lower()],
+    "Nefndir": [f for f in filtered_files if "nefndir" in f.lower()],
     "Fyrirspurnir": [f for f in filtered_files if "fyrirspurnir" in f.lower()],
     "Ræður": [f for f in filtered_files if "raedur" in f.lower()],
     "Gögn": [f for f in filtered_files if "gogn" in f.lower()],
 }
-
 
 cursor.execute(query)
 results = cursor.fetchall()
@@ -117,6 +126,51 @@ with open('thingmal_thingmannamal_samthykkt.html', 'w') as f:
 output_html = template.render(rows=rows, filter='none', categories=categories, aliases=aliases)
 with open('thingmal.html', 'w') as f:
     f.write(output_html)
+
+template_file = 'nefndir_template.html'
+env = Environment(loader=FileSystemLoader('.'))  # Adjust the loader path accordingly
+# Load the template
+template = env.get_template(template_file)
+
+nefnd_alias = {
+    "AMN": "Allsherjar- og menntamálanefnd",
+    "ATV": "Atvinnuveganefnd",
+    "EVN": "Efnahags- og viðskiptanefnd",
+    "FLN": "Fjárlaganefnd",
+    "SEN": "Stjórnskipunar- og eftirlitsnefnd",
+    "UMS": "Umhverfis- og samgöngunefnd",
+    "UTN": "Utanríkismálanefnd",
+    "VEL": "Velferðarnefnd",
+    "FRA": "Framtíðarnefnd"
+}
+output_html = template.render(rows=rows, filter='AVN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_AMN.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='ATV', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_ATV.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='EVN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_EVN.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='FLN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_FLN.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='SEN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_SEN.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='UMS', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_UMS.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='UTN', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_UTN.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='VEL', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_VEL.html', 'w') as f:
+    f.write(output_html)
+output_html = template.render(rows=rows, filter='FRA', nefnd_alias=nefnd_alias, categories=categories, aliases=aliases)
+with open('nefndir_FRA.html', 'w') as f:
+    f.write(output_html)
+
 
 print("Upplýsingar um þingskjöl tilbúin")
 
@@ -187,6 +241,25 @@ template = env.get_template(template_file)
 # Render the template with the query results
 output_html = template.render(rows=rows, categories=categories, aliases=aliases)
 with open('raedur_oundirbunar.html', 'w') as f:
+    f.write(output_html)
+
+query = """select r.*, tm.* from raedur r
+join thingmenn tm on r.raedumadur = tm.nafn
+where mal_tegund = "st"
+"""
+cursor.execute(query)
+results = cursor.fetchall()
+columns = [column[0] for column in cursor.description]
+# Convert the list of tuples to a list of dictionaries
+rows = [dict(zip(columns, row)) for row in results]
+
+# Specify the template file and create a Jinja2 environment
+template_file = 'storfin_template.html'
+template = env.get_template(template_file)
+
+# Render the template with the query results
+output_html = template.render(rows=rows, categories=categories, aliases=aliases)
+with open('raedur_storfin.html', 'w') as f:
     f.write(output_html)
 
 query = """select r.*, tm.* from raedur r

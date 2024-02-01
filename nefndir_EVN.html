@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nefndir - Efnahags- og viðskiptanefnd</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+    <style>
+        /* Optional: Set a max-width for the table container to prevent it from expanding too much */
+        #table-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>    
+</head>
+<body>    
+    <h1 class="center">
+        <img src="img/piratar.png" height="40px">        
+        <a href="index.html" class="header-link">
+        Nefndir - Efnahags- og viðskiptanefnd
+        </a>   
+        <img src="img/piratar.png" height="40px">
+    </h1>
+    <nav class="center">
+    
+        <div class="dropdown">
+            <button class="dropbtn">Ríkisstjórnarmál</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_rikisstjorn_bida_umraedu.html">Bíða umræðu</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_rikisstjorn_samthykkt.html">Samþykkt</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Þingmannamál</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_thingmannamal_samthykkt.html">Samþykkt</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Nefndir</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_UMS.html">Umhverfis- og samgöngunefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_UTN.html">Utanríkismálanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_SEN.html">Stjórnskipunar- og eftirlitsnefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_EVN.html">Efnahags- og viðskiptanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_ATV.html">Atvinnuveganefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_FLN.html">Fjárlaganefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_AMN.html">Allsherjar- og menntamálanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_VEL.html">Velferðarnefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_FRA.html">Framtíðarnefnd</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Fyrirspurnir</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Ræður</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="raedur_oundirbunar.html">Óundirbúnar fyrirspurnir</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="raedur_storfin.html">Störf þingsins</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Gögn</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="gogn_visitala.html">Vísitala neysluverðs</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+        
+    </nav>
+    <div id="table-container">
+        <table id="nefndir" class="display stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="sorting">Malsnr.</th>
+                    <th class="sorting">Staða máls</th>
+                    <th class="sorting">Málsheiti</th>
+                    <th class="sorting">Skjalategund</th>
+                    <th class="sorting">Flutningsmaður</th>
+                    <th class="sorting">Þingflokkur</th>
+                    <th class="sorting">Nefnd</th>
+                    <th class="sorting">Útbýting</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>2</td>
+                        <td>Samþykkt sem lög frá Alþingi.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=2">
+                                breyting á ýmsum lögum vegna fjárlaga 2024
+                                
+                            </a></td>
+                        <td>stjórnarfrumvarp</td>
+                        
+                            <td>fjármála- og efnahagsráðherra</td>
+                        
+                        
+                            <td>Sjálfstæðisflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-12 15:28</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>3</td>
+                        <td>Í nefnd eftir fyrri umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=3">
+                                réttlát græn umskipti
+                                
+                            </a></td>
+                        <td>þáltill.</td>
+                        
+                            <td>Oddný G. Harðardóttir</td>
+                        
+                        
+                            <td>Samfylkingin</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-18 15:31</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>45</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=45">
+                                erfðafjárskattur
+                                
+                                    (ættliðaskipti bújarða)
+                                
+                            </a></td>
+                        <td>frumvarp</td>
+                        
+                            <td>Birgir Þórarinsson</td>
+                        
+                        
+                            <td>Sjálfstæðisflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-13 19:42</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>63</td>
+                        <td>Í nefnd eftir fyrri umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=63">
+                                skattalegir hvatar vegna launa keppnis- og afreksíþróttafólks
+                                
+                            </a></td>
+                        <td>þáltill.</td>
+                        
+                            <td>Ágúst Bjarni Garðarsson</td>
+                        
+                        
+                            <td>Framsóknarflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-13 19:44</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>74</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=74">
+                                fasteignalán til neytenda og nauðungarsala
+                                
+                                    (nauðungarsala og eftirstöðvar)
+                                
+                            </a></td>
+                        <td>frumvarp</td>
+                        
+                            <td>Ásthildur Lóa Þórsdóttir</td>
+                        
+                        
+                            <td>Flokkur fólksins</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-14 17:01</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>98</td>
+                        <td>Í nefnd eftir fyrri umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=98">
+                                staðgreiðsla við innborgun í lífeyrissjóði
+                                
+                            </a></td>
+                        <td>þáltill.</td>
+                        
+                            <td>Inga Sæland</td>
+                        
+                        
+                            <td>Flokkur fólksins</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-14 18:50</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>104</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=104">
+                                stimpilgjald
+                                
+                                    (kaup einstaklings á íbúðarhúsnæði eða lögbýli)
+                                
+                            </a></td>
+                        <td>frumvarp</td>
+                        
+                            <td>Vilhjálmur Árnason</td>
+                        
+                        
+                            <td>Sjálfstæðisflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-15 10:18</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>171</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=171">
+                                fasteignalán til neytenda
+                                
+                                    (lántökuskilyrði vegna íbúðafjárfestinga)
+                                
+                            </a></td>
+                        <td>frumvarp</td>
+                        
+                            <td>Ásthildur Lóa Þórsdóttir</td>
+                        
+                        
+                            <td>Flokkur fólksins</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-20 14:43</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>184</td>
+                        <td>Bíður 3. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=184">
+                                endurskoðendur o.fl.
+                                
+                                    (endurskoðunarnefndir, siðareglur, sektarákvæði o.fl.)
+                                
+                            </a></td>
+                        <td>stjórnarfrumvarp</td>
+                        
+                            <td>menningar- og viðskiptaráðherra</td>
+                        
+                        
+                            <td>Framsóknarflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-14 17:01</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>204</td>
+                        <td>Í nefnd eftir fyrri umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=204">
+                                samkeppnisúttekt á löggjöf og regluverki
+                                
+                            </a></td>
+                        <td>þáltill.</td>
+                        
+                            <td>Þorgerður Katrín Gunnarsdóttir</td>
+                        
+                        
+                            <td>Viðreisn</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-10-09 14:33</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>206</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=206">
+                                Náttúruhamfaratrygging Íslands
+                                
+                                    (lágmarksfjárhæð bóta)
+                                
+                            </a></td>
+                        <td>frumvarp</td>
+                        
+                            <td>Gísli Rafn Ólafsson</td>
+                        
+                        
+                            <td>Píratar</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-09-21 14:11</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>378</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=378">
+                                sérstakur skattur á fjármálafyrirtæki
+                                
+                                    (hækkun bankaskatts)
+                                
+                            </a></td>
+                        <td>frumvarp</td>
+                        
+                            <td>Inga Sæland</td>
+                        
+                        
+                            <td>Flokkur fólksins</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-10-17 13:08</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>453</td>
+                        <td>Í nefnd eftir fyrri umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=453">
+                                dreifing starfa
+                                
+                            </a></td>
+                        <td>þáltill.</td>
+                        
+                            <td>Hanna Katrín Friðriksson</td>
+                        
+                        
+                            <td>Viðreisn</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-11-06 14:42</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>468</td>
+                        <td>Samþykkt sem lög frá Alþingi.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=468">
+                                skattar og gjöld
+                                
+                                    (gistináttaskattur, áfengisgjald o.fl.)
+                                
+                            </a></td>
+                        <td>stjórnarfrumvarp</td>
+                        
+                            <td>fjármála- og efnahagsráðherra</td>
+                        
+                        
+                            <td>Sjálfstæðisflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-11-07 17:21</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>507</td>
+                        <td>Samþykkt sem lög frá Alþingi.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=507">
+                                kílómetragjald vegna notkunar hreinorku- og tengiltvinnbifreiða
+                                
+                            </a></td>
+                        <td>stjórnarfrumvarp</td>
+                        
+                            <td>fjármála- og efnahagsráðherra</td>
+                        
+                        
+                            <td>Sjálfstæðisflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2023-11-17 15:59</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+                    <tr>
+                        <td>616</td>
+                        <td>Í nefnd eftir 1. umræðu.</td>
+                        <td>
+                            <a href="http://www.althingi.is/dba-bin/ferill.pl?ltg=154&mnr=616">
+                                staðgreiðsla opinberra gjalda o.fl.
+                                
+                                    (náttúruhamfarir í Grindavíkurbæ)
+                                
+                            </a></td>
+                        <td>stjórnarfrumvarp</td>
+                        
+                            <td>fjármála- og efnahagsráðherra</td>
+                        
+                        
+                            <td>Sjálfstæðisflokkur</td>
+                        
+                        <td>efnahags- og viðskiptanefnd</td>
+                        <td>2024-01-24 13:09</td>
+                    </tr>    
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                
+            
+            </tbody>            
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var table = $('.nefndir').DataTable({
+                "lengthChange": false,
+                "paging": false,
+                "scrollX": true,
+                "scrollCollapse": true
+            });
+        });
+    </script>      
+</body>
+</html>

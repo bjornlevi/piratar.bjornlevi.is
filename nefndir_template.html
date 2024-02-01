@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nefndir - {{ nefnd_alias[filter] }}</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+    <style>
+        /* Optional: Set a max-width for the table container to prevent it from expanding too much */
+        #table-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>    
+</head>
+<body>    
+    <h1 class="center">
+        <img src="img/piratar.png" height="40px">        
+        <a href="index.html" class="header-link">
+        Nefndir - {{ nefnd_alias[filter] }}
+        </a>   
+        <img src="img/piratar.png" height="40px">
+    </h1>
+    <nav class="center">
+    {% for category, files in categories.items() %}
+        <div class="dropdown">
+            <button class="dropbtn">{{ category }}</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    {% for file in files %}
+                        <tr>
+                            <td><a href="{{ file }}">{{ aliases.get(file, file) }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    {% endfor %}    
+    </nav>
+    <div id="table-container">
+        <table id="nefndir" class="display stripe" style="width:100%">
+            <thead>
+                <tr>
+                    <th class="sorting">Malsnr.</th>
+                    <th class="sorting">Staða máls</th>
+                    <th class="sorting">Málsheiti</th>
+                    <th class="sorting">Skjalategund</th>
+                    <th class="sorting">Flutningsmaður</th>
+                    <th class="sorting">Þingflokkur</th>
+                    <th class="sorting">Nefnd</th>
+                    <th class="sorting">Útbýting</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for row in rows %}
+            <!-- render different rows based on filter: -->
+            <!-- rikisstjorn_samþykkt, rikisstjorn_i_nefnd, rikisstjorn_bida_umraedu -->
+            <!-- thingmannamal_samþykkt, thingmannamal_i_nefnd, thingmannamal_bida_umraedu -->
+                {% if nefnd_alias[filter]|lower == row.nefnd %}
+                    <tr>
+                        <td>{{ row.malsnumer }}</td>
+                        <td>{{ row.stadamals }}</td>
+                        <td>
+                            <a href="{{ row.html }}">
+                                {{ row.malsheiti }}
+                                {% if row.efnisgreining %}
+                                    ({{ row.efnisgreining }})
+                                {% endif %}
+                            </a></td>
+                        <td>{{ row.skjalategund }}</td>
+                        {% if row.flutningsmadur_radherra is none %}
+                            <td>{{ row.flutningsmadur_name }}</td>
+                        {% else %}
+                            <td>{{ row.flutningsmadur_radherra }}</td>
+                        {% endif %}
+                        {% if row.thingflokkur is none %}
+                            <td>Stjórnarfrumvarp</td>
+                        {% else %}
+                            <td>{{ row.thingflokkur }}</td>
+                        {% endif %}
+                        <td>{{ row.nefnd }}</td>
+                        <td>{{ row.utbyting }}</td>
+                    </tr>    
+                {% endif %}
+            {% endfor %}
+            </tbody>            
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var table = $('.nefndir').DataTable({
+                "lengthChange": false,
+                "paging": false,
+                "scrollX": true,
+                "scrollCollapse": true
+            });
+        });
+    </script>      
+</body>
+</html>
