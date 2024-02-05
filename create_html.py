@@ -70,7 +70,8 @@ aliases = {
     "nefndir_FRA.html": "Framtíðarnefnd",
     "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir",
     "raedur_storfin.html": "Störf þingsins",
-    "gogn_visitala.html": "Vísitala neysluverðs"
+    "gogn_visitala.html": "Vísitala neysluverðs",
+    "gogn_thjodhagsspa.html": "Þjóðhagsspá"
     # Add more entries as needed
 }
 
@@ -288,6 +289,40 @@ output_html = template.render(data=data, order=order, categories=categories, ali
 with open('gogn_visitala.html', 'w') as f:
     f.write(output_html)
 
+""" Í VINNSLU
+thjodhagsspa_rows = {
+0: "Einkaneysla",
+1: "Samneysla",
+2: "Fjármunamyndun",
+3: "Atvinnuvegafjárfesting",
+4: "Fjárfesting í íbúðarhúsnæði",
+5: "Fjárfesting hins opinbera",
+6: "Þjóðarútgjöld, alls",
+7: "Útflutningur vöru og þjónustu",
+8: "Innflutningur vöru og þjónustu",
+9: "Verg landsframleiðsla",
+10: "Vöru- og þjónustujöfnuður, % af VLF",
+11: "Viðskiptajöfnuður, % af VLF",
+12: "Viðskiptajöfnuður án innlánsstofnana í slitameðferð, % af VLF",
+13: "VLF á verðlagi hvers árs",
+14: "Vísitala neysluverðs",
+15: "Gengisvísitala",
+16: "Raungengi",
+17: "Atvinnuleysi, % af vinnuafli",
+18: "Kaupmáttur launa",
+19: "Hagvöxtur í helstu viðskiptalöndum",
+20: "Alþjóðleg verðbólga",
+21: "Verð útflutts áls",
+22: "Olíuverð"
+}
+template_file = 'thjodhagsspa_template.html'
+template = env.get_template(template_file)
+data = get_hagstofa.get_thjodhagsspa_data()
+output_html = template.render(data=data, row_labels=thjodhagsspa_rows, categories=categories, aliases=aliases)
+with open('gogn_thjodhagsspa.html', 'w') as f:
+    f.write(output_html)
+"""
+
 #create index file
 #dagskrá þingsins
 query = """SELECT *, count(d.malsnumer) FROM dagskra d
@@ -299,18 +334,24 @@ order by d.lidur_numer
 
 cursor.execute(query)
 results = cursor.fetchall()
-columns = [column[0] for column in cursor.description]
-# Convert the list of tuples to a list of dictionaries
-rows = [dict(zip(columns, row)) for row in results]
+try:
+    columns = [column[0] for column in cursor.description]
+    # Convert the list of tuples to a list of dictionaries
+    rows = [dict(zip(columns, row)) for row in results]
 
-# Jinja2 template for index.html
-template_loader = FileSystemLoader(searchpath="./")
-template_env = Environment(loader=template_loader)
-template = template_env.get_template("index_template.html")
+    # Jinja2 template for index.html
+    template_loader = FileSystemLoader(searchpath="./")
+    template_env = Environment(loader=template_loader)
+    template = template_env.get_template("index_template.html")
 
-# Generate index.html
-output = template.render(categories=categories, rows=rows, aliases=aliases)
-with open("index.html", "w") as index_file:
-    index_file.write(output)
+    # Generate index.html
+    output = template.render(categories=categories, rows=rows, aliases=aliases)
+    with open("index.html", "w") as index_file:
+        index_file.write(output)
+except:
+    # Búa til tóman þingfund
+    output = template.render(categories=categories, rows=[], aliases=aliases)
+    with open("index.html", "w") as index_file:
+        index_file.write(output)
 
 conn.close()

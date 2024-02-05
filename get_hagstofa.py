@@ -4,6 +4,34 @@ import requests
 from datetime import datetime as dt
 import json
 
+def get_thjodhagsspa_data():
+    url = "https://px.hagstofa.is:443/pxis/api/v1/is/Efnahagur/thjodhagsspa/THJ07000.px"
+    headers = {
+        'Content-Type': 'application/json',
+    }
+    query = {
+        "query": [],
+        "response": {
+            "format": "json"
+        }
+    }
+    response = requests.post(url, headers=headers, json=query)
+    #query['response']['format'] = "px"
+    #meta_response = requests.post(url, headers=headers, json=query)
+    data = ''
+
+    if response.status_code == 200:
+        # The request was successful
+        data = response.text
+        #json_data = meta_response.text
+    else:
+        # The request failed
+        print(f'Request failed with status code {response.status_code}')
+
+    data = json.loads(data.strip('\ufeff'))
+    return data
+
+
 def get_visitala_data():
     url = 'https://px.hagstofa.is:443/pxis/api/v1/is/Efnahagur/visitolur/1_vnv/2_undirvisitolur/VIS01304.px'
     headers = {
@@ -184,4 +212,4 @@ def get_visitala_data():
     return table, desired_column_order
 
 if __name__ == "__main__":
-    get_visitala_data()
+    print(get_thjodhagsspa_data())
