@@ -36,7 +36,14 @@
         <h2>Dagskrá fundar: {{ rows[0].fundarheiti }}</h2>
         <h3>{{ rows[0].hefst }}</h3>
         <ol>
+        {% set meetings = namespace(first=rows[0].hefst) %}
         {% for row in rows %}
+            {% if row.hefst != meetings.first %}
+                </ol>
+                <h3>Annar fundur: {{ row.hefst }}</h3>
+                {% set meetings.first = row.hefst %}
+                <ol>
+            {% endif %}
             <li>
                 {% if row.malsflokkur == 'B' %}
                     {{ row.malsheiti }}

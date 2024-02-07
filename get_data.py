@@ -521,39 +521,74 @@ cursor.execute('''
 
 try:
     # Insert parsed data into the SQLite tables
-    thingfundur = data['dagskráþingfundar']['þingfundur']
-    thingfundur_numer = thingfundur['@númer']
-    fundarheiti = thingfundur['fundarheiti']
-    hefst = thingfundur['hefst']['texti']
+    if type(data['dagskráþingfundar']['þingfundur']) is list:
+        for thingfundur in data['dagskráþingfundar']['þingfundur']:
+            thingfundur_numer = thingfundur['@númer']
+            fundarheiti = thingfundur['fundarheiti']
+            hefst = thingfundur['hefst']['texti']
 
 
-    # Insert data from dagskrárliður elements
-    for dagskrarlidur in thingfundur['dagskrá']['dagskrárliður']:
-        lidur_numer = dagskrarlidur['@númer']
-        malsnumer = dagskrarlidur['mál']['@málsnúmer']
-        malsheiti = dagskrarlidur['mál']['málsheiti']
-        malsflokkur = dagskrarlidur['mál']['@málsflokkur']
-        if 'athugasemd' in dagskrarlidur:
-            if 'skýring' in dagskrarlidur['athugasemd']:
-                skyring = dagskrarlidur['athugasemd']['skýring']
+            # Insert data from dagskrárliður elements
+            for dagskrarlidur in thingfundur['dagskrá']['dagskrárliður']:
+                lidur_numer = dagskrarlidur['@númer']
+                malsnumer = dagskrarlidur['mál']['@málsnúmer']
+                malsheiti = dagskrarlidur['mál']['málsheiti']
+                malsflokkur = dagskrarlidur['mál']['@málsflokkur']
+                if 'athugasemd' in dagskrarlidur:
+                    if 'skýring' in dagskrarlidur['athugasemd']:
+                        skyring = dagskrarlidur['athugasemd']['skýring']
+                    else:
+                        skyring = ''
+                else:
+                    skyring = ''
+                if 'umræða' in dagskrarlidur:
+                    if '#text' in dagskrarlidur['umræða']:
+                        umraeda = dagskrarlidur['umræða']['#text']
+                    else:
+                        umraeda = ''
+                else:
+                    umraeda = ''
+                html_link = dagskrarlidur['mál']['html']
+
+                cursor.execute('''
+                    INSERT INTO dagskra
+                    (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ''', (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link))
+    else:
+        thingfundur = data['dagskráþingfundar']['þingfundur']
+        thingfundur_numer = thingfundur['@númer']
+        fundarheiti = thingfundur['fundarheiti']
+        hefst = thingfundur['hefst']['texti']
+
+
+        # Insert data from dagskrárliður elements
+        for dagskrarlidur in thingfundur['dagskrá']['dagskrárliður']:
+            lidur_numer = dagskrarlidur['@númer']
+            malsnumer = dagskrarlidur['mál']['@málsnúmer']
+            malsheiti = dagskrarlidur['mál']['málsheiti']
+            malsflokkur = dagskrarlidur['mál']['@málsflokkur']
+            if 'athugasemd' in dagskrarlidur:
+                if 'skýring' in dagskrarlidur['athugasemd']:
+                    skyring = dagskrarlidur['athugasemd']['skýring']
+                else:
+                    skyring = ''
             else:
                 skyring = ''
-        else:
-            skyring = ''
-        if 'umræða' in dagskrarlidur:
-            if '#text' in dagskrarlidur['umræða']:
-                umraeda = dagskrarlidur['umræða']['#text']
+            if 'umræða' in dagskrarlidur:
+                if '#text' in dagskrarlidur['umræða']:
+                    umraeda = dagskrarlidur['umræða']['#text']
+                else:
+                    umraeda = ''
             else:
                 umraeda = ''
-        else:
-            umraeda = ''
-        html_link = dagskrarlidur['mál']['html']
+            html_link = dagskrarlidur['mál']['html']
 
-        cursor.execute('''
-            INSERT INTO dagskra
-            (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link))
+            cursor.execute('''
+                INSERT INTO dagskra
+                (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (thingfundur_numer, fundarheiti, hefst, lidur_numer, malsnumer, malsheiti, malsflokkur, skyring, umraeda, html_link))
 
     # Commit changes and close connection
     conn.commit()

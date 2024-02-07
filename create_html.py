@@ -329,7 +329,7 @@ query = """SELECT *, count(d.malsnumer) FROM dagskra d
 join thingskjal ts on ts.malsnumer = d.malsnumer
 join flutningsmadur f on f.skjalsnumer = ts.skjalsnumer
 group by d.malsnumer
-order by d.lidur_numer
+order by hefst, d.lidur_numer
 """
 
 cursor.execute(query)
