@@ -4,6 +4,7 @@ import xmltodict
 import sqlite3
 import sys, os
 import json
+from bs4 import BeautifulSoup
 
 force = False
 try:
@@ -11,8 +12,6 @@ try:
       force = True
 except:
     sys.exit(0)
-
-print(force)
 
 def cache_file(url, contents):
   file_name = "cache/"+url.replace('/','-')
@@ -441,23 +440,6 @@ cursor.execute('''
 ''')
 conn.commit()
 
-def fix_text(obj, indent = 1):
-    if isinstance(obj, list):
-        htmls = []
-        for k in obj:
-            htmls.append(fix_text(k,indent+1))
-
-        return '[<div style="margin-left: %dem">%s</div>]' % (indent, ',<br>'.join(htmls))
-
-    if isinstance(obj, dict):
-        htmls = []
-        for k in obj:
-            htmls.append("<span style='font-style: italic; color: #888'>%s</span>: %s" % (k,fix_text(obj[k],indent+1)))
-
-        return '{<div style="margin-left: %dem">%s</div>}' % (indent, ',<br>'.join(htmls))
-
-    return str(obj)
-
 # Iterate through the XML data and insert into the database
 counter = 1
 for raeda in data['ræðulisti']['ræða']:
@@ -475,7 +457,14 @@ for raeda in data['ræðulisti']['ræða']:
     if 'xml' in raeda['slóðir']:
         try:
             raeda_data = cache_or_fetch(raeda['slóðir']['xml'], force)
-            raeda_texti = fix_text(raeda_data['ræða']['ræðutexti'])
+            soup_data = xmltodict.unparse(raeda_data)
+            soup = BeautifulSoup(soup_data, 'lxml-xml')
+            for mgr in soup.find_all('mgr'):
+                mgr.replace_with('###'+mgr.get_text()+'###') #placeholder fyrir málsgrein
+            raeda_texti = soup.find('ræðutexti').get_text()
+            raeda_texti = raeda_texti.replace('\n', ' ') #hreinsa öll newline
+            raeda_texti = raeda_texti.replace('  ', ' ') #hreinsa öll tvöföld línubil
+            raeda_texti = raeda_texti.replace('###', '\n') #setja inn málsgreinar aftur
         except Exception as e:
             print(e)
             raeda_texti = "Villa í XML ræðutexta, vinsamlega smellið á tengilinn hér fyrir ofan."
