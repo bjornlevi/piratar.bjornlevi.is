@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óundirbúnar fyrirspurnir</title>
+    <title>Ræður - óundirbúnar, störfin og tímaröð</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
@@ -66,8 +66,9 @@
 
         $(document).ready(function() {
             var table = $('.sortable-table').DataTable({
-              "lengthChange": false,
-              "paging": false
+                "pageLength": 100,  // Set the number of records per page
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],  // Custom pagination              
+                "order": [[ 2, "desc" ]]
             });
 
             // Add event listener for opening and closing details

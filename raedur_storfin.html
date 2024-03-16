@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óundirbúnar fyrirspurnir</title>
+    <title>Ræður - óundirbúnar, störfin og tímaröð</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
@@ -28,15 +28,15 @@
                     </tr>
                     
                         <tr>
+                            <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
+                        </tr>
+                    
+                        <tr>
                             <td><a href="thingmal_rikisstjorn_bida_umraedu.html">Bíða umræðu</a></td>
                         </tr>
                     
                         <tr>
                             <td><a href="thingmal_rikisstjorn_samthykkt.html">Samþykkt</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
                         </tr>
                     
                 </table>
@@ -52,11 +52,11 @@
                     </tr>
                     
                         <tr>
-                            <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
+                            <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
                         </tr>
                     
                         <tr>
-                            <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
+                            <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
                         </tr>
                     
                         <tr>
@@ -80,10 +80,6 @@
                         </tr>
                     
                         <tr>
-                            <td><a href="nefndir_UTN.html">Utanríkismálanefnd</a></td>
-                        </tr>
-                    
-                        <tr>
                             <td><a href="nefndir_SEN.html">Stjórnskipunar- og eftirlitsnefnd</a></td>
                         </tr>
                     
@@ -92,15 +88,15 @@
                         </tr>
                     
                         <tr>
+                            <td><a href="nefndir_AMN.html">Allsherjar- og menntamálanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
                             <td><a href="nefndir_ATV.html">Atvinnuveganefnd</a></td>
                         </tr>
                     
                         <tr>
-                            <td><a href="nefndir_FLN.html">Fjárlaganefnd</a></td>
-                        </tr>
-                    
-                        <tr>
-                            <td><a href="nefndir_AMN.html">Allsherjar- og menntamálanefnd</a></td>
+                            <td><a href="nefndir_UTN.html">Utanríkismálanefnd</a></td>
                         </tr>
                     
                         <tr>
@@ -109,6 +105,10 @@
                     
                         <tr>
                             <td><a href="nefndir_FRA.html">Framtíðarnefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_FLN.html">Fjárlaganefnd</a></td>
                         </tr>
                     
                 </table>
@@ -124,11 +124,11 @@
                     </tr>
                     
                         <tr>
-                            <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
+                            <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
                         </tr>
                     
                         <tr>
-                            <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
+                            <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
                         </tr>
                     
                 </table>
@@ -145,6 +145,10 @@
                     
                         <tr>
                             <td><a href="raedur_oundirbunar.html">Óundirbúnar fyrirspurnir</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="raedur_timarod.html">Tímaröð</a></td>
                         </tr>
                     
                         <tr>
@@ -5974,8 +5978,9 @@ Heyr, heyr.Hæstv. forseti. Meðal þess sem er í umræðunni varðandi börnin
 
         $(document).ready(function() {
             var table = $('.sortable-table').DataTable({
-              "lengthChange": false,
-              "paging": false
+                "pageLength": 100,  // Set the number of records per page
+                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],  // Custom pagination              
+                "order": [[ 2, "desc" ]]
             });
 
             // Add event listener for opening and closing details

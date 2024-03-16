@@ -70,6 +70,7 @@ aliases = {
     "nefndir_FRA.html": "Framtíðarnefnd",
     "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir",
     "raedur_storfin.html": "Störf þingsins",
+    "raedur_timarod.html": "Tímaröð",
     "gogn_visitala.html": "Vísitala neysluverðs",
     "gogn_thjodhagsspa.html": "Þjóðhagsspá"
     # Add more entries as needed
@@ -279,6 +280,22 @@ template = env.get_template(template_file)
 # Render the template with the query results
 output_html = template.render(rows=rows, categories=categories, aliases=aliases)
 with open('raedur_storfin.html', 'w') as f:
+    f.write(output_html)
+
+#Ná í ræður í tímaröð, mínus forsetaræður og ræður þar sem ræðutexti er ekki tilbúinn
+query = """select r.*, tm.* from raedur r
+join thingmenn tm on r.raedumadur = tm.nafn
+where mal_heiti NOT NULL and raeda_texti != ""
+order by id DESC"""
+cursor.execute(query)
+results = cursor.fetchall()
+columns = [column[0] for column in cursor.description]
+# Convert the list of tuples to a list of dictionaries
+rows = [dict(zip(columns, row)) for row in results]
+
+# Render the template with the query results
+output_html = template.render(rows=rows, categories=categories, aliases=aliases)
+with open('raedur_timarod.html', 'w') as f:
     f.write(output_html)
 
 #Hagstofugögn
