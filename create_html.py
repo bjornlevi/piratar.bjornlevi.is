@@ -71,6 +71,7 @@ aliases = {
     "raedur_oundirbunar.html": "Óundirbúnar fyrirspurnir",
     "raedur_storfin.html": "Störf þingsins",
     "raedur_timarod.html": "Tímaröð",
+    "raedur_skrar.html": "Ræðuskrár",
     "gogn_visitala.html": "Vísitala neysluverðs",
     "gogn_thjodhagsspa.html": "Þjóðhagsspá"
     # Add more entries as needed
@@ -295,6 +296,72 @@ rows = [dict(zip(columns, row)) for row in results]
 
 # Render the template with the query results
 output_html = template.render(rows=rows, categories=categories, aliases=aliases)
+with open('raedur_timarod.html', 'w') as f:
+    f.write(output_html)
+
+query = """select * from thingmenn"""
+cursor.execute(query)
+results = cursor.fetchall()
+columns = [column[0] for column in cursor.description]
+# Convert the list of tuples to a list of dictionaries
+data = [dict(zip(columns, row)) for row in results]
+
+# Create an empty set to track unique pairs
+unique_pairs = set()
+
+# Create an empty list for the final output
+unique_values_list = []
+
+# Extracting unique 'nafn'
+unique_nafn = set(item['nafn'] for item in data)
+
+# Extracting unique 'thingflokkur'
+unique_thingflokkur = set(item['thingflokkur'] for item in data)
+
+# Iterate through the original list
+for item in data:
+    # Create a tuple of (nafn, thingflokkur)
+    pair = (item['nafn'], item['thingflokkur'])
+    # Add the pair to the list and set if it's not already there
+    if pair not in unique_pairs:
+        unique_pairs.add(pair)
+        unique_values_list.append({'nafn': item['nafn'], 'thingflokkur': item['thingflokkur']})
+
+# Check for folder
+folder_path = 'raedur/'
+if not os.path.exists(folder_path):
+    # If the folder does not exist, create it
+    os.makedirs(folder_path)
+
+# Create files with raedur for each thingflokkur and each nafn
+for flokkur in unique_thingflokkur:
+    #loop through rows to find all raedur from flokkur
+    raedur_flokks = ''
+    for r in rows:
+        if r['thingflokkur'] == flokkur:
+            raedur_flokks += 'Ræðumaður: ' + r['raedumadur'] + '\n'
+            raedur_flokks += r['raeda_texti'] + '\n\n'
+    with open('raedur/'+flokkur+'.txt', 'w') as f:
+        f.write(raedur_flokks)
+
+for nafn in unique_nafn:
+    #loop through rows to find all raedur from nafn
+    raedur_thingmanns = ''
+    for r in rows:
+        if r['nafn'] == nafn:
+            raedur_thingmanns += r['raeda_texti'] + '\n###\n'
+    with open('raedur/'+nafn+'.txt', 'w') as f:
+        f.write(raedur_thingmanns)
+
+# Specify the template file and create a Jinja2 environment
+template_file = 'raedur_skrar_template.html'
+template = env.get_template(template_file)
+output_html = template.render(
+        rows=rows, categories=categories, aliases=aliases, 
+        thingmenn=unique_nafn, 
+        thingflokkar=unique_thingflokkur, 
+        nafn_thingflokkur=unique_values_list
+    )
 with open('raedur_timarod.html', 'w') as f:
     f.write(output_html)
 
