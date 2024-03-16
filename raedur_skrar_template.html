@@ -46,14 +46,18 @@
             <tbody>
                 {% for flokkur in thingflokkar %}
                     <tr>
-                        <td><a href="raedur/{{ flokkur }}.txt">{{ flokkur }}</a></td>
+                        <td><a href="raedur/{{ flokkur | replace(' ', '_') }}.txt">{{ flokkur }}</a></td>
                         <td></td>
                     </tr>
                     {% for thingmadur in nafn_thingflokkur %}
                         {% if thingmadur.thingflokkur == flokkur %}
                             <tr>
                                 <td></td>
-                                <td><a href="raedur/{{ thingmadur.nafn }}.txt">{{ thingmadur.nafn }}</a></td>
+                                <td>
+                                    <a href="raedur/{{ thingmadur.nafn | replace(' ', '_') }}.txt">
+                                        {{ thingmadur.nafn }}
+                                    </a>
+                                </td>
                             </tr>                            
                         {% endif %} 
                     {% endfor %}

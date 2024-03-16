@@ -341,7 +341,7 @@ for flokkur in unique_thingflokkur:
         if r['thingflokkur'] == flokkur:
             raedur_flokks += 'Ræðumaður: ' + r['raedumadur'] + '\n'
             raedur_flokks += r['raeda_texti'] + '\n\n'
-    with open('raedur/'+flokkur+'.txt', 'w') as f:
+    with open('raedur/'+flokkur.replace(' ', '_')+'.txt', 'w') as f:
         f.write(raedur_flokks)
 
 for nafn in unique_nafn:
@@ -350,7 +350,7 @@ for nafn in unique_nafn:
     for r in rows:
         if r['nafn'] == nafn:
             raedur_thingmanns += r['raeda_texti'] + '\n###\n'
-    with open('raedur/'+nafn+'.txt', 'w') as f:
+    with open('raedur/'+nafn.replace(' ', '_')+'.txt', 'w') as f:
         f.write(raedur_thingmanns)
 
 # Specify the template file and create a Jinja2 environment
