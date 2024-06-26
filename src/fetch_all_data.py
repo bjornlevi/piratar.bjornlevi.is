@@ -1,4 +1,4 @@
-# main.py
+# fetch_all_data.py
 
 import sqlite3
 import os, sys
