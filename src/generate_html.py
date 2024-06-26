@@ -12,7 +12,8 @@ def render_template(template_file, output_file, context):
         template = env.get_template(template_file)
         output_html = template.render(context)
 
-        output_path = os.path.join('output', output_file)
+        # Ensure output directory is output/html
+        output_path = os.path.join('output/html', output_file)
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
         with open(output_path, 'w') as f:
@@ -38,17 +39,9 @@ def main():
             'nefnd_alias': nefnd_alias
         })
 
-        # Determine subfolder based on file name pattern
         file_name = query_info["output_file"]
-        if "_" in file_name:
-            subfolder = file_name.split("_")[0]
-            output_file = os.path.join(subfolder, file_name)
-        else:
-            output_file = file_name
+        render_template(query_info["template_file"], file_name, context)
 
-        render_template(query_info["template_file"], output_file, context)
-
-    # Additional templates without SQL queries
     hagstofa_data, order = get_hagstofa.get_visitala_data()
     render_template('visitala_template.html', 'gogn/gogn_visitala.html', {
         'data': hagstofa_data,
@@ -57,7 +50,6 @@ def main():
         'aliases': aliases
     })
 
-    # Create index file
     query = """SELECT *, count(d.malsnumer) FROM dagskra d
                JOIN thingskjal ts ON ts.malsnumer = d.malsnumer
                JOIN flutningsmadur f ON f.skjalsnumer = ts.skjalsnumer

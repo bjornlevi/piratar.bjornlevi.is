@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Þróun vísitölu neysluverðs</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="style.css">    
+    <style>
+        /* Optional: Set a max-width for the table container to prevent it from expanding too much */
+        #table-container {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>    
+</head>
+<body>    
+    <h1 class="center">
+        <img src="img/piratar.png" height="40px">        
+        <a href="index.html" class="header-link">
+        Þróun vísitölu neysluverðs
+        </a>   
+        <img src="img/piratar.png" height="40px">
+    </h1>
+    <nav class="center">
+    
+        <div class="dropdown">
+            <button class="dropbtn">Ríkisstjórnarmál</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_rikisstjorn_bida_umraedu.html">Bíða umræðu</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_rikisstjorn_i_nefnd.html">Í nefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_rikisstjorn_samthykkt.html">Samþykkt</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Þingmannamál</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_thingmannamal_bida_umraedu.html">Bíða umræðu</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_thingmannamal_i_nefnd.html">Í nefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="thingmal_thingmannamal_samthykkt.html">Samþykkt</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Nefndir</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_AMN.html">Allsherjar- og menntamálanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_ATV.html">Atvinnuveganefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_EVN.html">Efnahags- og viðskiptanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_FLN.html">Fjárlaganefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_SEN.html">Stjórnskipunar- og eftirlitsnefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_UMS.html">Umhverfis- og samgöngunefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_UTN.html">Utanríkismálanefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_VEL.html">Velferðarnefnd</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="nefndir_FRA.html">Framtíðarnefnd</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Fyrirspurnir</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="fyrirspurnir_svarad.html">Svaraðar fyrirspurnir</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="fyrirspurnir_osvarad.html">Ósvaraðar fyrirspurnir</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Ræður</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="raedur_oundirbunar.html">Óundirbúnar fyrirspurnir</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="raedur_storfin.html">Störf þingsins</a></td>
+                        </tr>
+                    
+                        <tr>
+                            <td><a href="raedur_timarod.html">Tímaröð</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+    
+        <div class="dropdown">
+            <button class="dropbtn">Gögn</button>
+            <div class="dropdown-content">
+                <table>
+                    <tr>
+                        <th></th>
+                    </tr>
+                    
+                        <tr>
+                            <td><a href="gogn_visitala.html">Vísitala neysluverðs</a></td>
+                        </tr>
+                    
+                </table>
+            </div>
+        </div>
+        
+    </nav>
+    <div id="table-container">
+        <table id="visitala" class="display stripe" style="width:100%">
+            <thead>
+                <tr>
+                    
+                        <th>Mánuður</th>
+                    
+                        <th>Vísitala neysluverðs</th>
+                    
+                        <th>IS00 Δ</th>
+                    
+                        <th>Matur og drykkjarvara</th>
+                    
+                        <th>IS01 Δ</th>
+                    
+                        <th>Áfengi og tóbak</th>
+                    
+                        <th>IS02 Δ</th>
+                    
+                        <th>Föt og skór</th>
+                    
+                        <th>IS03 Δ</th>
+                    
+                        <th>Húsnæði, hiti og rafmagn</th>
+                    
+                        <th>IS04 Δ</th>
+                    
+                        <th>Greidd húsaleiga</th>
+                    
+                        <th>IS041 Δ</th>
+                    
+                        <th>Reiknuð húsaleiga</th>
+                    
+                        <th>IS042 Δ</th>
+                    
+                        <th>Rafmagn</th>
+                    
+                        <th>IS0451 Δ</th>
+                    
+                        <th>Hiti</th>
+                    
+                        <th>IS0455 Δ</th>
+                    
+                        <th>Húsgögn og heimilisbúnaður</th>
+                    
+                        <th>IS05 Δ</th>
+                    
+                        <th>Heilsa</th>
+                    
+                        <th>IS06 Δ</th>
+                    
+                        <th>Ferðir og flutningar</th>
+                    
+                        <th>IS07 Δ</th>
+                    
+                        <th>Bensín og olíur</th>
+                    
+                        <th>IS0722 Δ</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        
+                            <td>2023M03</td>
+                        
+                            <td>205.7</td>
+                        
+                            <td>None</td>
+                        
+                            <td>219.7</td>
+                        
+                            <td>None</td>
+                        
+                            <td>242.9</td>
+                        
+                            <td>None</td>
+                        
+                            <td>172.0</td>
+                        
+                            <td>None</td>
+                        
+                            <td>238.5</td>
+                        
+                            <td>None</td>
+                        
+                            <td>251.1</td>
+                        
+                            <td>None</td>
+                        
+                            <td>227.6</td>
+                        
+                            <td>None</td>
+                        
+                            <td>214.0</td>
+                        
+                            <td>None</td>
+                        
+                            <td>250.5</td>
+                        
+                            <td>None</td>
+                        
+                            <td>182.5</td>
+                        
+                            <td>None</td>
+                        
+                            <td>176.1</td>
+                        
+                            <td>None</td>
+                        
+                            <td>199.8</td>
+                        
+                            <td>None</td>
+                        
+                            <td>238.5</td>
+                        
+                            <td>None</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M04</td>
+                        
+                            <td>208.4</td>
+                        
+                            <td>1.013</td>
+                        
+                            <td>223.0</td>
+                        
+                            <td>1.015</td>
+                        
+                            <td>243.7</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>173.6</td>
+                        
+                            <td>1.009</td>
+                        
+                            <td>242.7</td>
+                        
+                            <td>1.018</td>
+                        
+                            <td>253.2</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>233.3</td>
+                        
+                            <td>1.025</td>
+                        
+                            <td>213.7</td>
+                        
+                            <td>0.999</td>
+                        
+                            <td>250.5</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>185.9</td>
+                        
+                            <td>1.019</td>
+                        
+                            <td>176.7</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>203.8</td>
+                        
+                            <td>1.02</td>
+                        
+                            <td>234.1</td>
+                        
+                            <td>0.982</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M05</td>
+                        
+                            <td>209.2</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>224.8</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>244.1</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>173.6</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>245.1</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>255.0</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>236.4</td>
+                        
+                            <td>1.013</td>
+                        
+                            <td>213.9</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>250.5</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>187.9</td>
+                        
+                            <td>1.011</td>
+                        
+                            <td>177.3</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>201.2</td>
+                        
+                            <td>0.987</td>
+                        
+                            <td>229.8</td>
+                        
+                            <td>0.982</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M06</td>
+                        
+                            <td>210.9</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>226.0</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>245.8</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>174.4</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>248.1</td>
+                        
+                            <td>1.012</td>
+                        
+                            <td>256.9</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>240.3</td>
+                        
+                            <td>1.016</td>
+                        
+                            <td>213.7</td>
+                        
+                            <td>0.999</td>
+                        
+                            <td>250.5</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>185.6</td>
+                        
+                            <td>0.988</td>
+                        
+                            <td>178.3</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>202.5</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>230.4</td>
+                        
+                            <td>1.003</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M07</td>
+                        
+                            <td>211.0</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>227.0</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>245.8</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>159.2</td>
+                        
+                            <td>0.913</td>
+                        
+                            <td>247.8</td>
+                        
+                            <td>0.999</td>
+                        
+                            <td>259.0</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>238.5</td>
+                        
+                            <td>0.993</td>
+                        
+                            <td>213.7</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>260.1</td>
+                        
+                            <td>1.038</td>
+                        
+                            <td>184.8</td>
+                        
+                            <td>0.996</td>
+                        
+                            <td>178.7</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>206.5</td>
+                        
+                            <td>1.02</td>
+                        
+                            <td>227.9</td>
+                        
+                            <td>0.989</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M08</td>
+                        
+                            <td>211.7</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>227.8</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>245.8</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>168.5</td>
+                        
+                            <td>1.058</td>
+                        
+                            <td>247.8</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>260.3</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>237.8</td>
+                        
+                            <td>0.997</td>
+                        
+                            <td>217.6</td>
+                        
+                            <td>1.018</td>
+                        
+                            <td>262.0</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>187.1</td>
+                        
+                            <td>1.012</td>
+                        
+                            <td>178.7</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>203.8</td>
+                        
+                            <td>0.987</td>
+                        
+                            <td>229.2</td>
+                        
+                            <td>1.006</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M09</td>
+                        
+                            <td>212.5</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>228.9</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>246.0</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>174.8</td>
+                        
+                            <td>1.037</td>
+                        
+                            <td>249.6</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>262.6</td>
+                        
+                            <td>1.009</td>
+                        
+                            <td>239.9</td>
+                        
+                            <td>1.009</td>
+                        
+                            <td>217.6</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>262.6</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>187.4</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>179.9</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>201.3</td>
+                        
+                            <td>0.988</td>
+                        
+                            <td>234.3</td>
+                        
+                            <td>1.022</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M10</td>
+                        
+                            <td>213.7</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>231.1</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>245.4</td>
+                        
+                            <td>0.998</td>
+                        
+                            <td>175.3</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>253.0</td>
+                        
+                            <td>1.014</td>
+                        
+                            <td>263.2</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>244.8</td>
+                        
+                            <td>1.02</td>
+                        
+                            <td>217.6</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>262.4</td>
+                        
+                            <td>0.999</td>
+                        
+                            <td>187.7</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>180.3</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>201.6</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>236.8</td>
+                        
+                            <td>1.011</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M11</td>
+                        
+                            <td>214.6</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>231.5</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>245.7</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>178.0</td>
+                        
+                            <td>1.015</td>
+                        
+                            <td>257.0</td>
+                        
+                            <td>1.016</td>
+                        
+                            <td>264.7</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>249.8</td>
+                        
+                            <td>1.02</td>
+                        
+                            <td>223.2</td>
+                        
+                            <td>1.026</td>
+                        
+                            <td>262.5</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>189.0</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>181.5</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>198.4</td>
+                        
+                            <td>0.984</td>
+                        
+                            <td>234.9</td>
+                        
+                            <td>0.992</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2023M12</td>
+                        
+                            <td>215.5</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>231.7</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>245.8</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>179.6</td>
+                        
+                            <td>1.009</td>
+                        
+                            <td>258.9</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>267.6</td>
+                        
+                            <td>1.011</td>
+                        
+                            <td>252.0</td>
+                        
+                            <td>1.009</td>
+                        
+                            <td>223.2</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>262.8</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>186.6</td>
+                        
+                            <td>0.987</td>
+                        
+                            <td>183.4</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>199.7</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>232.9</td>
+                        
+                            <td>0.991</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2024M01</td>
+                        
+                            <td>215.1</td>
+                        
+                            <td>0.998</td>
+                        
+                            <td>232.9</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>253.3</td>
+                        
+                            <td>1.031</td>
+                        
+                            <td>163.1</td>
+                        
+                            <td>0.908</td>
+                        
+                            <td>261.8</td>
+                        
+                            <td>1.011</td>
+                        
+                            <td>268.9</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>254.3</td>
+                        
+                            <td>1.009</td>
+                        
+                            <td>234.1</td>
+                        
+                            <td>1.049</td>
+                        
+                            <td>270.7</td>
+                        
+                            <td>1.03</td>
+                        
+                            <td>177.2</td>
+                        
+                            <td>0.95</td>
+                        
+                            <td>185.3</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>198.5</td>
+                        
+                            <td>0.994</td>
+                        
+                            <td>235.0</td>
+                        
+                            <td>1.009</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2024M02</td>
+                        
+                            <td>218.0</td>
+                        
+                            <td>1.013</td>
+                        
+                            <td>234.4</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>254.1</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>176.8</td>
+                        
+                            <td>1.084</td>
+                        
+                            <td>265.3</td>
+                        
+                            <td>1.013</td>
+                        
+                            <td>271.6</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>256.1</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>235.1</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>272.9</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>186.9</td>
+                        
+                            <td>1.055</td>
+                        
+                            <td>185.8</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>199.6</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>235.9</td>
+                        
+                            <td>1.004</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2024M03</td>
+                        
+                            <td>219.7</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>235.3</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>254.4</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>180.5</td>
+                        
+                            <td>1.021</td>
+                        
+                            <td>269.2</td>
+                        
+                            <td>1.015</td>
+                        
+                            <td>273.7</td>
+                        
+                            <td>1.008</td>
+                        
+                            <td>261.4</td>
+                        
+                            <td>1.021</td>
+                        
+                            <td>235.1</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>272.9</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>187.4</td>
+                        
+                            <td>1.003</td>
+                        
+                            <td>187.7</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>200.9</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>234.9</td>
+                        
+                            <td>0.996</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2024M04</td>
+                        
+                            <td>220.9</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>235.6</td>
+                        
+                            <td>1.001</td>
+                        
+                            <td>254.5</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>179.7</td>
+                        
+                            <td>0.996</td>
+                        
+                            <td>272.5</td>
+                        
+                            <td>1.012</td>
+                        
+                            <td>275.4</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>265.8</td>
+                        
+                            <td>1.017</td>
+                        
+                            <td>235.1</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>272.9</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>186.0</td>
+                        
+                            <td>0.993</td>
+                        
+                            <td>188.7</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>203.4</td>
+                        
+                            <td>1.012</td>
+                        
+                            <td>236.1</td>
+                        
+                            <td>1.005</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>2024M05</td>
+                        
+                            <td>222.2</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>236.6</td>
+                        
+                            <td>1.004</td>
+                        
+                            <td>255.0</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>180.9</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>274.2</td>
+                        
+                            <td>1.006</td>
+                        
+                            <td>277.4</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>267.7</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>236.3</td>
+                        
+                            <td>1.005</td>
+                        
+                            <td>273.0</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>187.9</td>
+                        
+                            <td>1.01</td>
+                        
+                            <td>189.1</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>203.8</td>
+                        
+                            <td>1.002</td>
+                        
+                            <td>235.4</td>
+                        
+                            <td>0.997</td>
+                        
+                    </tr>
+                
+                    <tr>
+                        
+                            <td>Ársbreyting</td>
+                        
+                            <td>1.0621</td>
+                        
+                            <td>1.0047</td>
+                        
+                            <td>1.0525</td>
+                        
+                            <td>1.0046</td>
+                        
+                            <td>1.0447</td>
+                        
+                            <td>1.0037</td>
+                        
+                            <td>1.0421</td>
+                        
+                            <td>1.0041</td>
+                        
+                            <td>1.1187</td>
+                        
+                            <td>1.0097</td>
+                        
+                            <td>1.0878</td>
+                        
+                            <td>1.007</td>
+                        
+                            <td>1.1324</td>
+                        
+                            <td>1.0109</td>
+                        
+                            <td>1.1047</td>
+                        
+                            <td>1.0081</td>
+                        
+                            <td>1.0898</td>
+                        
+                            <td>1.0071</td>
+                        
+                            <td>1.0</td>
+                        
+                            <td>1.0005</td>
+                        
+                            <td>1.0666</td>
+                        
+                            <td>1.0054</td>
+                        
+                            <td>1.0129</td>
+                        
+                            <td>0.9999</td>
+                        
+                            <td>1.0244</td>
+                        
+                            <td>1.0008</td>
+                        
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var table = $('.visitala').DataTable({
+                "lengthChange": false,
+                "paging": false,
+                "scrollX": true,
+                "scrollCollapse": true
+            });
+        });
+    </script>      
+</body>
+</html>
