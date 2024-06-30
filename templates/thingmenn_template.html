@@ -80,9 +80,7 @@
                 birthdayMessage.textContent = formatBirthdayMessage(daysUntilBirthday);
             });
         });
-    </script>
 
-    <script>
         var thingmennData = {};
         {% for entry in entries %}
             thingmennData[{{ entry.id }}] = {{ entry.thingskjol | tojson }};

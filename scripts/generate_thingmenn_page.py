@@ -18,13 +18,13 @@ def fetch_thingmenn_entries(db_path):
     for thingmadur in thingmenn:
         id, nafn, faedingardagur, skammstofun, thingflokkur = thingmadur
         
-        # Fetch thingskjol entries where thingmadur is flutningsmadur and include malsheiti
+        # Fetch thingskjol entries where thingmadur is the first flutningsmadur (rod = 1) and include malsheiti
         cursor.execute('''
             SELECT t.skjalsnumer, t.malsnumer, t.skjalategund, t.utbyting, t.html, m.malsheiti
             FROM thingskjal t
             JOIN flutningsmadur f ON t.skjalsnumer = f.skjalsnumer
             JOIN malaskra m ON t.malsnumer = m.malsnumer
-            WHERE f.nafn = ?
+            WHERE f.nafn = ? AND f.rod = 1
             ORDER BY CAST(t.skjalsnumer AS INTEGER)
         ''', (nafn,))
         thingskjol = cursor.fetchall()
