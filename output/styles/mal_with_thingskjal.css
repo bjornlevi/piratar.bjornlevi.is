@@ -1,0 +1,25 @@
+#malWithThingskjalTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+.details-control {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em; /* Adjust the font size if needed */
+}
+.mal-row.even {
+    background-color: #e0f7fa !important; /* Light Blue */
+}
+.mal-row.odd {
+    background-color: #b3e5fc !important; /* Light Sky Blue */
+}
+.child-row {
+    background-color: #f9f9f9; /* Light Grey */
+}
+.hidden {
+    display: none;
+}

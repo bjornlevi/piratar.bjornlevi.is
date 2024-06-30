@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaskra List</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <style>
+        #malaskraTable {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>Malaskra List</h1>
+    <table id="malaskraTable" class="display">
+        <thead>
+            <tr>
+                <th>Malsnumer</th>
+                <th>Thingnumer</th>
+                <th>Malsheiti</th>
+                <th>HTML</th>
+                <th>XML</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+            <tr>
+                <td>{{ entry.malsnumer }}</td>
+                <td>{{ entry.thingnumer }}</td>
+                <td>{{ entry.malsheiti }}</td>
+                <td><a href="{{ entry.html }}" target="_blank">Link</a></td>
+                <td><a href="{{ entry.xml }}" target="_blank">Link</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#malaskraTable').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "info": true
+            });
+        });
+    </script>
+</body>
+</html>
