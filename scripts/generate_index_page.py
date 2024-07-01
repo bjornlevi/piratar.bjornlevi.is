@@ -41,10 +41,10 @@ def fetch_mal_with_thingskjal_entries(db_path):
 
 def generate_html(entries):
     env = Environment(loader=FileSystemLoader('templates'))
-    template = env.get_template('mal_with_thingskjal.html')
+    template = env.get_template('index_template.html')
     output = template.render(entries=entries)
     os.makedirs('output', exist_ok=True)
-    with open('output/mal_with_thingskjal.html', 'w') as f:
+    with open('output/index.html', 'w') as f:
         f.write(output)
     print("HTML file generated successfully")
 
