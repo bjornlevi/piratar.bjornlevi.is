@@ -6,47 +6,17 @@
     <title>Þingmál</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="styles/index.css">
-    <style>
-        #filter-section {
-            display: none;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .filter-content {
-            display: flex;
-            flex-direction: column;
-        }
-        .filter-section {
-            margin-right: 20px;
-        }
-        .filter-section h3 {
-            cursor: pointer;
-        }
-        .filter-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .filter-content ul li {
-            margin-bottom: 5px;
-        }
-        .tab {
-            cursor: pointer;
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .tab:hover {
-            background-color: #ddd;
-        }
-        .active-tab {
-            background-color: #ccc;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles/navigation.css">    
+    <link rel="stylesheet" type="text/css" href="styles/filters.css"> 
+    <link rel="stylesheet" type="text/css" href="styles/datatables.css">        
 </head>
 <body>
-    <h1>Þingmál</h1>
-
+    <nav>
+        <ul>
+            <li><a href="index.html">Þingmál</a></li>
+            <li><a href="thingmenn.html">Þingmenn</a></li>
+        </ul>
+    </nav>    
     <div class="tab" id="filter-tab">Flokka gögn</div>
 
     <!-- Filter Section -->
