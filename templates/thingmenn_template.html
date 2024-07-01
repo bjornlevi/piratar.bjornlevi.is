@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Þingmenn</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="styles/thingmenn.css">
+    <link rel="stylesheet" type="text/css" href="styles/navigation.css">    
+    <link rel="stylesheet" type="text/css" href="styles/datatables.css">    
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Þingmál</a></li>
+            <li><a href="thingmenn.html">Þingmenn</a></li>
+        </ul>
+    </nav>    
+    <table id="thingmennTable" class="display">
+        <thead>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Nafn</th>
+                <th>Fæðingardagur</th>
+                <th>Skammstöfun</th>
+                <th>Þingflokkur</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+                <tr data-id="{{ entry.id }}" class="thingmadur-row {% if entry.thingskjol|length > 0 %}has-thingskjol{% endif %}">
+                    <td class="details-control">{% if entry.thingskjol|length > 0 %}➕{% endif %}</td>
+                    <td>
+                        <img src="https://www.althingi.is/myndir/thingmenn-cache/{{ entry.id }}/{{ entry.id }}-220.jpg" 
+                             alt="{{ entry.nafn }}" 
+                             class="thingmadur-image" 
+                             onerror="this.onerror=null; this.src='images/placeholder.webp';">
+                    </td>
+                    <td><a href="https://www.althingi.is/altext/cv/is/cv/{{ entry.nafn }}/{{ entry.id }}/?nfaerslunr={{ entry.id }}">{{ entry.nafn }}</a></td>
+                    <td>
+                        {{ entry.faedingardagur }}
+                        <span class="birthday-message"></span>
+                    </td>
+                    <td>{{ entry.skammstofun }}</td>
+                    <td>{{ entry.thingflokkur }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        // Calculate days until next birthday
+        function daysUntilNextBirthday(birthday) {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const nextBirthday = new Date(birthday);
+            nextBirthday.setFullYear(currentYear);
+            
+            if (nextBirthday < now) {
+                nextBirthday.setFullYear(currentYear + 1);
+            }
+
+            const oneDay = 24 * 60 * 60 * 1000;
+            return Math.ceil((nextBirthday - now) / oneDay);
+        }
+
+        // Format birthday message
+        function formatBirthdayMessage(daysUntilBirthday) {
+            if (daysUntilBirthday === 0) {
+                return " - Til hamingju með afmælið!";
+            } else {
+                return ` - ${daysUntilBirthday} dagar til afmælis`;
+            }
+        }
+
+        // Add birthday messages to the table
+        document.addEventListener("DOMContentLoaded", function() {
+            const rows = document.querySelectorAll("#thingmennTable tbody tr");
+            rows.forEach(row => {
+                const birthdayCell = row.querySelector("td:nth-child(4)");
+                const birthdayMessage = birthdayCell.querySelector(".birthday-message");
+                const birthdayText = birthdayCell.textContent.trim();
+                const birthdayDate = new Date(birthdayText);
+                
+                const daysUntilBirthday = daysUntilNextBirthday(birthdayDate);
+                birthdayMessage.textContent = formatBirthdayMessage(daysUntilBirthday);
+            });
+        });
+
+        var thingmennData = {};
+        {% for entry in entries %}
+            thingmennData[{{ entry.id }}] = {{ entry.thingskjol | tojson }};
+        {% endfor %}
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="scripts/thingmenn.js"></script>
+</body>
+</html>

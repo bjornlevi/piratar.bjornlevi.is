@@ -1,0 +1,36 @@
+#thingmennTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+.details-control {
+    cursor: pointer;
+    text-align: center;
+}
+.thingmadur-row.even {
+    background-color: #e0f7fa !important; /* Light Blue */
+}
+.thingmadur-row.odd {
+    background-color: #b3e5fc !important; /* Light Sky Blue */
+}
+.thingskjal-row {
+    font-size: 0.9em; /* Smaller font size for expanded rows */
+}
+.thingskjal-row.even {
+    background-color: #cfd8dc !important; /* Light Grey Blue */
+}
+.thingskjal-row.odd {
+    background-color: #b0bec5 !important; /* Medium Grey Blue */
+}
+.hidden-row {
+    display: none;
+}
+.thingmadur-image {
+    width: 50px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
