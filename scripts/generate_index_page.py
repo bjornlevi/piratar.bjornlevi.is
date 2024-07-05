@@ -42,7 +42,13 @@ def fetch_mal_with_thingskjal_entries(db_path):
 def generate_html(entries):
     env = Environment(loader=FileSystemLoader('templates'))
     template = env.get_template('index_template.html')
-    output = template.render(entries=entries)
+    
+    categories = {
+        "Þingmál": ["index.html", "thingmenn.html"],
+        "Annar Flokkur": ["other1.html", "other2.html"]
+    }
+    
+    output = template.render(entries=entries, categories=categories)
     os.makedirs('output', exist_ok=True)
     with open('output/index.html', 'w') as f:
         f.write(output)

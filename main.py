@@ -40,7 +40,9 @@ def main():
         'fetch_malaskra.py',
         'fetch_thingskjol.py',
         'fetch_dagskra.py',
-        'fetch_raedur.py'
+        'fetch_raedur.py',
+        'generate_index_page.py',
+        'generate_thingmenn_page.py'
     ]
 
     for script in scripts:
