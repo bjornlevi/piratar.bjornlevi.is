@@ -6,7 +6,7 @@ def fetch_mal_with_thingskjal_entries(db_path):
     print(f"Connecting to database at {db_path}")
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute('''
+    cursor.execute(''' 
         SELECT 
             m.malsnumer, 
             t.skjalsnumer, 
@@ -26,11 +26,14 @@ def fetch_mal_with_thingskjal_entries(db_path):
         FROM 
             malaskra m
         LEFT JOIN 
-            thingskjal t ON m.malsnumer = t.malsnumer
+            (SELECT DISTINCT skjalsnumer, malsnumer, skjalategund, utbyting, html FROM thingskjal) t 
+            ON m.malsnumer = t.malsnumer
         LEFT JOIN 
-            flutningsmadur f ON t.skjalsnumer = f.skjalsnumer AND f.rod = 1
+            (SELECT DISTINCT skjalsnumer, nafn, rod, radherra FROM flutningsmadur WHERE rod = 1) f 
+            ON t.skjalsnumer = f.skjalsnumer
         LEFT JOIN 
-            thingmenn tm ON f.nafn = tm.nafn
+            (SELECT DISTINCT nafn, thingflokkur FROM thingmenn) tm 
+            ON f.nafn = tm.nafn
         ORDER BY 
             m.malsnumer, t.skjalsnumer;
     ''')
