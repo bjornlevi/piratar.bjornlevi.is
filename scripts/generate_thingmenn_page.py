@@ -20,7 +20,7 @@ def fetch_thingmenn_entries(db_path):
         
         # Fetch thingskjol entries where thingmadur is the first flutningsmadur (rod = 1) and include malsheiti
         cursor.execute('''
-            SELECT t.skjalsnumer, t.malsnumer, t.skjalategund, t.utbyting, t.html, m.malsheiti
+            SELECT DISTINCT t.skjalsnumer, t.malsnumer, t.skjalategund, t.utbyting, t.html, m.malsheiti
             FROM thingskjal t
             JOIN flutningsmadur f ON t.skjalsnumer = f.skjalsnumer
             JOIN malaskra m ON t.malsnumer = m.malsnumer

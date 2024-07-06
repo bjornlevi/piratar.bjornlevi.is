@@ -49,7 +49,7 @@ def main():
         print(f"Running {script}...")
         try:
             subprocess.run(['python', os.path.join('scripts', script), force, current_session])
-        except FileNotFoundError:
+        except:
             subprocess.run(['python3', os.path.join('scripts', script), force, current_session])
 
 if __name__ == '__main__':
